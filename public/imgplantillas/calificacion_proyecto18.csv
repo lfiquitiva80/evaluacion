@@ -1,0 +1,5 @@
+    "id","name","email","password","TipoUsers","remember_token","_token","_method","created_at","updated_at"
+"1","Leonidas Fiquitiva Castro","lfiquitiva@ocyt.org.co","$2y$10$h9itLiDSfoeStdO871nbPuokSjNbd6Bj6RbwfrY17JDa3GwlO9eju","1","Uk7vzU4lPEkbmm1Iiq3Iu4w5ga67OmhHONusnD7YsJqCMC9MEhwNlNtnNhhs","","","2017-08-28 15:09:33","2017-08-28 15:09:33"
+"2","Juan Yesid Bello Ramos","jbello@ocyt.org.co","$2y$10$IR0hT4kwLi4F42m80qAsV.qfXgi6oyheV.0mrgX9RafZZr1t1fNaG","0","DkZrUI94GIS5d78ByYmjC7aScwRwQJALEz3X5BzXtU1FfbO78xNQARvQPHWj","","","2017-08-30 09:01:03","2017-08-30 09:01:03"
+"3","Alexander Cotte Poveda","acotte@ocyt.org.co","$2y$10$aV0rpjOd2PqSp1r8mOoTf.VrlFmzu2AhZGnbtU8mur3hR4aUh9tve","1","pAZxjs3SvudhaOHKKFu9rG3M53XpGTSmXFbLKlI9I02dA6iCxobKUmwyI6St","2Mo6NtMIqhspiH3WlUrYQ9wVF74FOXKqNBzisJBx","PATCH","2017-09-23 13:16:14","2017-09-23 13:16:14"
+"4","Angélica Monroy Perez","amonroy@ocyt.org.co","$2y$10$GOzsoUc5r7W7PWSzlvITTOJFJ5E4NceefSTb5Y3QeqigM5ue92xOq","1","IouBEPiTYhbrViq0wQ7I0Ave7TnJYhs0DUZF3W6hdhJ4hzn990zcUMToWpgZ","","","2017-09-23 13:19:56","2017-09-23 13:19:56"
