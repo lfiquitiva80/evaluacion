@@ -9,7 +9,7 @@
 
 
   <div class="panel-body">
-  
+
 <div class="container">
 {!! Form::open(['route' => 'comunicados.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
 <!--<form class="navbar-form navbar-right" role="search">-->
@@ -39,10 +39,9 @@
         <td> Correo Certificado y pago</td>
         <td> Correo (No respuesta)</td>
          <td>Proyecto Completo</td>
-      
 
-     
-   
+
+  
     </tr>
   </thead>
   <tbody>
@@ -53,13 +52,13 @@
           <td>{{$row->id}}</td>
           <td>{{$row->DescripcionProyecto_Articulo}}</td>
            <td><a href="{{ $url = route('proyectos_articulos.edit', $row->id) }}">
-          <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users; 
+          <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users;
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
-          ?> 
+          ?>
           </a></td>
-          
-    
- 
+
+
+
         <td>
         @if ($row->correo_invitacion!=0)
         <a href="{{ $url = route('invitacion',$row->id) }}" class="glyphicon glyphicon-envelope" aria-hidden="true" style="color:blue;"></a>
@@ -90,7 +89,7 @@
         <a href="{{ $url = route('pagos',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;">
         @else
         <a href="{{ $url = route('pagos',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-usd" aria-hidden="true" style="color:red;"></span>
-        @endif 
+        @endif
 
 
         </a></td>
@@ -100,7 +99,7 @@
         <a href="{{ $url = route('certificadoypago',$row->id) }}" class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:blue;">
         @else
         <a href="{{ $url = route('certificadoypago',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:red;"></span>
-        @endif 
+        @endif
 
 
         </a></td>
@@ -124,18 +123,18 @@
 
         </td>
 
-        
+
         </td>
-        
-        
-       
 
 
-              
 
 
-        </td></td>  
-      
+
+
+
+
+        </td></td>
+
     </tr>
   </tbody>
 
@@ -154,4 +153,3 @@
 
 
 @endsection
-
