@@ -25,7 +25,7 @@
 		  <a href="{{ $url = route('allusers') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los usuarios</a>
 		  <a href="{{ $url = route('allevaluadores') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los evaluadores</a>
 		  <a href="{{ $url = route('allcriterios') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los criterios de evaluación</a>
-		  <a href="{{ $url = route('eloy') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los criterios de evaluación para Eloy</a>
+		  <a href="{{ $url = route('eloy') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los criterios de evaluación por Plantilla</a>
 		  </center>
 		</div>
 	</div>

@@ -218,7 +218,7 @@
                     
             
         
-    		<input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" step="10" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}">
+    		<input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}">
     	</div>   
                 </td>
                 <td>
@@ -347,6 +347,11 @@
 
         </select>
                 </td>
+
+                <input type="hidden" name="caracteristicas" value="0">
+                <input type="hidden" name="conflicto_real" value="0">
+                <input type="hidden" name="conflicto_aparente" value="0">
+                <input type="hidden" name="conflicto_potencial" value="0">
         
         <tr>
         <td colspan="8">  

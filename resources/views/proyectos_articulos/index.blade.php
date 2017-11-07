@@ -54,7 +54,7 @@
     <tr>
 
                     <td>{{$row->id}}</td>
-          <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}" target="_blank">{{$row->DescripcionProyecto_Articulo}}</a></td>
+          <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}">{{$row->DescripcionProyecto_Articulo}}</a></td>
 
           <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
 

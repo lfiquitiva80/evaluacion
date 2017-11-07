@@ -3,6 +3,7 @@
   <thead>
     <tr>
 <th>id</th>
+<th>Plantilla</th>
 <th>categoria</th>
 <th>DescripcionProyecto_Articulo</th>
 <th>area</th>
@@ -32,6 +33,7 @@
     <tr>
 
 <td>{{$row->id}}</td>
+<td>{{$row->plantilla}}</td>
 <td><?php if ($row->categoria==1) {
     echo "Investigador Consolidado";
 } else {

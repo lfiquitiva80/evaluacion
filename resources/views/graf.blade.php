@@ -31,7 +31,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3><?php $número_formato_inglés = number_format($porcentaje,2); echo $número_formato_inglés;?><sup style="font-size: 20px">%</sup></h3>
-              <p>Porcentaje Proyectos</p>
+              <p>Porcentaje Proyectos Finalizados</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -94,7 +94,14 @@
             <!-- /.box-body-->
           </div>
 
-          <div class="box box-primary">
+          
+
+        </div>
+
+
+<div class="col-md-6">
+          
+        <div class="box box-primary">
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
 
@@ -114,33 +121,6 @@
             <!-- /.box-body-->
           </div>
           <!-- /.box -->
-
-        </div>
-
-
-<div class="col-md-6">
-          <!-- Bar chart -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-bar-chart-o"></i>
-
-              <h3 class="box-title">Full Width Area Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div style="width:75%;">
-            {!! $chartjs3->render() !!}
-             </div>
-            </div>
-            <!-- /.box-body-->
-          </div>
-          <!-- /.box -->
-
           <!-- Donut chart -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -159,7 +139,7 @@
             <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">proyectos</span>
+              <span class="info-box-text">proyectos Finalizados</span>
               <span class="info-box-number">{{$proyectos->count()}}</span>
 
               <div class="progress">
@@ -184,8 +164,8 @@
               </div>
               <span class="progress-description">
                     20% Increase in 30 Days
-                  </span>
-            </div>
+                  </span>-->
+           <!-- </div>
             <!~~ /.info-box-content ~~>
           </div>-->
           <!-- /.info-box -->

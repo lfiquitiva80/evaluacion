@@ -10,6 +10,6 @@ Ingresar a nuestra página.
 
 
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

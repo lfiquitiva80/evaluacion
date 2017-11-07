@@ -23,7 +23,7 @@
 	
 
 	<div class="panel panel-success">
-		<div class="panel-heading">
+		<div class="panel-primary">
 			<h3 class="panel-title"></h3>
 		</div>
 		<div class="panel-body">
@@ -44,7 +44,15 @@
 		<input type="hidden" class="form-control" name="categoria" id="categoria" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->categoria}}">
 	</div>
 
-	
+	<div class="form-group">
+		
+		<input type="hidden" class="form-control" name="plantilla" id="plantilla" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->plantilla}}">
+	</div>
+	<div class="form-group">
+		
+		<input type="hidden" class="form-control" name="sepaga" id="sepaga" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->sepaga}}">
+	</div>
+		
 	<div class="form-group">
 		
 		<input type="hidden" class="form-control" name="area" id="area" placeholder="Digite un área" value="{{$proyectos_articulos->area}}" >

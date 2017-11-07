@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Log;
 
 class proyectos_articulosController extends Controller
 {
-   
-    
+
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +44,7 @@ class proyectos_articulosController extends Controller
      */
     public function create()
     {
-        
+
          return view('proyectos_articulos.create');
     }
 
@@ -57,10 +57,10 @@ class proyectos_articulosController extends Controller
     public function store(proyectos_articulosRequest $request)
     {
 
-        flash('Se creo con Exito!')->important();  
+        flash('Se creo con Exito!')->important();
         Log::info('El usuario '. \Auth::user()->name .' Creo un nuevo proyecto y/o articulo: '.$request['Nombre_convocatoria']);
 
-   
+
        $input = $request->all();
 
                         if ($request->hasFile('proyecto_pdf')) {
@@ -72,7 +72,7 @@ class proyectos_articulosController extends Controller
                         }
 
 
-                        if ($request->hasFile('calificacion_proyecto')) {   
+                        if ($request->hasFile('calificacion_proyecto')) {
 
                         $rutaimagen2 = '/'.'documentos/'.$request->file('calificacion_proyecto')->store('proyecto');
                         }else
@@ -81,8 +81,8 @@ class proyectos_articulosController extends Controller
                         $rutaimagen2="";
                         }
 
-                        if ($request->hasFile('img_proyecto')) {   
-                         
+                        if ($request->hasFile('img_proyecto')) {
+
                         $rutaimagen3 = '/'.'documentos/'.$request->file('img_proyecto')->store('proyecto');
                         }else
 
@@ -90,15 +90,15 @@ class proyectos_articulosController extends Controller
                         $rutaimagen3="";
                         }
 
-                        if ($request->hasFile('doc_confidencialidad')) {   
-                         
+                        if ($request->hasFile('doc_confidencialidad')) {
+
                         $rutaimagen4 = '/'.'documentos/'.$request->file('doc_confidencialidad')->store('proyecto');
                         }else
 
                          {
                         $rutaimagen4="";
                         }
-                        
+
                     $proy_pdf = new proyectos_articulos;
                     $proy_pdf->Nombre_convocatoria=$input['Nombre_convocatoria'];
                     $proy_pdf->Codigo_convocatoria=$input['Codigo_convocatoria'];
@@ -132,15 +132,15 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->plantilla=$input['plantilla'];
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
-                    
-                    
+
+
                     $proy_pdf->save();
 
+                  
 
-             
 
         //Session::flash('msjevento',"Se ha registrado el Area Tematica ".$eventos_general->id." de manera exitosa!");
-        
+
 
        return redirect()->route('proyectos_articulos.index');
     }
@@ -167,11 +167,11 @@ class proyectos_articulosController extends Controller
 
         $proyectos_articulos= proyectos_articulos::findOrFail($id);
         Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$proyectos_articulos);
-       
+
         //dd($eventosg);
         return view('proyectos_articulos.edit', compact('proyectos_articulos'));
 
-        
+
     }
 
     /**
@@ -184,8 +184,8 @@ class proyectos_articulosController extends Controller
     public function update(Request $request, $id)
     {
 
-        flash('Se actualizo el registro con exito!')->important();  
-        Log::info('El usuario '. \Auth::user()->name .' Actualizo el id: '.$id);  
+        flash('Se actualizo el registro con exito!')->important();
+        Log::info('El usuario '. \Auth::user()->name .' Actualizo el id: '.$id);
         $input = $request->all();
 
         //dd($input);
@@ -204,7 +204,7 @@ class proyectos_articulosController extends Controller
                         }
 
 
-                        if ($request->hasFile('calificacion_proyecto')) {   
+                        if ($request->hasFile('calificacion_proyecto')) {
 
                         $rutaimagen2 = '/'.'documentos/'.$request->file('calificacion_proyecto')->store('proyecto');
                         }else
@@ -213,8 +213,8 @@ class proyectos_articulosController extends Controller
                         $rutaimagen2=$updates->calificacion_proyecto;
                         }
 
-                        if ($request->hasFile('img_proyecto')) {   
-                         
+                        if ($request->hasFile('img_proyecto')) {
+
                         $rutaimagen3 = '/'.'documentos/'.$request->file('img_proyecto')->store('proyecto');
                         }else
 
@@ -222,15 +222,15 @@ class proyectos_articulosController extends Controller
                         $rutaimagen3=$updates->img_proyecto;
                         }
 
-                        if ($request->hasFile('doc_confidencialidad')) {   
-                         
+                        if ($request->hasFile('doc_confidencialidad')) {
+
                         $rutaimagen4 = '/'.'documentos/'.$request->file('doc_confidencialidad')->store('proyecto');
                         }else
 
                          {
                         $rutaimagen4=$updates->doc_confidencialidad;
                         }
-                        
+
                     $proy_pdf = \App\proyectos_articulos::find($id);
                     $proy_pdf->Nombre_convocatoria=$input['Nombre_convocatoria'];
                     $proy_pdf->Codigo_convocatoria=$input['Codigo_convocatoria'];
@@ -262,12 +262,12 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->plantilla=$input['plantilla'];
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
-                    
-                    
-                    
+
+
+
                     $proy_pdf->save();
 
-        
+
 
         return redirect()->route('homedos');
 
@@ -282,8 +282,8 @@ class proyectos_articulosController extends Controller
      */
     public function destroy($id)
     {
-        flash('Se elimino el registro!'.$id)->warning();    
-        Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id); 
+        flash('Se elimino el registro!'.$id)->warning();
+        Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);
         $destruir=DB::table('proyectos_articulos')->where('id', '=', $id)->delete();
         return redirect()->route('proyectos_articulos.index');
     }
@@ -292,13 +292,13 @@ class proyectos_articulosController extends Controller
     public function subircalificacion($id)
     {
 
-            
+
       $proyectos_articulos= proyectos_articulos::findOrFail($id);
         Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$proyectos_articulos);
-       
+
         //dd($eventosg);
         return view('proyectos_articulos.calificacion', compact('proyectos_articulos'));
-           
+
     }
 
 
@@ -311,8 +311,8 @@ class proyectos_articulosController extends Controller
 
         dd($request->file('proyecto_pdf'));
 
-        if ($request->hasFile('calificacion_proyecto')) {   
-                         
+        if ($request->hasFile('calificacion_proyecto')) {
+
                         $rutaimagen3 = 'documentos/'.$request->file('calificacion_proyecto')->store('proyecto');
                         }else
 
@@ -324,17 +324,17 @@ class proyectos_articulosController extends Controller
                          $proyectos_articulos->calificacion_proyecto= $rutaimagen3;
                          $proyectos_articulos->save();
 
-       
-        Log::info('El usuario '. \Auth::user()->name .' Subio la calificacion para el id: '.$id); 
+
+        Log::info('El usuario '. \Auth::user()->name .' Subio la calificacion para el id: '.$id);
         //dd($eventosg);
         //return view('proyectos_articulos.calificacion', compact('proyectos_articulos'));
         return redirect()->route('homedos');
-           
+
     }
 
-    
-    
-   
+
+
+
 
 
 

@@ -14,6 +14,6 @@ $url = route('certificado', $datos->id) ?>
 Descargar PDF
 @endcomponent
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

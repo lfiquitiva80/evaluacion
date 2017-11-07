@@ -34,6 +34,6 @@
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Observatorio Colombiano de Ciencia y Tecnolog&iacute;a</span></span></span></span><span style="font-size:10pt"><span style="font-family:Calibri,sans-serif">.</span></span></p>
 
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

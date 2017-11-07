@@ -242,9 +242,8 @@
                 </td>
                 <td>
                     <div class="form-group">
-            <label for="NombreDepartamento">Justificacion_Comentarios</label>
-            <textarea class="form-control" name="Justificacion_Comentarios[]"  id="Justificacion_Comentarios" placeholder="Justificacion_Comentarios" rows="15" > <?php echo $row->Justificacion_Comentarios ?></textarea>
-        </div>
+          <!--  <label for="NombreDepartamento">Justificacion_Comentarios</label>-->
+            <?php echo $row->Justificacion_Comentarios ?>
 
                 </td>
             </tr>
@@ -292,7 +291,7 @@
                 <td colspan="8">
                  <div class="form-group">
                 <label for="NombreDepartamento">Concepto final de la evaluacion del Proyecto</label>
-                <textarea class="ckeditor" name="concepto_final" id="concepto_final" placeholder="concepto_final" value="{{$row->concepto_final}}">{{$row->concepto_final}}</textarea>
+                {{$row->concepto_final}}
                 </div>
 
                 </td>

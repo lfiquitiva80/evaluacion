@@ -17,6 +17,6 @@ Esperamos contar con su experiencia en otras evaluaciones.
 <br><p align="justify">Directora Ejecutiva
 <br><p align="justify">Observatorio Colombiano de Ciencia y Tecnología
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

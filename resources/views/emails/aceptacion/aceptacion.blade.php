@@ -24,6 +24,6 @@ Si no tiene contraseña por favor dar click en el boton azul
 Ingresar para confirmar contraseña.
 @endcomponent
 
-Thanks,<br>
+Gracias,<br>
 {{ config('app.name') }}
 @endcomponent

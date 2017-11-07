@@ -162,7 +162,7 @@ class preguntasController extends Controller
     public function duplicarvarios(Request $request)
     {
         
-        flash('Se copio correctamente el proyecto, Revisar tks!!')->important();    
+        flash('Se copio correctamente el proyecto, Revisar muchas Gracias!!')->important();    
         $input = $request->input('listaproyectos');
         $input2 = $request->input('listaproyectos2');
       
