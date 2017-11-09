@@ -13,10 +13,6 @@
 <div class="panel panel-default">
   <div class="panel-body">
 
-  
-  
-
-
 	<legend>VISTA CRITERIOS DE EVALUACION</legend>
 
  <a 	href="{{ route('criterios_evaluacion.index') }}" class="btn btn-primary" >Regresar</a><p>

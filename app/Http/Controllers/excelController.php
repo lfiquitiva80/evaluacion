@@ -195,7 +195,7 @@ class excelController extends Controller
             ->select('proyectos_articulos.*','criterios_evaluacion.*')
             ->get();
 
-            //dd($products);
+       
 
             flash('Se descargo el archivo correctamente !')->important();
         //$input = $request->all();

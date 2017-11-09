@@ -207,12 +207,12 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::get('error', function(){     abort(500); });
 
-	
+
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 });
 
 
 Route::group(['middleware' => ['UEstandar']], function () {
-    
+
 });

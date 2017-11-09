@@ -94,13 +94,13 @@
             <!-- /.box-body-->
           </div>
 
-          
+        
 
         </div>
 
 
 <div class="col-md-6">
-          
+
         <div class="box box-primary">
             <div class="box-header with-border">
               <i class="fa fa-bar-chart-o"></i>
@@ -216,6 +216,6 @@
 
 
 
- 
+
 
 @endsection
