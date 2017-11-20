@@ -27,7 +27,7 @@ class evaluadoresController extends Controller
     // dd($name);
 
            $evaluadores=DB::table('evaluadores')->where('NombreEvaluador','LIKE',"%$name%")
-           ->orderBy('NombreEvaluador', 'asc')->Paginate(15);
+           ->orderBy('id', 'desc')->Paginate(15);
 
           return view('evaluadores.index', ['evaluadores' => $evaluadores]);
     }

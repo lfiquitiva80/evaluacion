@@ -41,18 +41,7 @@
 
 	<div class="form-group">
 	<label for="">Categoria</label>
-	<select name="categoria" id="categoria" class="form-control" required="required" value="{{$proyectos_articulos->categoria}}">
-            
-            @if ($proyectos_articulos->categoria==1)
-                <option value="1" selected>Investigador Consolidado</option>
-                <option value="0">Investigador en Formación</option>
-            @else
-                <option value="1">Investigador Consolidado</option>
-                <option value="0" selected="">Investigador en Formación</option>
-
-            @endif
-
-        </select> 
+	<input type="text" class="form-control" name="categoria" id="categoria" placeholder="Digite un categoria" value="{{$proyectos_articulos->categoria}}" >
 	</div>
 
 

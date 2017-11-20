@@ -20,15 +20,15 @@ class criterios_evaluacionController extends Controller
      */
     public function index(Request $request)
     {
-         
+
          $name = $request->input('listaproyectos');
 
         //dd($input);
         $criterios_evaluacion=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',$name)->paginate(15);
-     //$listaproyectos=DB::table('proyectos_articulos')->pluck('DescripcionProyecto_Articulo','id');  
-       $listaproyectos=proyectos_articulos::all(); 
-    
-return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_evaluacion,'listaproyectos' => $listaproyectos]);
+     //$listaproyectos=DB::table('proyectos_articulos')->pluck('DescripcionProyecto_Articulo','id');
+       $listaproyectos=proyectos_articulos::all();
+
+return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_evaluacion,'listaproyectos' => $listaproyectos ,'id' => $name]);
     }
 
     /**
@@ -54,7 +54,7 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
 
         $input = $request->all();
 
-        $criterios_evaluacion=criterios_evaluacion::create($input);  
+        $criterios_evaluacion=criterios_evaluacion::create($input);
 
        return redirect()->route('criterios_evaluacion.index');
     }
@@ -86,7 +86,7 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
         Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$criterios_evaluacion);
         //dd($criterios_evaluacion);
         return view('criterios_evaluacion.edit', compact('criterios_evaluacion'));
-         
+
     }
 
     /**
@@ -99,22 +99,22 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
     public function update(Request $request, $id)
     {
         flash('Se actualizo el registro con exito!')->important();
-        Log::info('El usuario '. \Auth::user()->name .' Actualizo el id: '.$id);    
+        Log::info('El usuario '. \Auth::user()->name .' Actualizo el id: '.$id);
         $input = $request->all();
-        
+
         //dd($input);
 
-        $updates=DB::table('criterios_evaluacion')->where('id',"=",$id)->update($input); 
+        $updates=DB::table('criterios_evaluacion')->where('id',"=",$id)->update($input);
 
 
          if (\Auth::user()->TipoUsers==0){
          return redirect()->route('homedos');
          }
         else{
-            return redirect()->route('criterios_evaluacion.index');           
+            return redirect()->route('criterios_evaluacion.index');
         }
-        
-       
+
+
         //return back();
     }
 
@@ -127,22 +127,23 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
     public function destroy($id)
     {
          flash('Se elimino el registro!'.$id)->warning();
-         Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);      
+         Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);
         $destruir=DB::table('criterios_evaluacion')->where('id', '=', $id)->delete();
-        return redirect()->route('criterios_evaluacion.index');
+        //return redirect()->route('criterios_evaluacion.index');
+        return back();
     }
 
 
     public function duplicar(Request $request, $duplicar)
     {
-                  
+
         //for($i=1;$i<=39;$i++){
         $input= $request->all();
         //dd($duplicar);
 
         $criterios_evaluacion= criterios_evaluacion::findOrFail($duplicar);
         flash('Se Duplico correctamente!'.$duplicar)->warning();
-        Log::warning('El usuario '. \Auth::user()->name .' Duplico la pregunta: '.$criterios_evaluacion);   
+        Log::warning('El usuario '. \Auth::user()->name .' Duplico la pregunta: '.$criterios_evaluacion);
         //$criterios_evaluacion2= DB::table('proyectos_articulos')->get()->last();
         //dd($criterios_evaluacion2);
 
@@ -165,12 +166,8 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
             //'recomendacion_proyecto' => $criterios_evaluacion->recomendacion_proyecto,
 
            ]);
-         //}    
+         //}
         //return redirect()->route('criterios_evaluacion.index');
        return back();
     }
 }
-
-
-
-

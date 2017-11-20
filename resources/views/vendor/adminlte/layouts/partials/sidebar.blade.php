@@ -49,6 +49,7 @@
             
             <li class="active"><a href="{{ url('criterios_evaluacion') }}"><i class="fa fa-ship"></i> <span>Criterios de Evaluación</span></a></li>
             <li class="active"><a href="{{ url('comunicados') }}"><i class="fa fa-commenting"></i> <span>Comunicados</span></a></li>
+            <li class="active"><a href="{{ url('gestion_pago') }}"><i class="fa fa-money" aria-hidden="true"></i><span>Gestión Pago</span></a></li>
 
             <li class="active"><a href="{{ url('preguntas') }}"><i class="fa fa-question-circle"></i> <span>Sistema de Clonado</span></a></li>
             <li class="active"><a href="{{ url('/logs') }}"><i class="fa fa-cog"></i> <span>Logs del Sistema</span></a></li>
@@ -62,7 +63,7 @@
             
             <li class="treeview">
 
-                <a href="{{ url('eventos_general') }}"><i class='fa fa-link'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="{{ url('eventos_general') }}"><i class="fa fa-file-excel-o" aria-hidden="true"></i><span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ $url = route('excel.index') }}">Reporte de Excel</a></li>
                                     </ul>

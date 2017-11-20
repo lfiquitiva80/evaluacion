@@ -405,9 +405,9 @@ Fecha de Ingreso al sistema  {{ $date }}
           </a></td>
           <td><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")  
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada">Ver Evaluación</a> 
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a> 
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada">Ver Evaluación</a>
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
           @endif</td>
 
           <td>
@@ -437,10 +437,10 @@ Fecha de Ingreso al sistema  {{ $date }}
       <div class="modal-body">
        <lu>
         <li><strong>Antes de Finalizar verificar lo siguiente:</strong></li>
-        <li>1.Revisar que hallá cargado el documento de Calificación del Proyecto</li>
-        <li>2. Revisar que hallá cargado el Documento de Confidencialidad</li>
-        <li>3. Revisar que hallá Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
-        <li>4. Revisar que hallá terminado la Evaluación.</li>
+        <li>1.Revisar que haya cargado el documento de Calificación del Proyecto</li>
+        <li>2. Revisar que haya cargado el Documento de Confidencialidad</li>
+        <li>3. Revisar que haya Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
+        <li>4. Revisar que haya terminado la Evaluación.</li>
 
        </lu>
 
@@ -497,6 +497,7 @@ Fecha de Ingreso al sistema  {{ $date }}
       
       <td>  id_evaluador</td>
       <td>  Evaluacion_par</td>
+      <td>  Certificado</td>
       <!--<td>  Acción </td>-->
 
      
@@ -542,6 +543,9 @@ Fecha de Ingreso al sistema  {{ $date }}
           <a href="{{ $url = route('pdfevaluacion', $row->id) }}" class="btn btn-primary">PDF Innpulsa</a> 
           @endif
 -->
+        </td>
+        <td>
+          <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado</a>
         </td>
           
           
@@ -668,7 +672,7 @@ Fecha de Ingreso al sistema  {{ $date }}
           </td> 
              
  
-        <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success">Edición</a></td>
+        <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edición</a></td>
         
 
 
@@ -688,11 +692,12 @@ Fecha de Ingreso al sistema  {{ $date }}
 </div>
       
     </div>
-   <!-- <div id="Finalizar" class="tab-pane fade">
+  <div id="Finalizar" class="tab-pane fade">
       <h3>Finalizar</h3>
       
-      
-      </div>-->
+             
+
+      </div>
 
 
 

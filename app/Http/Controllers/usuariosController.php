@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\evaluadores;
+use App\tratamiento_carta;
 Use App\Validator;
 use App\Events\OrderShipped;
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class usuariosController extends Controller
     // dd($name);
 
            $usuarios=DB::table('users')->where('Name','LIKE',"%$name%")
-           ->orderBy('Name', 'asc')->Paginate(15);
+           ->orderBy('id', 'desc')->Paginate(15);
            
            
 
@@ -52,7 +53,9 @@ class usuariosController extends Controller
      */
     public function create()
     {
-       return view('usuarios.create');
+       $cartas = tratamiento_carta::all();
+       //dd($cartas); 
+       return view('usuarios.create', ['cartas' => $cartas]);
     }
 
     /**
@@ -64,8 +67,17 @@ class usuariosController extends Controller
     public function store(Request $request)
     {
 
-        $input = $request->all();
+       // $data = $request->all();
        //dd($input);
+
+
+        $this->validate($request,[
+            'name'     => 'required|max:255',
+            'username' => 'sometimes|required|max:255|unique:users',
+            'email'    => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            
+        ]);
 
         flash('Se creo con Exito!')->important();
        Log::info('El usuario '. \Auth::user()->name .' Creo un nuevo usuario: '.$request['name']);
@@ -76,24 +88,25 @@ class usuariosController extends Controller
             'email'    => $request['email'],
             'password' => bcrypt($request['password']),
             'TipoUsers' => $request['TipoUsers'],
+            'id_tratamiento' => $request['id_tratamiento'],
             ];
 
             //$leonidas = $faker->password;
         
 
-        $criterios_evaluacion=User::create($input);
+        $createuser=User::create($input);
         //dd($criterios_evaluacion);
 
-         /*$input2 = [
+         $input2 = [
             'NombreEvaluador'=> $request['name'],
             'email'    => $request['email'],
-            'id_users' => $criterios_evaluacion->id,
+            'id_users' => $createuser->id,
         ];
 
+        $evaluador=evaluadores::create($input2);   
 
-        $evaluador=evaluadores::create($input2);   */ 
-
-        event(new OrderShipped($criterios_evaluacion));
+        //event(new OrderShipped($criterios_evaluacion));
+       
 
        return redirect()->route('usuarios.index');
 
@@ -121,13 +134,14 @@ class usuariosController extends Controller
     public function edit($id)
     {
             $usuarios= User::findOrFail($id);
+            $cartas = tratamiento_carta::all();
             //$users= DB::table('users')->get();
             //$usuarios->notify(new notificacionadmin($usuarios));
             Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$usuarios);
             
           //\Notification::send($users, new notificacionadmin($usuarios));
          
-        return view('usuarios.edit', compact('usuarios'));
+        return view('usuarios.edit', compact('usuarios','cartas'));
     }
 
     /**
@@ -150,6 +164,7 @@ class usuariosController extends Controller
             'email'    => $request['email'],
             'password' => bcrypt($request['password']),
             'TipoUsers' => $request['TipoUsers'],
+            'id_tratamiento' => $request['id_tratamiento'],
         ];
 
         

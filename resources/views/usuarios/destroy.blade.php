@@ -1,5 +1,3 @@
-{!! Form::open(['route' => ['usuarios.destroy', $usuarios->id],'method'=>'DELETE']) !!}
- 
-
-<button class='btn btn-danger'>Eliminar</button>
+{!! Form::open(['route' => ['usuarios.destroy', $row->id],'method'=>'DELETE']) !!}
+<button class='btn btn-danger'><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
 {!! Form::close() !!}

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\eventos_general;
 use App\proyectos_articulos;
+use App\evaluadores;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
@@ -64,5 +65,24 @@ class PDFcontroller extends Controller
                         
 
     }
+
+     public function certificadoeloy($id)
+
+    {
+        //$preguntas=DB::table('plantilla')->where('id',"=",$id)->get(); 
+        $proyectos_articulos= proyectos_articulos::find($id);
+
+        $evaluadores= evaluadores::find($proyectos_articulos->id_evaluador);
+                
+        $pdf = PDF::loadView('pdf.pdfeloy', compact('proyectos_articulos','id','evaluadores'));
+       
+
+        return $pdf->setPaper('letter', 'landscape')->setOptions(['defaultFont' => 'Helvetica'])->download('Certificado.pdf');
+                      
+
+    }
+
+
+
 
 }

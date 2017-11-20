@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -28,7 +31,7 @@ class plantillaController extends Controller
 
  
     //dd($plantilla);
-      return view('adminlte::plantilla.index', ['plantilla' => $plantilla]);
+      return view('plantilla.index', ['plantilla' => $plantilla]);
 
     }
 
@@ -39,7 +42,7 @@ class plantillaController extends Controller
      */
     public function create()
     {
-        return view('adminlte::plantilla.create');
+        return view('plantilla.create');
     }
 
     /**
@@ -51,23 +54,37 @@ class plantillaController extends Controller
     public function store(Request $request)
     {
 
+            flash('Se creo con Exito!')->important();
+        Log::info('El usuario '. \Auth::user()->name .' Creo una nueva plantilla');
+
+
                 $input = $request->all();
 
-                        $file= $request->file('ImagenInstitucion1');
-                        $nombre = $file->getClientOriginalName();
-                        Storage::disk('local')->put($nombre, \File::get($file));
-                        $rutaimagen="imgplantillas/".$nombre;
+                        if ($request->hasFile('ImagenInstitucion1')) {
+                        $rutaimagen = '/'.'documentos/'.$request->file('ImagenInstitucion1')->store('proyecto');
+                         } else
 
-                        $file2= $request->file('ImagenInstitucion2');
-                        $nombre2 = $file2->getClientOriginalName();
-                        Storage::disk('local')->put($nombre2, \File::get($file2));
-                        $rutaimagen2="imgplantillas/".$nombre2;
+                         {
+                        $rutaimagen="";
+                        }
 
-                        $file3= $request->file('ImagenInstitucion3');
-                        $nombre3 = $file3->getClientOriginalName();
-                        Storage::disk('local')->put($nombre3, \File::get($file3));
-                        $rutaimagen3="imgplantillas/".$nombre3;
+                         if ($request->hasFile('ImagenInstitucion2')) {
 
+                        $rutaimagen2 = '/'.'documentos/'.$request->file('ImagenInstitucion2')->store('proyecto');
+                        }else
+
+                         {
+                        $rutaimagen2="";
+                        }
+
+                        if ($request->hasFile('ImagenInstitucion3')) {
+
+                        $rutaimagen3 = '/'.'documentos/'.$request->file('ImagenInstitucion3')->store('proyecto');
+                        }else
+
+                         {
+                        $rutaimagen3="";
+                        }
 
                     $img = new Plantilla;
                     $img->NombrePlantilla=$input['NombrePlantilla'];
@@ -134,7 +151,7 @@ class plantillaController extends Controller
     {
          $plantilla= plantilla::findOrFail($id);
         //dd($eventosg);
-        return view('adminlte::plantilla.edit', compact('plantilla'));
+        return view('plantilla.edit', compact('plantilla'));
     }
 
     /**

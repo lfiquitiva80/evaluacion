@@ -96,6 +96,23 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group">
+                            <label for="" class="col-md-4 control-label">Tratamiento para Cartas y Certificados</label>
+
+                          <div class="col-md-6">
+
+                                  
+                                <select class="form-control" name="id_tratamiento" id="id_tratamiento">
+                                    @foreach ($cartas as $row)  
+                                    <option value="{{$row->id}}">{{$row->Abreviacion}}  {{$row->Titulo}}</option>
+                                      @endforeach                                 
+                                </select>
+                               
+
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

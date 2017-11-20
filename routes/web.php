@@ -58,6 +58,8 @@ Route::get('pdfevaluacion/{id}', 'PDFcontroller@Certificado')->name('pdfevaluaci
 
 Route::get('pdfevaluacion2/{id}', 'PDFcontroller@Certificado2')->name('pdfevaluacion2');
 
+Route::get('certificadoeloy/{id}', 'PDFcontroller@certificadoeloy')->name('certificadoeloy');
+
 Route::get('emailnorespuesta/{id}', 'emailController@norespuesta')->name('norespuesta');
 
 Route::get('aceptacion/{id}', 'emailController@aceptacion')->name('aceptacion');
@@ -110,7 +112,11 @@ Route::get('emailpagos/{id}', 'emailController@pagos')->name('pagos');
 
 Route::get('certificadoypago/{id}', 'emailController@certificadoypago')->name('certificadoypago');
 
+Route::get('gestionpago/{id}', 'emailController@gestionpago')->name('gestionpago');
+
 Route::get('final_evaluacion/{id}', 'emailController@finalevaluacion')->name('finalevaluacion');
+
+Route::get('devolver_finalevaluacion/{id}', 'emailController@devolver_finalevaluacion')->name('devolver_finalevaluacion');
 
 Route::get('emailparticipantes', 'emailController@enviarparticipantes');
 
@@ -181,11 +187,14 @@ Route::resource('evaluacion_par','evaluacion_parController');
 
 Route::resource('comunicados', 'comunicadosController');
 
+Route::get('rectificacion','comunicadosController@rectificacion_errores')->name('rectificacion_errores');
+
 Route::resource('criterios_evaluacion', 'criterios_evaluacionController');
 
 Route::get('duplicar/{duplicar}', 'criterios_evaluacionController@duplicar')->name('duplicar');
 
 Route::get('preguntasduplicar', 'preguntasController@duplicarvarios')->name('preguntasduplicar');
+Route::get('duplicarproyectos', 'preguntasController@duplicarproyectos')->name('duplicarproyectos');
 
 Route::get('preguntaseloy/{id}', 'preguntasController@editformeloyvalenzuela')->name('preguntaseloy');
 
@@ -200,6 +209,10 @@ Route::resource('preguntas', 'preguntasController');
 Route::resource('usuarios', 'usuariosController');
 
 Route::resource('dashboard', 'dashboardController');
+
+Route::resource('gestion_pago', 'gestionpagoController');
+
+Route::get('confirmación_financiera/{id}', 'gestionpagoController@confirmacionpago')->name('confirmacionpago');
 
 Route::get('arreglo_criterios', 'preguntasController@ArregloCriterios')->name('arreglo_criterios');
 

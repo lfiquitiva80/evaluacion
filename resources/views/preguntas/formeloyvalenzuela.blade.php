@@ -497,8 +497,11 @@
                 <br>
                 <br>    
                
-                    
+                    @if(!empty($evaluadores->FirmaDigital))
                     <img src="<?php echo "/".$evaluadores->FirmaDigital; ?>" height="40%" width="40%">
+                    @else
+
+                    @endif
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>    
                 <br><strong>Nombre:</strong>{{$evaluadores->NombreEvaluador}}

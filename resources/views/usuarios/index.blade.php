@@ -9,7 +9,7 @@
 
 
     <div class="panel-body">
-    
+
     <div class="container">
   {!! Form::open(['route' => 'usuarios.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
   <!--<form class="navbar-form navbar-right" role="search">-->
@@ -27,7 +27,15 @@
 <h4><b><center>REGISTROS DE usuarios</h4></b></center>
 
 
-<a href="{{ $url = route('usuarios.create') }}" class="btn btn-primary">Registar Nuevos usuarios</a>
+
+ <div class="box-footer">
+              <div class="pull-left">
+
+        <a href="{{ $url = route('usuarios.create') }}" class="btn btn-primary"><i class="fa fa-users" aria-hidden="true"></i> Registar Nuevos usuarios</a>
+
+              </div>
+
+            </div>
 
 
 
@@ -40,47 +48,47 @@
       <td>  id  </td>
       <td>  Name</td>
       <td>  email  </td>
-      <td>  password</td>
+
       <td>  TipoUsers  </td>
       <td>  Acción </td>
 
-     
-   
+
+
     </tr>
   </thead>
   <tbody>
 
   @foreach($usuarios as $row)
     <tr>
-
+   
           <td>{{$row->id}}</td>
           <td>{{$row->name}}</td>
           <td>{{$row->email}}</td>
-          <td>{{$row->password}}</td>
           <td><?php if ($row->TipoUsers==0) {
             echo "Estándar";
           } else {
            echo "Administrador";
           }
            ?></td>
-          
-
-         
-
-          
-          
-
-              
- 
-        <td><a href="{{ $url = route('usuarios.edit', $row->id) }}" class="btn btn-success">Edicion</a></td>
-        <!--<td><a href="{{ $url = route('eventos_general.destroy', $row->id) }}" class="btn btn-danger">Eliminar</a></td>-->
 
 
-              
 
 
-        </td></td>  
-      
+
+
+
+
+
+        <td><a href="{{ $url = route('usuarios.edit', $row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edición</a>
+
+        </td>
+        <td>@include('usuarios.destroy')</td>
+
+
+
+
+        </td></td>
+
     </tr>
   </tbody>
 
@@ -100,4 +108,3 @@
 
 
 @endsection
-

@@ -8,6 +8,9 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Apreciado (a) Investigador (a),</span></span></span></span></span></span></p> <br>
 <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          $comment2 = App\User::find($comment->id_users); $comment2->name;
+          $comment3 = App\tratamiento_carta::find($comment2->id_tratamiento); echo $comment3->Titulo;
+          ?> <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?> ,</b>
 

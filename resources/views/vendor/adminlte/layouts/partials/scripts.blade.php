@@ -11,7 +11,7 @@
 <script src="{{ url (asset('/js/Chart.bundle.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/highcharts.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/vue.js')) }}" type="text/javascript"></script>
-<script src="node_modules/vue/dist/vue.js"></script>
+<!--<script src="node_modules/vue/dist/vue.js"></script>-->
 
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>

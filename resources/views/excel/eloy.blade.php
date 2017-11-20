@@ -34,14 +34,7 @@
 
 <td>{{$row->id}}</td>
 <td>{{$row->plantilla}}</td>
-<td><?php if ($row->categoria==1) {
-    echo "Investigador Consolidado";
-} else {
-    echo "Investigador en Formación";
-}
-  ?></td>
-
-
+<td>{{$row->categoria}}</td>
 <td>{{$row->DescripcionProyecto_Articulo}}</td>
 <td>{{$row->area}}</td>
 <td><?php $comment = App\evaluadores::find($row->id_evaluador); echo $comment->NombreEvaluador?></td>

@@ -6,7 +6,7 @@
 
 @section('main-content')
 <div class="container">
-<h4><b><center>PLANTILLAS PARA EVENTOS</h4></b></center>
+<h4><b><center>PLANTILLAS PARA EVALUACIONES</h4></b></center>
 
 
 <a href="{{ $url = route('plantilla.create') }}" class="btn btn-primary">Registar Nueva plantilla</a>

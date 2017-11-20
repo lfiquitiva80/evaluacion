@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
+use App\proyectos_articulos;
+use App\Mail\rectificacion;
 
 class comunicadosController extends Controller
 {
@@ -72,7 +74,11 @@ class comunicadosController extends Controller
      */
     public function edit($id)
     {
-        //
+          $proyectos_articulos= proyectos_articulos::findOrFail($id);
+        Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$proyectos_articulos);
+
+        //dd($eventosg);
+        return view('comunicados_evaluadores.edit', compact('proyectos_articulos'));
     }
 
     /**
@@ -97,4 +103,45 @@ class comunicadosController extends Controller
     {
         //
     }
+
+    public function rectificacion_errores(Request $request)
+    {
+
+        $data= $request->all();
+        $Subject = $request->input('Subject');
+        $Contenido = $request->input('contenido');
+
+
+       // dd($request->file('adjunto'));
+        
+
+         /*if ($request->hasFile('adjunto')) {
+                        $adjunto = '/'.'documentos/'.$request->file('adjunto')->store('proyecto');
+                         } else
+
+                         {
+                        $adjunto="";
+                        }
+        
+                        //dd($attachment);*/
+
+    \Mail::to($request->input('To'))
+    ->cc($request->input('Cc'))
+    ->send(new rectificacion($data,$Subject,$Contenido));
+
+        Log::info('El usuario '. \Auth::user()->name .' Ingreso a rectificacion de errores ');
+        
+
+  $name="";
+
+ $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")
+           ->orderBy('id', 'desc')->Paginate(10);
+
+
+        
+
+          return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
+    }
+
+
 }

@@ -8,19 +8,19 @@
 @section('main-content')
 
 
-<center>@include('criterios_evaluacion.destroy')</center>
+<center></center>
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
 
-  
-  
+
+
 {!! Form::open(['route' => ['criterios_evaluacion.update', $criterios_evaluacion->id],'method'=>'PATCH']) !!}
 
 	<legend>EDITAR INFORMACION criterios_evaluacion</legend>
 
  <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
-	
+
 
 	<div class="form-group">
 		<label for="id">id</label>
@@ -29,15 +29,15 @@
 
 
 		<?php  $proyectos_articulos = DB::table('proyectos_articulos')->get();?>
-			
+
 
 	<div class="form-group">
 			<label for="">	Proyecto y/o Artículos</label>
 			<select name="id_proyectos_articulos" id="id_proyectos_articulos" class="form-control" required="required" placeholder="id_proyectos_articulos" >
-					
+
 			  @foreach($proyectos_articulos as $row)
-				
-			  		@if($criterios_evaluacion->id_proyectos_articulos==$row->id)		
+
+			  		@if($criterios_evaluacion->id_proyectos_articulos==$row->id)
 					<option value="{{$row->id}}" selected>{{$row->DescripcionProyecto_Articulo}}</option>
 					@else
 					<option value="{{$row->id}}">{{$row->DescripcionProyecto_Articulo}}</option>
@@ -47,22 +47,22 @@
 			</select>
 	</div>
 
-	
+
 	<div class="form-group">
 	<label for="NombreDepartamento">Descripción Evaluación</label>
 	<input type="text" class="form-control" name="DescripcionEvaluacion" id="DescripcionEvaluacion" placeholder="Digite un nuevo DescripcionEvaluacion" value="{{$criterios_evaluacion->DescripcionEvaluacion}}">
 	</div>
 
-	
+
 
 	<div class="form-group">
 	<label for="Desc_criterio_eval">CRITERIOS DE EVALUACIÓN</label>
 	<textarea class="ckeditor" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" value="{{$criterios_evaluacion->Desc_criterio_eval}}">{{$criterios_evaluacion->Desc_criterio_eval}}</textarea>
 	</div>
 
-	
 
-	
+
+
 	<div class="form-group">
 		<label for="NombreDepartamento">Puntaje Máximo (*) Campo Obligatorio</label>
 		<input type="text" class="form-control" name="Puntaje_Maximo" id="Puntaje_Maximo" placeholder="Digite un Puntaje_Maximo" value="{{$criterios_evaluacion->Puntaje_Maximo}}" required>
@@ -98,7 +98,7 @@
 	<div class="form-group">
 	<label for="Sobresaliente">Excelente</label>
 	<input type="text" class="form-control" name="Excelente" id="Excelente" placeholder="Excelente" value="100 puntos" value="{{$criterios_evaluacion->Excelente}}" >
-	</div>	
+	</div>
 
 
 	<!--<div class="form-group">
@@ -130,4 +130,3 @@
 
 
 @endsection
-

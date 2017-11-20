@@ -59,10 +59,12 @@
 
         
 		<div class="form-group">
-		<label for="">Categoria</label>
+		<label for="">Categoría</label>
 		<select name="categoria" id="categoria" class="form-control">
-			<option value="1" selected>Investigador Consolidado</option>
-			<option value="0">Investigador en Formación</option>
+			<option value="Sin Categoría">Sin Categoría</option>
+			<option value="Investigador Consolidado" selected>Investigador Consolidado</option>
+			<option value="Investigador en Formación">Investigador en Formación</option>
+
 		</select>
 		</div>
 
@@ -91,8 +93,11 @@
 
 
 		<div class="form-group">
+			<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 			<label for="">Proyecto PDF (*) Campo Obligatorio e importante para el evaluador</label>
 			<input type="file" class="form-control" name="proyecto_pdf" id="proyecto_pdf" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" required>
+		</div>
 		</div>
 
 		<div class="form-group" >
@@ -144,13 +149,19 @@
 
 
     <div class="form-group">
+    	<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Formato de evaluación diligenciado</label>
 		<input type="file" class="form-control" name="calificacion_proyecto" id="calificacion_proyecto" placeholder="Digite un nuevo 	calificacion_proyecto">
 	</div>
+	</div>
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Documento de confidencialidad</label>
 		<input type="file" class="form-control" name="doc_confidencialidad" id="doc_confidencialidad" placeholder="Digite un nuevo 	img_proyecto">
+	</div>
 	</div>
 
 

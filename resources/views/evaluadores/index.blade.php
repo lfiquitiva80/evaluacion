@@ -9,7 +9,7 @@
 
 
   <div class="panel-body">
-  
+
 <div class="container">
 {!! Form::open(['route' => 'evaluadores.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
 <!--<form class="navbar-form navbar-right" role="search">-->
@@ -22,7 +22,7 @@
 <h4><b><center>REGISTROS DE EVALUADORES</h4></b></center>
 
 
-<a href="{{ $url = route('evaluadores.create') }}" class="btn btn-primary">Registar Nuevos evaluadores</a>
+<a href="{{ $url = route('evaluadores.create') }}" class="btn btn-primary"><i class="fa fa-users" aria-hidden="true"></i> Registar Nuevos evaluadores</a>
 
 
 
@@ -43,8 +43,8 @@
       <td>  Rut</td>
       <td>  Acción </td>
 
-     
-   
+
+
     </tr>
   </thead>
   <tbody>
@@ -68,16 +68,16 @@
               <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></a>
             @else
              <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-paperclip" aria-hidden="true" style="color:red;"></span></a>
-            @endif 
-               
-          </td>        
-           <td>   
+            @endif
+
+          </td>
+           <td>
           <a href="{{$row->Cedula_pdf}}">
              @if(!empty($row->Cedula_pdf))
               <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span></a>
             @else
               <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-modal-window" aria-hidden="true" style="color:red;"></span></a>
-            @endif 
+            @endif
           </a></td>
           <td><a href="{{$row->Certificado_Bancario}}">
              @if(!empty($row->Certificado_Bancario))
@@ -101,27 +101,27 @@
               <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
             @else
              <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-link" aria-hidden="true" style="color:red;"></span></a>
-            @endif  
+            @endif
 
-          </td>          
-          
+          </td>
 
-         
 
-          
-          
 
-              
+
+
+
+
+
  
-        <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success">Edicion</a></td>
-        <!--<td><a href="{{ $url = route('eventos_general.destroy', $row->id) }}" class="btn btn-danger">Eliminar</a></td>-->
+        <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edición</a></td>
+        <td>@include('evaluadores.destroy')</td>
 
 
-              
 
 
-        </td></td>  
-      
+
+        </td></td>
+
     </tr>
   </tbody>
 
@@ -141,4 +141,3 @@
 
 
 @endsection
-

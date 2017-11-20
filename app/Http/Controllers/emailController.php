@@ -13,6 +13,7 @@ use App\Mail\finalencuesta;
 use App\Mail\pagos;
 use App\Mail\documentos;
 use App\Mail\norespuesta;
+use App\Mail\gestionpago;
 //use App\Mail;
 use App\Mail\partevento as part;
 use App\Http\Controllers\Flash;
@@ -158,6 +159,7 @@ class emailController extends Controller
         $invitacion = \App\proyectos_articulos::find($id);
         //dd($invitacion);
         $invitacion->Aceptacion=1;
+        $invitacion->correo_documentos=1;
         $date = Carbon::now();
         $invitacion->Fecha_Aceptacion=$date;
 
@@ -167,6 +169,7 @@ class emailController extends Controller
        $correo2=\App\User::find($correo->id_users);  
          
         \Mail::to($correo2->email)->send(new aceptacion($invitacion));
+        \Mail::to($correo2->email)->send(new documentos($invitacion));
 
        
 
@@ -230,6 +233,35 @@ class emailController extends Controller
         } 
 
 
+        public function gestionpago($id)
+         { 
+             //$order = participantesevento::findOrFail($id);
+             //dd($order);
+              Log::info('El usuario '. \Auth::user()->name .' Envio un correo para gestionar el pago con el área financiera: '.$id);
+
+
+              $invitacion = \App\proyectos_articulos::find($id);
+              $invitacion->correo_gestion_pago=1;
+              $invitacion->save();
+              $correo=\App\evaluadores::find($invitacion->id_evaluador);
+              $correo2=\App\User::find($correo->id_users);  
+
+          flash('Haz enviado un correo para gestionar el pago con el área financiera!')->success();
+        // Ship order...
+         
+        \Mail::to($correo2->email)->send(new gestionpago($invitacion, $correo));
+
+       
+
+         return redirect()->route('comunicados.index');
+        } 
+
+
+
+
+
+
+
          public function certificadoypago($id)
          { 
              //$order = participantesevento::findOrFail($id);
@@ -282,10 +314,9 @@ class emailController extends Controller
         }
 
 
+        public function finalevaluacion($id)
+        { 
 
-                 public function finalevaluacion($id)
-         { 
-            
 
           flash('Haz enviado un correo para la finalizacion de la evaluación!')->success();
 
@@ -299,16 +330,35 @@ class emailController extends Controller
           //dd($invitacion);
           $invitacion->save();
 
-        $correo=\App\evaluadores::find($invitacion->id_evaluador);
-              $correo2=\App\User::find($correo->id_users);
+          $correo=\App\evaluadores::find($invitacion->id_evaluador);
+          $correo2=\App\User::find($correo->id_users);
 
-        \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+          \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
 
         //return back();
         //return redirect()->route('/home');
 
-       return redirect()->route('homedos');
-    }      
+          return redirect()->route('homedos');
+        }
+
+
+             public function devolver_finalevaluacion($id)
+        { 
+          
+
+          flash('Se cambio de estado a no finalizado!')->success();
+
+          Log::info('El usuario '. \Auth::user()->name .' se cambio de estado a no finalizado id: '.$id);
+
+          $invitacion = \App\proyectos_articulos::find($id);
+          $invitacion->proyecto_completado=0;
+          $date = Carbon::now();
+          $invitacion->Fecha_Devolucion_Evaluador=$date;
+          $invitacion->save();
+
+          return redirect()->route('comunicados.index');
+        }       
+
 
         
      public function enviarparticipantes(Request $request)

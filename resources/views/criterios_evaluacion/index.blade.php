@@ -11,7 +11,7 @@
 
 
 
-    
+
 <div class="container">
 
    <div class="panel panel-primary">
@@ -22,34 +22,40 @@
      {!! Form::open(['route' => 'criterios_evaluacion.index', 'method'=>'GET']) !!}
 
 <!--{!! Form::select('listaproyectos', $listaproyectos, Null, ['id' => 'listaproyectos', 'class' => 'form-control']) !!}-->
-  
+
   <select name="listaproyectos" id="listaproyectos" class="form-control" >
     @foreach($listaproyectos as $row)
-    <option value="{{$row->id}}">{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
+    @if($id==$row->id)
+    <option value="{{$row->id}}" selected>{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
+    @else
+    <option value="{{$row->id}}" >{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
+    @endif
+
+
     @endforeach
   </select>
 
 
-  
+
 
  <br>
-  <center>{!! Form::submit('Consultar', ['class' => 'btn btn-success']) !!}</center>
+  <center><i class="fa fa-search" aria-hidden="true"></i>{!! Form::submit('Consultar', ['class' => 'btn btn-success']) !!}</center>
   {!! Form::close() !!}
   </div>
    </div>
  </div>
-  
-  
-      
-        
+
+
+
+
 
 
   <div class="panel-body">
-  
+
 <div class="container">
 
 
-   
+
 {!! Form::open(['route' => 'criterios_evaluacion.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
 <!--<form class="navbar-form navbar-right" role="search">-->
   <div class="form-group">
@@ -61,7 +67,7 @@
 <h4><b><center>REGISTROS CRITERIOS DE EVALUACION</h4></b></center>
 
 
-<a href="{{ $url = route('criterios_evaluacion.create') }}" class="btn btn-primary">Registrar Nuevos criterios evaluación</a>
+<a href="{{ $url = route('criterios_evaluacion.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Registrar Nuevos criterios evaluación</a>
 
 
 
@@ -88,8 +94,8 @@
 
       <td>  Acción </td>
 
-     
-   
+
+
     </tr>
   </thead>
   <tbody>
@@ -103,7 +109,7 @@
           </td>
           <td>{{$row->DescripcionEvaluacion}}</td>
           <td><?php echo $row->Desc_criterio_eval; ?></td>
-         
+
           <!--<td>{{$row->Desc_criterio_eval}}</td>
           <td>{{$row->Puntaje_Maximo}}</td>
           <td>{{$row->Puntaje_evaluador}}</td>
@@ -114,17 +120,16 @@
           <td>{{$row->Total_evaluacion}}</td>
           <td>{{$row->concepto_final}}</td>-->
 
- 
-        <td><a href="{{ $url = route('criterios_evaluacion.edit',$row->id) }}" alt="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-        
-        <!--<td><a href="{{ $url = route('eventos_general.destroy', $row->id) }}" class="btn btn-danger">Eliminar</a></td>-->
+
+        <td><a href="{{ $url = route('criterios_evaluacion.edit',$row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"> Edición</i></a>
+</td>
+    <td>@include('criterios_evaluacion.destroy')</td>
 
 
-              
 
 
-        </td></td>  
-      
+        </td></td>
+
     </tr>
   </tbody>
 
@@ -143,4 +148,3 @@
 <center>{{$criterios_evaluacion->links() }}</center>
 
 @endsection
-

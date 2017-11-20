@@ -122,13 +122,19 @@
               <div style="width:100%;">
              
     <div class="form-group">
+    	<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="NombreDepartamento">Calificacion proyecto</label>
 		<input type="file" class="form-control" name="calificacion_proyecto" id="calificacion_proyecto" placeholder="Digite un nuevo 	calificacion_proyecto" value="{{$proyectos_articulos->calificacion_proyecto}}">
+	</div>
 	</div> 
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Documento de confidencialidad</label>
 		<input type="file" class="form-control" name="doc_confidencialidad" id="doc_confidencialidad" placeholder="Digite un nuevo 	doc_confidencialidad" value="{{$proyectos_articulos->doc_confidencialidad}}">
+	</div>
 	</div>       
 
 	<div class="form-group"><input type="hidden" class="form-control" name="Nombre_convocatoria" id="Nombre_convocatoria" placeholder="Nombre_convocatoria" value="{{$proyectos_articulos->Nombre_convocatoria}}"

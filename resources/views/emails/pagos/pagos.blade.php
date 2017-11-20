@@ -4,7 +4,10 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:Arial,sans-serif"><span style="color:black"><span style="background-color:white">Respetado Dr.&nbsp;</span></span></span></span></span><b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:Arial,sans-serif"><span style="color:black"><span style="background-color:white">Respetado <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          $comment2 = App\User::find($comment->id_users); $comment2->name;
+          $comment3 = App\tratamiento_carta::find($comment2->id_tratamiento); echo $comment3->Titulo;
+          ?> &nbsp;</span></span></span></span></span><b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?> ,</b>
 <p></p>

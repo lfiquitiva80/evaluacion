@@ -195,6 +195,72 @@ class preguntasController extends Controller
     }
 
 
+    public function duplicarproyectos(Request $request)
+    {
+
+        $input=$request->all();
+        //dd($input);
+
+        $input2 = $request->input('listaproyectos2');
+        
+
+        flash('Se copio correctamente el proyecto, Revisar muchas Gracias!!')->important();    
+        
+        $input2 = $request->input('listaproyectos2');
+        $cantidad = $request->input('num_proy_duplicar');
+        
+      
+        $criterios_evaluacion= criterios_evaluacion::where('id_proyectos_articulos',$input2)->get();
+        $proyectos_articulos= proyectos_articulos::where('id',$input2)->first();
+        //dd($proyectos_articulos->id_evaluador);
+
+       for($i=1;$i<=$cantidad;$i++){
+
+             $input = [
+                'DescripcionProyecto_Articulo' => "Proyecto Nuevo Eloy Valenzuela",
+                'id_evaluador' => $proyectos_articulos->id_evaluador,
+                'categoria' => $proyectos_articulos->categoria,
+                'area' => $proyectos_articulos->area,
+                'plantilla' => $proyectos_articulos->plantilla,
+                'Objetivo' => $proyectos_articulos->Objetivo,
+                'sepaga' => $proyectos_articulos->sepaga,
+                'pago_evaluador' => $proyectos_articulos->pago_evaluador,
+                'CoordinadorProyecto_Articulo' => $proyectos_articulos->CoordinadorProyecto_Articulo,
+              
+                ];
+
+            //$leonidas = $faker->password;
+        
+
+        $createproyectos=proyectos_articulos::create($input);
+
+
+        foreach ($criterios_evaluacion as $key => $value) {
+            
+        
+         DB::table('criterios_evaluacion')->insert([
+
+            'id_proyectos_articulos' => $createproyectos->id,
+            'DescripcionEvaluacion' => $value->DescripcionEvaluacion,
+            'Desc_criterio_eval' => $value->Desc_criterio_eval,
+            'Puntaje_Maximo' => $value->Puntaje_Maximo,
+            'Deficiente' => $value->Deficiente,
+            'Aceptable' => $value->Aceptable,
+            'Sobresaliente' => $value->Sobresaliente,
+            'Muy_Bueno' => $value->Muy_Bueno,
+            'Excelente' => $value->Excelente,
+                      
+
+           ]);
+         }
+
+         }    
+        return redirect()->route('preguntas.index');
+       
+    
+}
+
+
     public function editformeloyvalenzuela($id)
     {
          $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();

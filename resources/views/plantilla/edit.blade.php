@@ -131,7 +131,7 @@
 
 
 {!! Form::close() !!}
-<center>@include('adminlte::plantilla.destroy')</center>
+<center>@include('plantilla.destroy')</center>
 
   </div>
 </div>

@@ -5,7 +5,10 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Respetado Dr. <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Respetado <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          $comment2 = App\User::find($comment->id_users); $comment2->name;
+          $comment3 = App\tratamiento_carta::find($comment2->id_tratamiento); echo $comment3->Titulo;
+          ?> <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?></span></span></span></span></span></p>
 
@@ -16,6 +19,12 @@
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Adjunto encontrar&aacute; el certificado por los servicios prestados.</span></span></span></span></span></p>
+
+<?php $url = route('certificadoeloy',$id) ?>
+
+@component('mail::button', ['url' => $url,'color' => 'green'])
+Certificado
+@endcomponent
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 

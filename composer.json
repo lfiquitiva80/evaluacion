@@ -9,6 +9,7 @@
         "acacha/admin-lte-template-laravel": "4.*",
         "algolia/algoliasearch-client-php": "^1.20",
         "barryvdh/laravel-dompdf": "^0.8.0",
+        "creativeorange/gravatar": "~1.0",
         "dompdf/dompdf": "^0.8.0",
         "fx3costa/laravelchartjs": "^2.3",
         "fzaninotto/faker": "^1.6",

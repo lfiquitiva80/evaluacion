@@ -1,4 +1,4 @@
-
+	
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
@@ -61,9 +61,11 @@
 	</div>
 
 	
-	<div class="form-group">
+	<div class="form-group ">
+		
 		<label for="">Documentos de Identidad</label>
 		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula"  >
+		
 	</div>
 
 	<div class="form-group">
@@ -115,33 +117,52 @@ $municipios = DB::table('municipios')->get();
 </div>-->
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="">Firma Digital</label>
 		<input type="file" class="form-control" name="FirmaDigital" id="FirmaDigital" placeholder="Suba la hoja de Vida" value="Sin informacion">
+		</div>
 	</div>
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="">Hoja de Vida</label>
 		<input type="file" class="form-control" name="HV" id="HV" placeholder="Suba la hoja de Vida" value="Sin informacion">
 	</div>
+	</div>
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="funcionario">Subir el Documento de Identidad</label>
 		<input type="file" class="form-control" name="Cedula_pdf" id="Cedula_pdf" placeholder="Digite el cargo" value="Sin informacion">
 	</div>
+	</div>
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="funcionario">Certificado_Bancario</label>
 		<input type="file" class="form-control" name="Certificado_Bancario" id="Certificado_Bancario" placeholder="Digite Certificado_Bancario" value="Sin informacion">
 	</div>
-
-	<div class="form-group">
-		<label for="funcionario">Cuenta de Cobro</label>
-		<input type="file" class="form-control" name="cuentacobro" id="cuentacobro" placeholder="" value="Sin informacion">
 	</div>
 
 	<div class="form-group">
-		<label for="funcionario">Rut</label>
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
+		<label for="funcionario">Cuenta de Cobro</label>
+		<input type="file" class="form-control" name="cuentacobro" id="cuentacobro" placeholder="" value="Sin informacion">
+	</div>
+	</div>
+
+	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Adjuntar
+		<label for="funcionario">Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</label>
 		<input type="file" class="form-control" name="Rut" id="Rut" placeholder="Rut" value="Sin informacion">
+		<small>Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</small>
+	</div>
 	</div>
 
 	<center><button type="submit" class="btn btn-primary" >Enviar</button>

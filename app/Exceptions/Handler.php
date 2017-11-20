@@ -46,11 +46,11 @@ class Handler extends ExceptionHandler
     {
         
        //dd($errors);
-  if ($e instanceof Exception) {
+  /*if ($e instanceof Exception) {
         return response()->view('errors.500',[], 500);
-    }
+    }*/
 
-    //return parent::render($request, $e);
+    return parent::render($request, $e);
 
     }
 

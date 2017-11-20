@@ -22,7 +22,7 @@
 <h4><b><center>REGISTROS DE PROYECTOS Y ARTICULOS</h4></b></center>
 
 
-<a href="{{ $url = route('proyectos_articulos.create') }}" class="btn btn-primary">Registar Nuevos proyectos_articulos</a>
+<a href="{{ $url = route('proyectos_articulos.create') }}" class="btn btn-primary"><i class="fa fa-cubes" aria-hidden="true"></i> Registar Nuevos proyectos_articulos</a>
 
 
 
@@ -88,9 +88,9 @@
           </a></td>
           <td><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")  
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada">Inicio Evaluación Eloy</a> 
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Eloy</a> 
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada">Inicio Evaluación Innpulsa</a> 
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Innpulsa</a> 
           @endif</td>
 
           <td>
@@ -120,10 +120,10 @@
       <div class="modal-body">
        <lu>
         <li><strong>Antes de Finalizar verificar lo siguiente:</strong></li>
-        <li>1.Revisar que hallá cargado el documento de Calificación del Proyecto</li>
-        <li>2. Revisar que hallá cargado el Documento de Confidencialidad</li>
-        <li>3. Revisar que hallá Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
-        <li>4. Revisar que hallá terminado la Evaluación.</li>
+        <li>1.Revisar que haya cargado el documento de Calificación del Proyecto</li>
+        <li>2. Revisar que haya cargado el Documento de Confidencialidad</li>
+        <li>3. Revisar que haya Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
+        <li>4. Revisar que haya terminado la Evaluación.</li>
 
        </lu>
 

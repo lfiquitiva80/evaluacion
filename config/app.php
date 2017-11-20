@@ -170,6 +170,7 @@ return [
         Reportico\Reportico\ReporticoServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
+        Creativeorange\Gravatar\GravatarServiceProvider::class,
         
         
 
@@ -241,6 +242,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         
        
         

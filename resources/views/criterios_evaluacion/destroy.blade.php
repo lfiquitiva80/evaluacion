@@ -1,5 +1,5 @@
-{!! Form::open(['route' => ['criterios_evaluacion.destroy', $criterios_evaluacion->id],'method'=>'DELETE']) !!}
- 
+{!! Form::open(['route' => ['criterios_evaluacion.destroy', $row->id],'method'=>'DELETE']) !!}
 
-<button class='btn btn-danger'>Eliminar</button>
+
+<button class='btn btn-danger'><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>
 {!! Form::close() !!}
