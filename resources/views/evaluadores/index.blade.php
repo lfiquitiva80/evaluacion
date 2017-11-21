@@ -106,13 +106,6 @@
           </td>
 
 
-
-
-
-
-
-
- 
         <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edición</a></td>
         <td>@include('evaluadores.destroy')</td>
 

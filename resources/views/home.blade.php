@@ -398,7 +398,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 
           </td>
           <td>  
-          <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}" data-toggle="tooltip" data-placement="top" title="Aqui puede subir su HV, Rut, Actualizar su información">
+          <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}" data-toggle="tooltip" data-placement="top" title="Subir o Actualizar sus Documentos">
           <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?> 
@@ -606,7 +606,7 @@ Fecha de Ingreso al sistema  {{ $date }}
       <td>  Documento de identidad en PDF</td>
       <td>  Certificado Bancario</td>
       <td>  Cuenta de Cobro</td>
-      <td>  Rut</td>
+      <td>  Rut / Pasaporte </td>
 
       <td>  Acción </td>
 

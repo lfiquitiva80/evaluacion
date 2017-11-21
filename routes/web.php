@@ -71,9 +71,6 @@ Route::group(['middleware' => 'auth'], function () {
 //        // Uses Auth Middleware
 //    });
 
-
-
-
 Route::get('pdf', 'PDFcontroller@index');
 
 Route::get('/home', 'HomeController@index')->name('homedos');
@@ -194,6 +191,7 @@ Route::resource('criterios_evaluacion', 'criterios_evaluacionController');
 Route::get('duplicar/{duplicar}', 'criterios_evaluacionController@duplicar')->name('duplicar');
 
 Route::get('preguntasduplicar', 'preguntasController@duplicarvarios')->name('preguntasduplicar');
+
 Route::get('duplicarproyectos', 'preguntasController@duplicarproyectos')->name('duplicarproyectos');
 
 Route::get('preguntaseloy/{id}', 'preguntasController@editformeloyvalenzuela')->name('preguntaseloy');

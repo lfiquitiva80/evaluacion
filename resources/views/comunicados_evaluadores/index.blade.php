@@ -35,11 +35,11 @@
         <td> Correo Invitación</td>
         <td> Correo Aceptación</td>
         <td> Correo Documentos</td>
+        <td> Proyecto Completo</td>
         <td> Correo Pago</td>
         <td> Correo Gestion de Pago</td>
         <td> Correo Certificado y pago</td>
         <td> El Evaluador NO acepto</td>
-        <td> Proyecto Completo</td>
         <td> Certificado PDF</td>
         <td> Correo Rectificación</td>
 
@@ -87,6 +87,16 @@
 
 
         </td>
+
+        <td>
+         @if ($row->proyecto_completado!=0)
+        <a href="{{ $url = route('devolver_finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;" ></a>
+        @else
+        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:red;"></span></a>
+        @endif
+
+        </td>
+
         <td>
           @if ($row->correo_pago!=0)
         <a href="{{ $url = route('pagos',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;" >
@@ -127,14 +137,7 @@
         </td>
 
 
-         <td>
-         @if ($row->proyecto_completado!=0)
-        <a href="{{ $url = route('devolver_finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;" ></a>
-        @else
-        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:red;"></span></a>
-        @endif
-
-        </td>
+         
 
         <td>
         <a href="{{ $url = route('certificadoeloy', $row->id) }}"><i class="fa fa-file-pdf-o" aria-hidden="true" ></i></a>
@@ -155,22 +158,5 @@
 <center>{{$comunicados->links()}}</center>
 
 </div>
-<div>
-  @{{ message }}
-</div>
-
-<pre>@{{$data | json}}</pre>
-
-</div>
-</div>
-
-<script type="text/javascript">
-var app = new Vue({
-el: '#app',
-data: {
-  message: true
-}
-})
-</script>
 
 @endsection

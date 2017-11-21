@@ -13,7 +13,7 @@
                 <div class="panel-heading">Sistema para duplicar preguntas a otro proyecto</div>
                 <div class="panel-body">
 
-  
+
   {!! Form::open(['route' => 'preguntasduplicar', 'method'=>'GET']) !!}
 
    <br>
@@ -26,7 +26,7 @@
   @foreach($listaproyectos2 as $row)
    <option value="{{$row->id}}">{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
   @endforeach
- </select>  
+ </select>
 
   <br>
   <div><small> <strong>COPIAR AL SIGUIENTE PROYECTO</small></strong> </div>
@@ -37,35 +37,35 @@
   @foreach($listaproyectos2 as $row)
    <option value="{{$row->id}}">{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
   @endforeach
- </select> 
+ </select>
 
    <br>
-  
+
   <hr>
   <center>
   {!! Form::submit('EJECUTAR', ['class' => 'btn btn-danger']) !!}
   </center>
   {!! Form::close() !!}
 
-          </div> 
-        </div> 
-      </div> 
- 
+          </div>
+        </div>
+      </div>
 
 
 
-  
+
+
              <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">Duplicar las preguntas de un proyecto a muchos</div>
                 <div class="panel-body">
 
-  
+
   {!! Form::open(['route' => 'duplicarproyectos', 'method'=>'GET']) !!}
 
    <br>
   <div><small> <strong>CANTIDAD DE PROYECTOS A CREAR</small></strong> </div>
-  <hr>  
+  <hr>
  <center><div class="input-group">
    <label for="input-id" class="col-sm-2"></label>
    <input type="number" name="num_proy_duplicar" value="0">
@@ -82,10 +82,10 @@
   @foreach($listaproyectos2 as $row)
    <option value="{{$row->id}}">{{$row->id}}  {{$row->DescripcionProyecto_Articulo}}</option>
   @endforeach
- </select> 
+ </select>
 
    <br>
-  
+
   <hr>
   <center>
   {!! Form::submit('EJECUTAR', ['class' => 'btn btn-danger']) !!}
@@ -96,7 +96,7 @@
      </div>
   </div>
 
-       
+
 
 
 
@@ -110,6 +110,3 @@
 
 
 @endsection
-
-
-

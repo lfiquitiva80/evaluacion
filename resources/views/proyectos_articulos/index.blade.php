@@ -9,7 +9,7 @@
 
 
   <div class="panel-body">
-  
+
 <div class="container">
 {!! Form::open(['route' => 'proyectos_articulos.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
 <!--<form class="navbar-form navbar-right" role="search">-->
@@ -44,8 +44,8 @@
       <td>  Finalizar Evaluación</td>
       <!--<td>  Acción </td>-->
 
-     
-   
+
+
     </tr>
   </thead>
   <tbody>
@@ -61,53 +61,53 @@
           @if (!empty($row->calificacion_proyecto))
           <td><a href="{{$row->calificacion_proyecto}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de CALIFICACION" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" ></span></a>
           @else
-          <td> 
-             
+          <td>
+
           <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info"  data-toggle="tooltip" data-placement="top" title="Cargar o Subir Documento de CALIFICACION"><span class="glyphicon glyphicon-open-file" aria-hidden="true" ></span></a>
-            
+
           </td>
           @endif
 
            @if (!empty($row->doc_confidencialidad))
           <td><a href="{{$row->doc_confidencialidad}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de Confidencialidad"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
           @else
-          <td> 
-             
+          <td>
+
           <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de Confidencialidad, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
-            
+
           </td>
           @endif
 
 
           </td>
-          <td>  
-          <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}" data-toggle="tooltip" data-placement="top" title="Aqui puede subir su HV, Rut, Actualizar su información">
-          <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users; 
+          <td>
+          <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}" data-toggle="tooltip" data-placement="top" title="Subir o Actualizar sus Documentos">
+          <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users;
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
-          ?> 
+          ?>
           </a></td>
           <td><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
-          @if ($row->plantilla=="PlantillaEloy")  
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Eloy</a> 
+          @if ($row->plantilla=="PlantillaEloy")
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Eloy</a>
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Innpulsa</a> 
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Innpulsa</a>
           @endif</td>
 
           <td>
-             @if ($row->plantilla=="PlantillaEloy")  
-          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" target="_blank" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a> 
+             @if ($row->plantilla=="PlantillaEloy")
+          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" target="_blank" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
           @else
           <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
           @endif
-          </td> 
+          </td>
 
 
 
-         
+
   <td>
-  @if (empty($row->Fecha_inicio))
+  @if (empty($row->calificacion_proyecto) || empty($row->doc_confidencialidad))
   Falta iniciar la evaluación
-  @else
+@else
 
 <a class="btn btn-default" data-toggle="modal" href='#modal-{{$row->id}}' data-placement="top" title="Click para Finalizar al evaluación">Finalizar Evaluación</a>
 <div class="modal fade" id="modal-{{$row->id}}">
@@ -137,27 +137,27 @@
 </div>
 @endif
           </td>
- 
-        
-          
-          
 
-         
 
-          
-          
 
-              
- 
+
+
+
+
+
+
+
+
+
         <!--<td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}" class="btn btn-success">Edicion</a></td>-->
         <!--<td><a href="{{ $url = route('eventos_general.destroy', $row->id) }}" class="btn btn-danger">Eliminar</a></td>-->
 
 
-              
 
 
-        </td></td>  
-      
+
+        </td></td>
+
     </tr>
   </tbody>
 
@@ -176,4 +176,3 @@
 
 
 @endsection
-

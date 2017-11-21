@@ -10,6 +10,7 @@
  @if (Auth::user()->TipoUsers==1)
 
 @endif
+
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
@@ -21,6 +22,8 @@
 	<legend>EDITAR INFORMACION evaluadores</legend>
 
  <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+
+
 
 
 	<div class="form-group">
@@ -63,10 +66,30 @@
 			</select>
 	</div>
 
+<div class="form-group ">
+		<label for="">Tipo de Documento de Identidad</label>
+			<select name="TipoDocumento" id="TipoDocumento" class="form-control" >
+				@foreach($Tipo as $row)
+
+				@if ($evaluadores->TipoDocumento==$row->id)
+				<option value="{{$row->id}}" selected>{{$row->Descripcion_Documento}}</option>
+				@else
+				<option value="{{$row->id}}" >{{$row->Descripcion_Documento}}</option>
+				@endif
+
+				@endforeach
+			</select>
+	</div>
+
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Documentos de Identidad</label>
 		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula" value="{{$evaluadores->Cedula}}" >
+	</div>
+
+	<div class="form-group">
+		<label for="NombreDepartamento">Ciudad de Expedición del Documento de Identidad</label>
+		<input type="text" class="form-control" name="	Ciudad_expedicion" id="	Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" >
 	</div>
 
 	<div class="form-group">
@@ -174,6 +197,8 @@ $municipios = DB::table('municipios')->get();
 		<small>Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</small>
 	</div>
 	</div>
+
+
 
 
 	<center><button type="submit" class="btn btn-primary" >Actualizar</button>

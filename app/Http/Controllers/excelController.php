@@ -24,14 +24,14 @@ class excelController extends Controller
             //$input=$request->all();
             //dd($input);
             /*if ($request->input('Fecha_Inicial')==NULL) {
-                
+
                 $fechas=proyectos_articulos::all();
 
             } else {
                $fechas=proyectos_articulos::whereBetween($request->input('Fechas'), [$request->input('Fecha_Inicial'),$request->input('Fecha_Final')])->get();
             }
-            
-           
+
+
             //dd($fechas);
 
 
@@ -39,20 +39,20 @@ class excelController extends Controller
         //$input = $request->all();
 
         Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los proyectos y/o articulos por fecha');
-            
 
-         //dd($products);   
+
+         //dd($products);
 
         \Excel::create('sistema', function($excel)use ($fechas) {
             $excel->sheet('sistema', function($sheet) use ($fechas){
-              
-              
+
+
               //$products=eventos_general::all();
-                           
+
          //dd($products);
-                
+
          $sheet->loadView('excel.excelproyectosall', ['products' => $fechas]);
-            
+
             });
         })->export('csv');    */
 
@@ -71,20 +71,20 @@ class excelController extends Controller
         //$input = $request->all();
 
         Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los proyectos y/o articulos por fecha');
-            
 
-         //dd($products);   
 
-        \Excel::create('sistema', function($excel)use ($fechas) {
-            $excel->sheet('sistema', function($sheet) use ($fechas){
-              
-              
-              //$products=eventos_general::all();
-                           
          //dd($products);
-                
+
+        \Excel::create('Proyectos_articulos_Fechas', function($excel)use ($fechas) {
+            $excel->sheet('Proyectos_articulos_Fechas', function($sheet) use ($fechas){
+
+
+              //$products=eventos_general::all();
+
+         //dd($products);
+
          $sheet->loadView('excel.excelproyectosall', ['products' => $fechas]);
-            
+
             });
         })->export('xlsx');
 
@@ -105,14 +105,14 @@ class excelController extends Controller
 
         \Excel::create('participantes', function($excel)use ($products) {
             $excel->sheet('participantes', function($sheet) use ($products){
-              
-              
+
+
               //$products=eventos_general::all();
-                           
+
          //dd($products);
-            
+
          $sheet->loadView('adminlte::excel.xlsxparticipantes', ['products' => $products]);
-            
+
             });
         })->export('xlsx');
 
@@ -130,20 +130,20 @@ class excelController extends Controller
         //$input = $request->all();
 
         Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los proyectos y/o articulos');
-            
 
-         //dd($products);   
 
-        \Excel::create('sistema', function($excel)use ($products) {
-            $excel->sheet('sistema', function($sheet) use ($products){
-              
-              
-              //$products=eventos_general::all();
-                           
          //dd($products);
-                
+
+        \Excel::create('Proyectos_articulos', function($excel)use ($products) {
+            $excel->sheet('Todos los proyectos', function($sheet) use ($products){
+
+
+              //$products=eventos_general::all();
+
+         //dd($products);
+
          $sheet->loadView('excel.excelproyectosall', ['products' => $products]);
-            
+
             });
         })->export('xlsx');
 
@@ -159,7 +159,7 @@ class excelController extends Controller
         //$input = $request->all();
 
         Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los proyectos y/o articulos');
-        //dd($products);   
+        //dd($products);
 
         \Excel::create('users', function($excel)use ($products) {
             $excel->sheet('users', function($sheet) use ($products){
@@ -174,12 +174,12 @@ class excelController extends Controller
        $products=DB::table('evaluadores')->join('users', 'id_users', '=', 'users.id')
             ->select('users.*','evaluadores.*')
             ->get();
-        //dd($products);
+      //dd($products);
 
         flash('Se descargo el archivo correctamente de todos los evaluadores!')->important();
         //$input = $request->all();
 
-        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los evaluadores');   
+        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los evaluadores');
 
         \Excel::create('evaluadores', function($excel)use ($products) {
             $excel->sheet('evaluadores', function($sheet) use ($products){
@@ -195,12 +195,12 @@ class excelController extends Controller
             ->select('proyectos_articulos.*','criterios_evaluacion.*')
             ->get();
 
-       
+
 
             flash('Se descargo el archivo correctamente !')->important();
         //$input = $request->all();
 
-        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte para Eloy'); 
+        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte para Eloy');
 
            //$monolog = Log::getMonolog();
         //dd($monolog);
@@ -219,12 +219,12 @@ class excelController extends Controller
             ->select('proyectos_articulos.*','criterios_evaluacion.*')
             ->get();
 
-            //dd($products);
+          //dd($products);
 
             flash('Se descargo el archivo correctamente de todos los criterios de evalaución!')->important();
         //$input = $request->all();
 
-        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los criterios de evaluación'); 
+        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte de todos los criterios de evaluación');
 
            //$monolog = Log::getMonolog();
         //dd($monolog);

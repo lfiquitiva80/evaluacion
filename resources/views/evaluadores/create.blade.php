@@ -60,11 +60,31 @@
 			</select>
 	</div>
 
+	<div class="form-group ">
+
+		
+
+		<label for="">Tipo de Documento de Identidad</label>
+			<select name="TipoDocumento" id="TipoDocumento" class="form-control" >
+				@foreach($Tipo as $row)
+				<option value="{{$row->id}}">{{$row->Descripcion_Documento}}</option>
+				@endforeach
+			</select>
+		
+	</div>
+
 	
 	<div class="form-group ">
 		
 		<label for="">Documentos de Identidad</label>
 		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula"  >
+		
+	</div>
+
+	<div class="form-group ">
+		
+		<label for="">Ciudad de Expedición del Documento de Identidad</label>
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula"  >
 		
 	</div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\evaluadores;
+use App\TipoDocumento;
 use Illuminate\Http\Request;
 use App\Http\Requests\evaluadoresRequest;
 use Illuminate\Support\Facades\DB;
@@ -39,7 +40,9 @@ class evaluadoresController extends Controller
      */
     public function create()
     {
-        return view('evaluadores.create');
+        $Tipo= TipoDocumento::all();
+
+        return view('evaluadores.create', compact('Tipo'));
     }
 
     /**
@@ -134,6 +137,8 @@ class evaluadoresController extends Controller
                     $documentos->cuentacobro=$patch4;
                     $documentos->Rut=$patch5;
                     $documentos->FirmaDigital=$patch6;
+                    $documentos->TipoDocumento=$request->input('TipoDocumento');
+                    $documentos->Ciudad_expedicion=$request->input('Ciudad_expedicion');
 
                     $documentos->save();
 
@@ -162,9 +167,10 @@ class evaluadoresController extends Controller
     public function edit($id)
     {
          $evaluadores= evaluadores::findOrFail($id);
+         $Tipo= TipoDocumento::all();
          Log::info('El usuario '. \Auth::user()->name .' Se mostro la edición para el Id: '.$evaluadores);
         //dd($eventosg);
-        return view('evaluadores.edit', compact('evaluadores'));
+        return view('evaluadores.edit', compact('evaluadores','Tipo'));
     }
 
     /**
@@ -240,7 +246,7 @@ class evaluadoresController extends Controller
         
 
         //$updates=DB::table('evaluadores')->where('id',"=",$id)->update($input); 
-        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal')]);
+        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal'),'TipoDocumento' => $request->input ('TipoDocumento'),'Ciudad_expedicion' => $request->input ('Ciudad_expedicion')]);
 
 
       
@@ -263,8 +269,12 @@ class evaluadoresController extends Controller
                            
                       
 
-         return back();                
-        //return redirect()->route('evaluadores.index');
+         if (\Auth::user()->TipoUsers==0){
+         return redirect()->route('homedos');
+         }
+        else{
+            return redirect()->route('evaluadores.index');
+        }
     }
 
     /**

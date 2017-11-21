@@ -39,7 +39,7 @@
 
 
  <br>
-  <center><i class="fa fa-search" aria-hidden="true"></i>{!! Form::submit('Consultar', ['class' => 'btn btn-success']) !!}</center>
+  <center>{!! Form::submit('Consultar', ['class' => 'btn btn-success']) !!}<i class="fa fa-search" aria-hidden="true"></i></center>
   {!! Form::close() !!}
   </div>
    </div>

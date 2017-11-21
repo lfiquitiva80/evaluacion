@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use App\preguntas;
 use App\criterios_evaluacion;
 use App\proyectos_articulos;
+use App\evaluadores;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
@@ -208,17 +209,22 @@ class preguntasController extends Controller
         
         $input2 = $request->input('listaproyectos2');
         $cantidad = $request->input('num_proy_duplicar');
+
+
+        
         
       
         $criterios_evaluacion= criterios_evaluacion::where('id_proyectos_articulos',$input2)->get();
         $proyectos_articulos= proyectos_articulos::where('id',$input2)->first();
-        //dd($proyectos_articulos->id_evaluador);
+        $evaluadores = evaluadores::where('id_users',\Auth::user()->id)->first();
+
+        //dd($evaluadores);
 
        for($i=1;$i<=$cantidad;$i++){
 
              $input = [
-                'DescripcionProyecto_Articulo' => "Proyecto Nuevo Eloy Valenzuela",
-                'id_evaluador' => $proyectos_articulos->id_evaluador,
+                'DescripcionProyecto_Articulo' => $proyectos_articulos->DescripcionProyecto_Articulo."-Copia ".$i,
+                'id_evaluador' => $evaluadores->id,
                 'categoria' => $proyectos_articulos->categoria,
                 'area' => $proyectos_articulos->area,
                 'plantilla' => $proyectos_articulos->plantilla,

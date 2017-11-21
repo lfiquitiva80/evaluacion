@@ -22,14 +22,8 @@ class comunicadosController extends Controller
     {
         Log::info('El usuario '. \Auth::user()->name .' Ingreso a Comunicados ');
         $name = $request->input('namefuncionario');
-
-    // dd($name);
-
-           $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")
-           ->orderBy('id', 'desc')->Paginate(10);
-
-
-        
+        $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")
+           ->orderBy('id', 'desc')->Paginate(15);
 
           return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
     }
@@ -113,7 +107,7 @@ class comunicadosController extends Controller
 
 
        // dd($request->file('adjunto'));
-        
+
 
          /*if ($request->hasFile('adjunto')) {
                         $adjunto = '/'.'documentos/'.$request->file('adjunto')->store('proyecto');
@@ -122,7 +116,7 @@ class comunicadosController extends Controller
                          {
                         $adjunto="";
                         }
-        
+
                         //dd($attachment);*/
 
     \Mail::to($request->input('To'))
@@ -130,15 +124,13 @@ class comunicadosController extends Controller
     ->send(new rectificacion($data,$Subject,$Contenido));
 
         Log::info('El usuario '. \Auth::user()->name .' Ingreso a rectificacion de errores ');
-        
+
 
   $name="";
 
- $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")
-           ->orderBy('id', 'desc')->Paginate(10);
+ $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")->orderBy('id', 'desc')->Paginate(10);
 
-
-        
+    
 
           return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
     }
