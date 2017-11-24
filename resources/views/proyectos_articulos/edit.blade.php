@@ -12,6 +12,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
+  	<div class="col-md-8 col-md-offset-2">
 
   
   
@@ -271,13 +272,14 @@ $municipios = DB::table('municipios')->get();
 
 	
 
-	<center><button type="submit" class="btn btn-primary" >Actualizar</button>
+	<center><button type="submit" class="btn btn-info pull-right">Actualizar</button>
 	</center><p>
 
 {!! Form::close() !!}
 
 
   </div>
+</div>
 </div>
 
 

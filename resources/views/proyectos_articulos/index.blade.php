@@ -55,11 +55,15 @@
 
                     <td>{{$row->id}}</td>
           <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}">{{$row->DescripcionProyecto_Articulo}}</a></td>
-
-          <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+          
+          @if (!empty($row->proyecto_pdf))
+          <td><a href="{{$row->proyecto_pdf}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+          @else
+          <td>Falta por subir</td>
+          @endif
 
           @if (!empty($row->calificacion_proyecto))
-          <td><a href="{{$row->calificacion_proyecto}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de CALIFICACION" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" ></span></a>
+          <td><a href="{{$row->calificacion_proyecto}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de CALIFICACION" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" ></span></a>
           @else
           <td>
 
@@ -69,7 +73,7 @@
           @endif
 
            @if (!empty($row->doc_confidencialidad))
-          <td><a href="{{$row->doc_confidencialidad}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de Confidencialidad"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
+          <td><a href="{{$row->doc_confidencialidad}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de Confidencialidad"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
           @else
           <td>
 

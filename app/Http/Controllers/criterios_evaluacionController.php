@@ -38,6 +38,7 @@ return view('criterios_evaluacion.index', ['criterios_evaluacion' => $criterios_
      */
     public function create()
     {
+      
         return view('criterios_evaluacion.create');
     }
 

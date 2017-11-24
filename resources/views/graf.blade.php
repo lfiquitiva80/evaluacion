@@ -31,7 +31,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3><?php $número_formato_inglés = number_format($porcentaje,2); echo $número_formato_inglés;?><sup style="font-size: 20px">%</sup></h3>
-              <p>Porcentaje Proyectos Finalizados</p>
+              <p>% Proyectos Finalizados</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>

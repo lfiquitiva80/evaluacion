@@ -8,10 +8,6 @@
 @section('main-content')
 
 
-
-
-
-
 <div class="container">
 
    <div class="panel panel-primary">
@@ -36,10 +32,11 @@
   </select>
 
 
-
-
  <br>
-  <center>{!! Form::submit('Consultar', ['class' => 'btn btn-success']) !!}<i class="fa fa-search" aria-hidden="true"></i></center>
+  <center>
+
+    <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
+
   {!! Form::close() !!}
   </div>
    </div>
@@ -68,9 +65,6 @@
 
 
 <a href="{{ $url = route('criterios_evaluacion.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Registrar Nuevos criterios evaluación</a>
-
-
-
 
 <p>
 <div class="table-responsive">

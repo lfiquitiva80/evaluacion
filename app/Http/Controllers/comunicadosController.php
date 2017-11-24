@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use App\proyectos_articulos;
 use App\Mail\rectificacion;
 
+
 class comunicadosController extends Controller
 {
     /**
@@ -124,13 +125,14 @@ class comunicadosController extends Controller
     ->send(new rectificacion($data,$Subject,$Contenido));
 
         Log::info('El usuario '. \Auth::user()->name .' Ingreso a rectificacion de errores ');
+         flash('Haz enviado un de rectificación!')->success();
 
 
   $name="";
 
  $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")->orderBy('id', 'desc')->Paginate(10);
 
-    
+
 
           return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
     }

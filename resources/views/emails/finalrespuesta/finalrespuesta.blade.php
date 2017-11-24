@@ -1,3 +1,4 @@
+
 @component('mail::message')
 
 Gracias por participar en esta evaluación.

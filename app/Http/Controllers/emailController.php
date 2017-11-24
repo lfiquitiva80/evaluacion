@@ -14,12 +14,10 @@ use App\Mail\pagos;
 use App\Mail\documentos;
 use App\Mail\norespuesta;
 use App\Mail\gestionpago;
-//use App\Mail;
 use App\Mail\partevento as part;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Mail\Mailer;
-//use Illuminate\Support\Facades\Mail;
 use Illuminate\Mail\messaje;
 use App\participantesevento;
 use Auth;
@@ -238,7 +236,7 @@ class emailController extends Controller
              //$order = participantesevento::findOrFail($id);
              //dd($order);
               Log::info('El usuario '. \Auth::user()->name .' Envio un correo para gestionar el pago con el área financiera: '.$id);
-
+              flash('Haz enviado un correo para gestionar el pago con el área financiera!')->success();
 
               $invitacion = \App\proyectos_articulos::find($id);
               $invitacion->correo_gestion_pago=1;
@@ -246,9 +244,8 @@ class emailController extends Controller
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
 
-          flash('Haz enviado un correo para gestionar el pago con el área financiera!')->success();
-        // Ship order...
-         
+          
+          
         \Mail::to($correo2->email)->send(new gestionpago($invitacion, $correo));
 
        
@@ -264,10 +261,9 @@ class emailController extends Controller
 
          public function certificadoypago($id)
          { 
-             //$order = participantesevento::findOrFail($id);
-             //dd($order);
+             
               Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Certificado y Pagos del id: '.$id);
-
+              flash('Haz enviado un correo de certificado y pago!')->success();
 
               $invitacion = \App\proyectos_articulos::find($id);
               $invitacion->certificadoypago=1;
@@ -275,7 +271,7 @@ class emailController extends Controller
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
 
-          flash('Haz enviado un correo de certificado y pago!')->success();
+          
         // Ship order...
          
         \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
@@ -361,71 +357,7 @@ class emailController extends Controller
 
 
         
-     public function enviarparticipantes(Request $request)
-         { 
-              //dd($request); 
-       //\Mail::to($Request->get('de'))->cc($Request->get('para'))->send(new emails);
-
-         $data = $request->all();
-          $datos = $request->get('cuerpocorreo');
-
-          
-
-          //dd($data);
-           //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
-           \Mail::send('adminlte::emails.notificacion2',$data, function($message) use ($request)
-           {
-               //remitente
-               $message->from($request->get('para'));
-               $message->cc($request->get('cc'));
-
-               //asunto
-               $message->subject($request->get('asunto'));
-
-               //receptor
-               $message->to('foo@example.com', env('CONTACT_NAME'));
-           });
      
-
-        //to va el usuario conectado en session
-        //dd($datos);
-        //Session::flash('msjevento',"Se ha enviado el correo de manera exitosa!");
-
-        return redirect()->route('participantesevento.index');   
-        return view('adminlte::emails.notificacion2', ['datos' => $datos]);
-
-
-        //return view('adminlte::participantesevento.index');
-
-             //$data = $request->all();
-
-
-            // Ship order...
-
-         /*   Mail::to('eventos@ocyt.org.co')->cc($request->cc)
-                  ->send(new correo());
-
-
-            */
-             
-
-        }
-
-        #envia el correo del participantes.
-        public function partevento(Request $request, $id)
-        {
-
-        $order = Order::findOrFail($id);
-        //  $order = $request;
-
-        // Ship order...
-
-        Mail::to($request->user())->send(new OrderShipped($order));
-
-        return redirect()->route('participantesevento.index');
-
-        }
-
 
         
          

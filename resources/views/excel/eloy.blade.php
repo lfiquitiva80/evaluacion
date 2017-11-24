@@ -24,7 +24,7 @@
 <th>conflicto_potencial</th>
 
 
-    
+
     </tr>
   </thead>
   <tbody>
@@ -91,16 +91,17 @@
 
 
 
-              
- 
-       
 
-        </td></td>  
-      
+
+
+
+        </td></td>
+
     </tr>
+      @endforeach
   </tbody>
 
-  @endforeach
+
 
 
 </table>

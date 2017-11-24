@@ -111,6 +111,8 @@ class gestionpagoController extends Controller
          { 
            
               Log::info('El usuario '. \Auth::user()->name .' Envio un correo de confirmacion de pago: '.$id);
+              flash('Haz enviado un correo de confirmación de pago!')->success();
+
 
 
              $invitacion = \App\proyectos_articulos::find($id);

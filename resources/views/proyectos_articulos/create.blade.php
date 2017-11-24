@@ -13,6 +13,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
+  	<div class="col-md-8 col-md-offset-2">
 
    @if ($errors->any())
     <div class="alert alert-danger">
@@ -30,10 +31,12 @@
 	<legend>Crear proyectos_articulos</legend>
 
 
-	<div class="panel panel-success" >
-		<div class="panel-default">
+	<div class="panel panel-success">
+		<div class="panel-heading">
 			<h3 class="panel-title"></h3>
 		</div>
+		<div class="panel-body">
+			
 		<div class="form-group">
 			<label for="id">id</label>
 			<input type="text" class="form-control" name="id"  id="id" placeholder="Id" readonly="readonly">
@@ -274,13 +277,15 @@ $municipios = DB::table('municipios')->get();
 
 
 
-	<center><button type="submit" class="btn btn-primary" >Enviar</button>
-	<button type="reset" class="btn btn-danger">Borrar</button></center><p>
+	<center><button type="submit" class="btn btn-info pull-right">Submit</button>
+	
 
 {!! Form::close() !!}
 
 
   </div>
+</div>
+</div>
 </div>
 
 

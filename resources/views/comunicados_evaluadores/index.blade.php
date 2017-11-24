@@ -8,7 +8,9 @@
 @section('main-content')
 
 
+  <div class="panel-body">
 
+<div class="container">
 {!! Form::open(['route' => 'comunicados.index', 'method'=>'GET', 'Class'=>'navbar-form navbar-right']) !!}
 <!--<form class="navbar-form navbar-right" role="search">-->
   <div class="form-group">
@@ -16,14 +18,12 @@
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 {!! Form::close() !!}
+
+</div>
+
 <div class="panel panel-default">
 <h4><b><center>CORREOS CON LOS SIGUIENTES PROCESOS</h4></b></center>
 
-
-<!--<a href="{{ $url = route('evaluadores.create') }}" class="btn btn-primary">Registar Nuevos evaluadores</a>-->
- <div class="panel-body">
-
-<div class="container" id="app">
 <p>
 <div class="table-responsive">
 <table class="table table-hover" >
@@ -35,16 +35,15 @@
         <td> Correo Invitación</td>
         <td> Correo Aceptación</td>
         <td> Correo Documentos</td>
-        <td> Proyecto Completo</td>
         <td> Correo Pago</td>
-        <td> Correo Gestion de Pago</td>
         <td> Correo Certificado y pago</td>
-        <td> El Evaluador NO acepto</td>
+        <td> Correo (No respuesta)</td>
+        <td>Proyecto Completo</td>
         <td> Certificado PDF</td>
         <td> Correo Rectificación</td>
 
 
-
+  
     </tr>
   </thead>
   <tbody>
@@ -62,44 +61,34 @@
 
 
 
-        <td >
+        <td>
         @if ($row->correo_invitacion!=0)
-        <a href="{{ $url = route('invitacion',$row->id) }}" class="glyphicon glyphicon-envelope" aria-hidden="true" style="color:blue;" ></a>
+        <a href="{{ $url = route('invitacion',$row->id) }}" class="glyphicon glyphicon-envelope" aria-hidden="true" style="color:blue;"></a>
         @else
-        <a href="{{ $url = route('invitacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color:red;" ></span></a>
+        <a href="{{ $url = route('invitacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color:red;"></span></a>
         @endif
         </td>
 
          <td>
         @if ($row->Aceptacion!=0)
-        <a class="fa fa-check-square-o" aria-hidden="true" style="color:blue;" ></a>
+        <a class="fa fa-check-square-o" aria-hidden="true" style="color:blue;"></a>
         @else
-        <a class="btn btn-info"><span class="fa fa-check-square-o" aria-hidden="true" style="color:red;" ></span></a>
+        <a class="btn btn-info"><span class="fa fa-check-square-o" aria-hidden="true" style="color:red;"></span></a>
         @endif
         </td>
 
         <td>
        @if ($row->correo_documentos!=0)
-        <a href="{{ $url = route('documentos',$row->id) }}" class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color:blue;" ></a>
+        <a href="{{ $url = route('documentos',$row->id) }}" class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color:blue;"></a>
         @else
         <a href="{{ $url = route('documentos',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color:red;"></span></a>
         @endif
 
 
         </td>
-
-        <td>
-         @if ($row->proyecto_completado!=0)
-        <a href="{{ $url = route('devolver_finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;" ></a>
-        @else
-        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:red;"></span></a>
-        @endif
-
-        </td>
-
         <td>
           @if ($row->correo_pago!=0)
-        <a href="{{ $url = route('pagos',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;" >
+        <a href="{{ $url = route('pagos',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;">
         @else
         <a href="{{ $url = route('pagos',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-usd" aria-hidden="true" style="color:red;"></span>
         @endif
@@ -108,22 +97,12 @@
         </a></td>
 
          <td>
-        @if ($row->correo_gestion_pago!=0)
-        <a href="{{ $url = route('gestionpago',$row->id) }}" class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:blue;" >
-        @else
-        <a href="{{ $url = route('gestionpago',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:red;"></span>
-        @endif
-
-
-        </a></td>
-
-        <td>
         @if ($row->certificadoypago!=0)
-        <a href="{{ $url = route('certificadoypago',$row->id) }}" class="glyphicon glyphicon-sort" aria-hidden="true" style="color:blue;" -if="!message">
+        <a href="{{ $url = route('certificadoypago',$row->id) }}" class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:blue;">
         @else
-        <a href="{{ $url = route('certificadoypago',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-sort" aria-hidden="true" style="color:red;"></span>
+        <a href="{{ $url = route('certificadoypago',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:red;"></span>
         @endif
-      
+
 
         </a></td>
 
@@ -137,15 +116,22 @@
         </td>
 
 
-         
+         <td>
+         @if ($row->proyecto_completado!=0)
+        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;"></a>
+        @else
+        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:red;"></span></a>
+        @endif
 
-        <td>
+        </td>
+
+         <td>
         <a href="{{ $url = route('certificadoeloy', $row->id) }}"><i class="fa fa-file-pdf-o" aria-hidden="true" ></i></a>
         </td>
          <td>
         <a href="{{ $url = route('comunicados.edit', $row->id) }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span></a>
         </td>
-
+        
 
     </tr>
   </tbody>
@@ -158,5 +144,10 @@
 <center>{{$comunicados->links()}}</center>
 
 </div>
+
+</div>
+</div>
+
+
 
 @endsection

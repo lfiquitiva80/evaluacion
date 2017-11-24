@@ -12,7 +12,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
-  
+
    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -31,28 +31,27 @@
 		<label for="id">id</label>
 		<input type="text" class="form-control" name="id"  id="id" placeholder="Id" readonly="readonly">
 	</div>
-
-
+	
 		<?php  $proyectos_articulos = DB::table('proyectos_articulos')->get();?>
-			
+
 
 	<div class="form-group">
 			<label for="">	Proyecto y/o Articulos</label>
 			<select name="id_proyectos_articulos" id="id_proyectos_articulos" class="form-control" required="required" placeholder="id_proyectos_articulos" >
-					
+
 			  @foreach($proyectos_articulos as $row)
-					<option value="{{$row->id}}" >{{$row->DescripcionProyecto_Articulo}}</option>
+					<option value="{{$row->id}}" >{{$row->id}} {{$row->DescripcionProyecto_Articulo}}</option>
 				@endforeach
 			</select>
 	</div>
 
-	
+
 	<div class="form-group">
 	<label for="NombreDepartamento">Descripción Evaluación</label>
 	<input type="text" class="form-control" name="DescripcionEvaluacion" id="DescripcionEvaluacion" placeholder="Digite un nuevo DescripcionEvaluacion">
 	</div>
-	
-	
+
+
 
 
 	<div class="form-group">
@@ -60,9 +59,9 @@
 	<textarea class="ckeditor" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval"></textarea>
 	</div>
 
-	
 
-	
+
+
 	<div class="form-group">
 		<label for="NombreDepartamento">Puntaje Máximo</label>
 		<input type="text" class="form-control" name="Puntaje_Maximo" id="Puntaje_Maximo" placeholder="Digite un Puntaje_Maximo"  required>
@@ -117,15 +116,15 @@
 
 
 
-		
 
-	
 
-		
 
-	
 
-	
+
+
+
+
+
 
 	<center><button type="submit" class="btn btn-primary" >Enviar</button>
 	<button type="reset" class="btn btn-danger">Borrar</button></center><p>
@@ -138,4 +137,3 @@
 
 
 @endsection
-

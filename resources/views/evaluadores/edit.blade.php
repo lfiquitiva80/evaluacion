@@ -14,6 +14,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
+  	<div class="col-md-6 col-md-offset-2">
 
 
 
@@ -23,6 +24,13 @@
 
  <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
 
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"></h3>
+		</div>
+		<div class="panel-body">
+			
+		
 
 
 
@@ -194,14 +202,14 @@ $municipios = DB::table('municipios')->get();
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="funcionario">Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</label>
 		<input type="file" class="form-control" name="Rut" id="Rut" placeholder="Rut" value="{{$evaluadores->Rut}}" >
-		<small>Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</small>
+		
 	</div>
 	</div>
 
 
 
 
-	<center><button type="submit" class="btn btn-primary" >Actualizar</button>
+	<center><button type="submit" class="btn btn-info pull-right">Actualizar</button>
 	</center><p>
 
 {!! Form::close() !!}
@@ -209,6 +217,9 @@ $municipios = DB::table('municipios')->get();
 
   </div>
 </div>
+</div>
+</div>
+	</div>
 
 
 @endsection

@@ -13,6 +13,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
+  	<div class="col-md-6 col-md-offset-2">
 
 
   @if ($errors->any())
@@ -30,6 +31,14 @@
 
 {!! Form::open(['route' => 'evaluadores.store', 'method'=>'POST','enctype'=>'multipart/form-data','file'=>true]) !!}
 	<legend>CREAR EVALUADORES</legend>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Crear evaluadores nuevos</h3>
+		</div>
+		<div class="panel-body">
+			
+	
 
 	<div class="form-group">
 		<label for="id">id</label>
@@ -185,14 +194,17 @@ $municipios = DB::table('municipios')->get();
 	</div>
 	</div>
 
-	<center><button type="submit" class="btn btn-primary" >Enviar</button>
-	<button type="reset" class="btn btn-danger">Borrar</button></center><p>
+	<center><button type="submit" class="btn btn-info pull-right">Submit</button>
+	
 
 {!! Form::close() !!}
 
 
   </div>
 </div>
+</div>
+	</div>
+	</div>
 
 
 @endsection
