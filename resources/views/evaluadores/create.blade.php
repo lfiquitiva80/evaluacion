@@ -188,7 +188,7 @@ $municipios = DB::table('municipios')->get();
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Adjuntar
-		<label for="funcionario">Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</label>
+		<label for="funcionario">Rut si es nacionalidad Colombiana o Pasaporte si es extranjero</label>
 		<input type="file" class="form-control" name="Rut" id="Rut" placeholder="Rut" value="Sin informacion">
 		<small>Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</small>
 	</div>

@@ -373,7 +373,7 @@ Fecha de Ingreso al sistema  {{ $date }}
           <td>{{$row->DescripcionProyecto_Articulo}}</td>
 
           @if (!empty($row->proyecto_pdf))
-          <td><a href="{{$row->proyecto_pdf}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+          <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
           @else
           <td>Falta por subir</td>
           @endif
@@ -442,7 +442,7 @@ Fecha de Ingreso al sistema  {{ $date }}
         <li><strong>Antes de Finalizar verificar lo siguiente:</strong></li>
         <li>1.Revisar que haya cargado el documento de Calificación del Proyecto</li>
         <li>2. Revisar que haya cargado el Documento de Confidencialidad</li>
-        <li>3. Revisar que haya Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
+        <li>3. Revisar que haya Cargado su Hoja de Vida, RUT actualizado O Pasaporte , etc.., para el pago</li>
         <li>4. Revisar que haya terminado la Evaluación.</li>
 
        </lu>
@@ -591,7 +591,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 <li>2.  Certificación bancaria en la que se registre la cuenta en la que se le consignará.</li>
 <li>3.  Cuenta de Cobro por valor a cobrar con número de cédula (diligenciar <a href="<?php $url = asset('imgplantillas/MODELO.doc'); echo $url; ?>" target="_blank" >Carta Modelo</a> adjunto y enviarlo con su firma).</li>
 <li>4.  Copia de la cédula de ciudadanía en formato pdf. </li>
-<li>5.  RUT actualizado.</li>
+<li>5.  RUT actualizado O Pasaporte.</li>
 
 <br>
 

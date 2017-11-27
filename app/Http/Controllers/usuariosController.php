@@ -166,9 +166,18 @@ class usuariosController extends Controller
             'TipoUsers' => $request['TipoUsers'],
             'id_tratamiento' => $request['id_tratamiento'],
         ];
-
         
         $updates=DB::table('users')->where('id',"=",$id)->update($input); 
+
+        $input2 = [
+            'NombreEvaluador'=> $request['name'],
+            'email'    => $request['email'],
+            
+        ];
+
+        $updates=DB::table('evaluadores')->where('id_users',"=",$id)->update($input2);   
+
+
 
 
         return redirect()->route('usuarios.index');
@@ -182,9 +191,23 @@ class usuariosController extends Controller
      */
     public function destroy($id)
     {
-        flash('Se elimino el registro!'.$id)->warning();
-        Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);    
-        $destruir=DB::table('users')->where('id', '=', $id)->delete();
+        
+
+        try
+        {
+            
+             
+            $destruir=DB::table('users')->where('id', '=', $id)->delete();
+            flash('Se elimino el registro!'.$id)->warning();
+            Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);   
+        }
+        catch(\Exception $e)
+        {
+            //$var_error=$e->get_message();
+            flash('No puedes eliminar, porque esta creado el evaluador')->error();
+        }    
+
+
         return redirect()->route('usuarios.index');
     }
 }

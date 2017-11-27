@@ -285,9 +285,25 @@ class evaluadoresController extends Controller
      */
     public function destroy($id)
     {
-        flash('Se actualizo el registro!')->warning();
-        Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);     
-        $destruir=DB::table('evaluadores')->where('id', '=', $id)->delete();
+             
+        
+
+          try
+        {
+          $destruir=DB::table('evaluadores')->where('id', '=', $id)->delete(); 
+          flash('Se actualizo el registro!')->warning();
+          Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id); 
+             
+         
+        }
+        catch(\Exception $e)
+        {
+            //$var_error=$e->get_message();
+            flash('No puedes eliminar, porque tiene proyectos asociado a este evaluador!')->error();
+        } 
+
+
+
         return redirect()->route('evaluadores.index');
     }
 

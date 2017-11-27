@@ -63,7 +63,7 @@
 
          
         
-       @if($row->Fecha_Pago_Financiera=="0000-00-00 00:00:00")
+       @if(empty($row->Fecha_Pago_Financiera))
        <td>
         <a href="{{ $url = route('confirmacionpago',$row->id) }}" class="btn btn-success"><i class="fa fa-usd" aria-hidden="true"></i> Confirmar el Pago</a></td>
         @else

@@ -36,6 +36,7 @@
         <td> Correo Aceptación</td>
         <td> Correo Documentos</td>
         <td> Correo Pago</td>
+        <td> Correo Gestión Financiera</td>
         <td> Correo Certificado y pago</td>
         <td> Correo (No respuesta)</td>
         <td>Proyecto Completo</td>
@@ -96,6 +97,17 @@
 
         </a></td>
 
+
+         <td>
+          @if ($row->correo_gestion_pago!=0)
+        <a href="{{ $url = route('gestionpago',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;">
+        @else
+        <a href="{{ $url = route('gestionpago',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-usd" aria-hidden="true" style="color:red;"></span>
+        @endif
+
+
+        </a></td>
+
          <td>
         @if ($row->certificadoypago!=0)
         <a href="{{ $url = route('certificadoypago',$row->id) }}" class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:blue;">
@@ -118,7 +130,7 @@
 
          <td>
          @if ($row->proyecto_completado!=0)
-        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;"></a>
+        <a href="{{ $url = route('devolver_finalevaluacion',$row->id) }}" class="glyphicon glyphicon-ok" aria-hidden="true" style="color:blue;"></a>
         @else
         <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:red;"></span></a>
         @endif

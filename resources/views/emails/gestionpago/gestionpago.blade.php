@@ -28,7 +28,7 @@ $Rut = asset($Rut);
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Cedula_pdf;?>">Documento de Identidad</a></li>
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Certificado_Bancario;?>">Certificado Bancario</a></li>
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $cuentacobro;?>">Cuenta de Cobro</a></li>
-	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Rut;?>">Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero.</a></li>
+	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Rut;?>">Rut si es nacionalidad Colombiana o Pasaporte si es extranjero.</a></li>
 </ul>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>

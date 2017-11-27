@@ -282,9 +282,25 @@ class proyectos_articulosController extends Controller
      */
     public function destroy($id)
     {
-        flash('Se elimino el registro!'.$id)->warning();
-        Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);
-        $destruir=DB::table('proyectos_articulos')->where('id', '=', $id)->delete();
+        
+        
+
+         try
+        {
+          $destruir=DB::table('proyectos_articulos')->where('id', '=', $id)->delete();
+          flash('Se elimino el registro!'.$id)->warning();
+          Log::warning('El usuario '. \Auth::user()->name .' Elimino el id: '.$id);
+             
+         
+        }
+        catch(\Exception $e)
+        {
+            //$var_error=$e->get_message();
+            flash('No puedes eliminar, porque tiene Criterio de Evaluacion asociados a este Proyecto!')->error();
+        } 
+
+
+
         return redirect()->route('proyectos_articulos.index');
     }
 

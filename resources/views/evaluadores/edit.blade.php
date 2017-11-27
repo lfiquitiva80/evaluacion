@@ -20,9 +20,15 @@
 
 {!! Form::open(['route' => ['evaluadores.update', $evaluadores->id],'method'=>'PATCH','enctype'=>'multipart/form-data','file'=>true]) !!}
 
-	<legend>EDITAR INFORMACION evaluadores</legend>
+	<legend>EDITAR INFORMACION EVALUADORES</legend>
 
- <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+  @if(Auth::user()->TipoUsers==0)
+          <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+         
+   @else
+            <a 	href="{{ route('evaluadores.index') }}" class="btn btn-primary" >Regresar</a><p>
+   @endif     
+
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -97,7 +103,7 @@
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Ciudad de Expedición del Documento de Identidad</label>
-		<input type="text" class="form-control" name="	Ciudad_expedicion" id="	Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" >
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" >
 	</div>
 
 	<div class="form-group">
@@ -200,7 +206,7 @@ $municipios = DB::table('municipios')->get();
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Attachment
-		<label for="funcionario">Rut si es nacionalidad de Colombiana o Pasaporte si es extranjero</label>
+		<label for="funcionario">Rut si es nacionalidad Colombiana o Pasaporte si es extranjero</label>
 		<input type="file" class="form-control" name="Rut" id="Rut" placeholder="Rut" value="{{$evaluadores->Rut}}" >
 		
 	</div>
