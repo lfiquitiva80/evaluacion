@@ -312,12 +312,13 @@ class evaluadoresController extends Controller
      public function perfil()
     {
         $evaluadores=DB::table('evaluadores')->where('id_users','=',\Auth::user()->id)->first();
-       
+        //$evaluadores= evaluadores::findOrFail($id);
+         $Tipo= TipoDocumento::all();
 
         //$evaluadores= evaluadores::findOrFail($id);
          Log::info('El usuario '. \Auth::user()->name .' ingreso al setting el Id:');
         
-        return view('evaluadores.settings', compact('evaluadores'));
+        return view('evaluadores.settings', compact('evaluadores','Tipo'));
     }
 
 }

@@ -27,7 +27,7 @@
 @endif
 
   
-   <a href="{{ route('evaluadores.store') }}" class="btn btn-primary" >Regresar</a><p>
+  <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
 {!! Form::open(['route' => 'evaluadores.store', 'method'=>'POST','enctype'=>'multipart/form-data','file'=>true]) !!}
 	<legend>CREAR EVALUADORES</legend>

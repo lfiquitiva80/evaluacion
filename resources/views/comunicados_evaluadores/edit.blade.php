@@ -19,7 +19,7 @@
 
 	<legend>ENVIO CORREO DE RECTIFICACION</legend>
 
- <a 	href="{{ route('evaluadores.index') }}" class="btn btn-primary" >Regresar</a><p>
+<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 	
 		{!! Form::open(['route' => 'rectificacion_errores', 'method'=>'GET','enctype'=>'multipart/form-data','File'=>true]) !!}
         <!-- /.col -->

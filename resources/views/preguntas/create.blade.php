@@ -22,7 +22,7 @@
         </ul>
     </div>
 @endif
-   <a href="{{ route('criterios_evaluacion.store') }}" class="btn btn-primary" >Regresar</a><p>
+   <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>><p>
 
 {!! Form::open(['route' => 'criterios_evaluacion.store', 'method'=>'POST','enctype'=>'multipart/form-data','File'=>true]) !!}
 	<legend>CREAR criterios_evaluacion</legend>

@@ -14,7 +14,7 @@
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
-  	<div class="col-md-6 col-md-offset-2">
+  	<div class="col-md-8 col-md-offset-2">
 
 
 
@@ -22,13 +22,7 @@
 
 	<legend>EDITAR INFORMACION EVALUADORES</legend>
 
-  @if(Auth::user()->TipoUsers==0)
-          <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
-         
-   @else
-            <a 	href="{{ route('evaluadores.index') }}" class="btn btn-primary" >Regresar</a><p>
-   @endif     
-
+<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -58,10 +52,19 @@
 
 
 
-
+	
 	<?php  $Usuarios= DB::table('users')->get();?>
 
 	<div class="form-group">
+			
+
+			 @if (Auth::user()->TipoUsers==0)
+			
+		<input type="hidden" class="form-control" name="id_users" id="id_users" placeholder="Digite el Nombre del evaluador" value="{{$evaluadores->id_users}}" readonly>
+		
+
+			@else
+
 			<label for="">Usuario:</label>
 			<select name="id_users" id="id_users" class="form-control" required="required" placeholder="" >
 
@@ -78,6 +81,10 @@
 
 				@endforeach
 			</select>
+			@endif
+
+
+
 	</div>
 
 <div class="form-group ">

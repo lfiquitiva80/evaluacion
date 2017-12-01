@@ -17,9 +17,9 @@
 
 {!! Form::open(['route' => ['criterios_evaluacion.update', $criterios_evaluacion->id],'method'=>'PATCH']) !!}
 
-	<legend>EDITAR INFORMACION criterios_evaluacion</legend>
+	<legend>EDITAR INFORMACION DE CRITERIOS DE EVALUACION</legend>
 
- <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+ <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
 
 	<div class="form-group">

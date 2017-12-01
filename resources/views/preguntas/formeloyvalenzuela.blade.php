@@ -27,7 +27,7 @@
     
  
 
-     <a href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
 	
 
@@ -497,10 +497,10 @@
                 <br>
                 <br>    
                
-                    @if(!empty($evaluadores->FirmaDigital))
+                    @if(empty($evaluadores->FirmaDigital))
                     <img src="<?php echo "/".$evaluadores->FirmaDigital; ?>" height="40%" width="40%">
                     @else
-
+                    
                     @endif
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>    

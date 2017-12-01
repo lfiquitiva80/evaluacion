@@ -24,7 +24,7 @@
 
 <div class="panel panel-default">
 
-<h4><b><center>REGISTROS DE usuarios</h4></b></center>
+<h4><b><center>REGISTROS DE USUARIOS</h4></b></center>
 
 
 

@@ -22,6 +22,7 @@ Fecha de Ingreso al sistema  {{ $date }}
     <h1>PROCESO DE EVALUACIÓN DE PROYECTOS Y/O ARTÍCULOS</h1>
     <p>A continuación encontrará los siguientes pasos, para la correspondiente evaluación del Proyecto y/o artículo que fue aceptada en la notificación enviada por email</p>
     <p>
+    <!--<p><a class="btn btn-primary btn-lg" href="{{asset('documentos/Instrucciones para el Evaluador.pdf')}}" role="button"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Instructivo para el Evaluador</a></p>-->  
 
     </p>
   </div>
@@ -352,7 +353,7 @@ Fecha de Ingreso al sistema  {{ $date }}
       <td>  Proyecto (Documentos)</td>
       <td>  Doc. Calificación</td>
       <td>  Doc. Confidencialidad</td>
-      <td>  id_evaluador</td>
+      <td>  Evaluador</td>
       <td>  Evaluación Dinámica</td>
       <td>  Imprimir</td>
       <!--<td>  Evaluacion_par</td>-->
@@ -405,7 +406,7 @@ Fecha de Ingreso al sistema  {{ $date }}
           <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users;
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?>
-          </a></td>
+         </a></td>
           <td><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")
           <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
@@ -425,7 +426,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 
 
   <td>
-  @if (empty($row->Fecha_inicio))
+  @if (empty($row->calificacion_proyecto) || empty($row->doc_confidencialidad))
   Falta iniciar la evaluación
   @else
 

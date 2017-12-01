@@ -76,10 +76,10 @@
                 <!-- Tasks Menu -->
                 <li class="dropdown tasks-menu">
                     <!-- Menu Toggle Button -->
-                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-flag-o"></i>
-                        <span class="label label-danger">9</span>
-                    </a>-->
+                    <a href="{{asset('documentos/Instrucciones para el Evaluador.pdf')}}">
+                        <i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>
+                        <span class="label label-danger">Ayuda</span>
+                    </a>
                     <ul class="dropdown-menu">
                         <li class="header">{{ trans('adminlte_lang::message.tasks') }}</li>
                         <li>

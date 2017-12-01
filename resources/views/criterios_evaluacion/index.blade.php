@@ -114,10 +114,17 @@
           <td>{{$row->Total_evaluacion}}</td>
           <td>{{$row->concepto_final}}</td>-->
 
-
+ <?php $comment = App\proyectos_articulos::find($row->id_proyectos_articulos); $comment->proyecto_completado ?>
+    @if($comment->proyecto_completado==0)
         <td><a href="{{ $url = route('criterios_evaluacion.edit',$row->id) }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"> Edición</i></a>
-</td>
-    <td>@include('criterios_evaluacion.destroy')</td>
+        </td>
+    <td>
+   
+    @include('criterios_evaluacion.destroy')
+    @else
+    <td>Proyecto Finalizado</td>
+    @endif
+  </td>
 
 
 

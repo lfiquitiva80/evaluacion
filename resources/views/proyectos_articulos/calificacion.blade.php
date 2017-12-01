@@ -17,18 +17,18 @@
   
 {!! Form::open(['route' => ['proyectos_articulos.update', $proyectos_articulos->id],'method'=>'PATCH','enctype'=>'multipart/form-data','File'=>true]) !!}
 
-	<legend>EDITAR INFORMACION proyectos_articulos</legend>
+	<legend>SUBIR LOS DOCUMENTOS CORRESPONDIENTES</legend>
 
- <a 	href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
-	
+ <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
 
 	<div class="panel panel-success">
 		<div class="panel-primary">
 			<h3 class="panel-title"></h3>
 		</div>
 		<div class="panel-body">
-			
 
+		{{$proyectos_articulos->DescripcionProyecto_Articulo}}		
+	
 	<div class="form-group">
 		
 		<input type="hidden" class="form-control" name="id"  id="id" placeholder="Id" readonly="readonly"  value="{{$proyectos_articulos->id}}">
@@ -193,7 +193,7 @@
 
 	
 
-	<center><button type="submit" class="btn btn-primary" >Actualizar</button>
+	<center><button type="submit" class="btn btn-success pull-right" >Actualizar</button>
 	</center><p>
 
 {!! Form::close() !!}

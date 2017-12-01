@@ -17,7 +17,7 @@
   
 {!! Form::open(['route' => ['evaluadores.update', $evaluadores->id],'method'=>'PATCH']) !!}
 
-	<legend>EDITAR INFORMACION evaluadores</legend>
+	<legend>PROCESO DE FINANCIERA PARA CONFIRMAR EL PAGO</legend>
 
  <a 	href="{{ route('evaluadores.index') }}" class="btn btn-primary" >Regresar</a><p>
 	

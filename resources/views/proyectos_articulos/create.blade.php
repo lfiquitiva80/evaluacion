@@ -25,7 +25,7 @@
     </div>
 @endif
 
-   <a href="{{ route('proyectos_articulos.store') }}" class="btn btn-primary" >Regresar</a><p>
+   <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
 {!! Form::open(['route' => 'proyectos_articulos.store', 'method'=>'POST','enctype'=>'multipart/form-data','File'=>true]) !!}
 	<legend>Crear proyectos_articulos</legend>
@@ -44,7 +44,7 @@
 
 		<div class="form-group">
 			<label for="">DescripcionProyecto_Articulo</label>
-			<input type="text" class="form-control" name="DescripcionProyecto_Articulo" id="DescripcionProyecto_Articulo" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo">
+			<input type="text" class="form-control" name="DescripcionProyecto_Articulo" id="DescripcionProyecto_Articulo" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" onchange="Mayusculas()">
 		</div>
 
 			<?php  $evaluadores = DB::table('evaluadores')->get();?>

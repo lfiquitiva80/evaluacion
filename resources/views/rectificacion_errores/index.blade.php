@@ -25,6 +25,7 @@
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Compose New Message</h3>
+              <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

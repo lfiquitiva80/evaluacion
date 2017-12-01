@@ -38,9 +38,9 @@
             
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             @else
-            
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="active"><a href="{{ url('dashboard') }}"><i class='fa fa-dashboard'></i> <span>Dashboard</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            
             
             <li class="active"><a href="{{ url('usuarios') }}"><i class='fa fa-user-plus'></i> <span>Usuarios</span></a></li>
             <li class="active"><a href="{{ url('evaluadores') }}"><i class='fa fa-coffee'></i> <span>Evaluadores</span></a></li>

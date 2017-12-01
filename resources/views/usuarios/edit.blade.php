@@ -22,6 +22,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">Editar Usuario</div>
+                <br>
+                <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
+
                 <div class="panel-body">
                     {!! Form::open(['route' => ['usuarios.update', $usuarios->id],'method'=>'PATCH']) !!}
 
@@ -118,7 +121,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success pull-right">
                                     Actualizar
                                 </button>
                             </div>

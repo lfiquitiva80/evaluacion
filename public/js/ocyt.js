@@ -37,5 +37,11 @@
 
 
 
+//Pasar a Mayúsculas
+     function Mayusculas() {
+              var x =document.getElementById("DescripcionProyecto_Articulo");
+              x.value =x.value.toUpperCase();
+          }     
+
 
     

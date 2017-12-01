@@ -7,5 +7,5 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2017 
     <!--<a href="http://acacha.org">Acacha.org</a>.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="http://acacha.org/sergitur">Ingeniero Leonidas Fiquitiva</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/acacha/adminlte-laravel">Github</a>-->
-    <a href="#">Observatorio Colombiano de Ciencia y Tecnologia</a> <strong>Desarrollado por el : </strong>Ingeniero Leonidas Fiquitiva
+    <!--<a href="#">Observatorio Colombiano de Ciencia y Tecnologia</a> <strong>Desarrollado por el : </strong>Ingeniero Leonidas Fiquitiva-->
 </footer>

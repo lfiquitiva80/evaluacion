@@ -15,7 +15,7 @@
 
 	<legend>VISTA CRITERIOS DE EVALUACION</legend>
 
- <a 	href="{{ route('criterios_evaluacion.index') }}" class="btn btn-primary" >Regresar</a><p>
+ <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 	
 
 	<div class="form-group">

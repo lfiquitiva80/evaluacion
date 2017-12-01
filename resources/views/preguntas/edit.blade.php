@@ -28,7 +28,7 @@
 
     	<legend>Formulario de Evaluación de propuesta de Investigación</legend>
 
-     <a href="{{ route('homedos') }}" class="btn btn-primary" >Regresar</a><p>
+    <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
     <div class="panel panel-default">
         <div class="panel-body">

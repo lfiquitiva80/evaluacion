@@ -18,9 +18,9 @@
   
 {!! Form::open(['route' => ['proyectos_articulos.update', $proyectos_articulos->id],'method'=>'PATCH','enctype'=>'multipart/form-data','File'=>true]) !!}
 
-	<legend>EDITAR INFORMACION proyectos_articulos</legend>
+	<legend>EDITAR INFORMACION PROYECTOS ARTICULOS</legend>
 
- <a 	href="{{ route('proyectos_articulos.index') }}" class="btn btn-primary" >Regresar</a><p>
+<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 	
 
 	<div class="panel panel-success">
@@ -37,7 +37,7 @@
 
 	<div class="form-group">
 		<label for="">DescripcionProyecto_Articulo</label>
-		<input type="text" class="form-control" name="DescripcionProyecto_Articulo" id="DescripcionProyecto_Articulo" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->DescripcionProyecto_Articulo}}">
+		<input type="text" class="form-control" name="DescripcionProyecto_Articulo" id="DescripcionProyecto_Articulo" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->DescripcionProyecto_Articulo}}" onchange="Mayusculas()">
 	</div>
 
 	<div class="form-group">

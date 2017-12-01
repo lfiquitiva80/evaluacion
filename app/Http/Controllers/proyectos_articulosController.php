@@ -269,7 +269,12 @@ class proyectos_articulosController extends Controller
 
 
 
-        return redirect()->route('homedos');
+        if (\Auth::user()->TipoUsers==0){
+         return redirect()->route('homedos');
+         }
+        else{
+            return redirect()->route('proyectos_articulos.index');
+        }
 
 
     }
