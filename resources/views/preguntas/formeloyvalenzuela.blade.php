@@ -63,13 +63,13 @@
                     Fecha de la evaluación:
                 </td >
                 <td >
-                    Día/Hora
+                    <center>Día/Hora</center>
                 </td>
                 <td >
-                    Mes
+                    <center>Mes</center>
                 </td>
                  <td colspan="2">
-                    Año
+                    <center>Año</center>
                 </td>
                	
                 
@@ -490,7 +490,7 @@
                 <center>
 
                 
-                <br>Certífico que la información consignada fue diligenciada por el par evaluador correspondiente.
+                <br>
                 <br>
                 <br>
                 <br>

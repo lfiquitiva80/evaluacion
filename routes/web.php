@@ -52,7 +52,13 @@ Route::get('/config-cache', function() {
 
 
 
+Route::get('norespuestaevaluador', function () {
+	    return view('respuestaEvaluador.norespuesta');
+	})->name('norespuestaevaluador');
 
+Route::get('respuestaevaluador', function () {
+	    return view('respuestaEvaluador.respuesta');
+	})->name('respuestaevaluador');
 
 Route::get('pdfevaluacion/{id}', 'PDFcontroller@Certificado')->name('pdfevaluacion');
 
@@ -121,8 +127,7 @@ Route::get('partevento', 'emailController@partevento');
 
 Route::get('enviarcorreo/{id}', 'emailController@enviarcorreo');
 
-Route::get('correoparticipantes/{id}', 'emailController@editmailsparticipantes')
-->name('correoparticipantes');
+Route::get('correoparticipantes/{id}', 'emailController@editmailsparticipantes')->name('correoparticipantes');
 
 Route::get('emaileditar/{id}', 'emailController@edit');
 

@@ -109,6 +109,11 @@
         </a></td>
 
          <td>
+
+         @if(!empty($row->Fecha_Pago_Financiera))
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        @endif
+        
         @if ($row->certificadoypago!=0)
         <a href="{{ $url = route('certificadoypago',$row->id) }}" class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:blue;">
         @else

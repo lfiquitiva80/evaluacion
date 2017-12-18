@@ -38,6 +38,8 @@
     <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
 
   {!! Form::close() !!}
+
+  <a href="{{ $url = route('preguntaseloy', $id) }}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Click para previsualizar"><i class="fa fa-eye" aria-hidden="true"></i> Previsualizar</a>  
   </div>
    </div>
  </div>

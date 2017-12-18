@@ -56,20 +56,20 @@
                     Fecha de la evaluación:
                 </td >
                 <td >
-                    Día/Hora
+                    <center>Día/Hora</center>
                 </td>
                 <td >
-                    Mes
+                    <center>Mes</center>
                 </td>
                  <td colspan="2">
-                    Año
+                    <center>Año</center>
                 </td>
                	
                 
             </tr>
             <tr >
                 <td >
-
+                <center>
                 <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
@@ -81,10 +81,10 @@
                 }
                 
                 ?>	
-                
+                </center>
                 </td>
                 <td >
-                	 <?php 
+                <center>	 <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
 	                	$fecha=$proyectos_articulos->Fecha_Devolucion_Evaluador;
@@ -94,10 +94,10 @@
                 	echo date("m");
                 }
                 
-                ?>	
+                ?>	</center>
                 </td >
                 <td colspan="2">
-				 <?php 
+				<center> <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
 	                	$fecha=$proyectos_articulos->Fecha_Devolucion_Evaluador;
@@ -108,10 +108,10 @@
                 }
                 
                 ?>
-                
+                </center>
                 </td>
                 
-               
+              
                  
                     
                 
@@ -168,14 +168,14 @@
                     <center>Puntaje Asignado</center>
                 </td>
                 <td colspan="2" >
-                    Observaciones o Comentarios 
+                    <center>Observaciones o Comentarios</center>
                 </td>
                 <td colspan="1" rowspan="1">
-                    Puntaje Máximo
+                    <center>Puntaje Máximo</center>
                 </td>
                 
             </tr>
-
+            
 			<?php $i=97; ?>
            @foreach($preguntas as $row)
             
@@ -185,7 +185,7 @@
            
             <tr>
             	<td>
-            	<?php echo chr($i++);  ?>
+            	<center><?php echo chr($i++);  ?></center>
             	</td>
 
                 	
@@ -201,13 +201,13 @@
                     
             
         
-    		{{$row->Puntaje_evaluador}}
+    		<center>{{$row->Puntaje_evaluador}}</center>
     	</div>   
                 </td>
                 
                 <td colspan="2">
                     <div class="form-group">
-    		<?php echo $row->Justificacion_Comentarios; ?>
+    		<center><?php echo $row->Justificacion_Comentarios; ?></center>
     	</div>
 
                 </td>
@@ -460,7 +460,7 @@
         <td colspan="8">  
         <div class="panel panel-default">
             <div class="panel-body">
-                <strong>Nota:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum deserunt expedita, rem nesciunt omnis, tempore ex. In sit dolores totam quibusdam at veritatis nihil sint? Sunt veniam eius quis repellendus!
+                <strong>Nota:</strong>  
             </div>
         </div>
         </td>
@@ -500,7 +500,7 @@
         </td>  
 
 
-
+ 
 
 
         </tr>    

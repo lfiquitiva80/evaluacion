@@ -31,7 +31,7 @@ class documentos extends Mailable
     public function build()
     {
         //dd($this->invitacion);
-        return $this->markdown('emails.documentos.documentos')->subject('Documentos para el pago de la evaluacion del proyecto y/o artículo'.$this->invitacion->DescripcionProyecto_Articulo)->with([
+        return $this->markdown('emails.documentos.documentos')->subject('Documentos para la gestión de la evaluación del proyecto'.$this->invitacion->DescripcionProyecto_Articulo)->with([
                         'DescripcionProyecto_Articulo' => $this->invitacion->DescripcionProyecto_Articulo,
                         'id_evaluador' => $this->invitacion->id_evaluador,
                         'proponente' => $this->invitacion->CoordinadorProyecto_Articulo,

@@ -9,6 +9,7 @@
 @section('main-content')
 
 
+
 Fecha de Ingreso al sistema  {{ $date }}
 <div class="container">
 
@@ -358,7 +359,7 @@ Fecha de Ingreso al sistema  {{ $date }}
       <td>  Imprimir</td>
       <!--<td>  Evaluacion_par</td>-->
       <td>  Finalizar Evaluación</td>
-      <!--<td>  Acción </td>-->
+      <td>  Editar Calificación y Confidencialidad </td>
 
 
 
@@ -458,6 +459,8 @@ Fecha de Ingreso al sistema  {{ $date }}
 </div>
 @endif
           </td>
+
+          <td><a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Cargar o Subir Documento de CALIFICACION"><span class="glyphicon glyphicon-open-file" aria-hidden="true"> Editar</span></a></td>
 
 
 

@@ -171,9 +171,9 @@ class emailController extends Controller
 
        
 
-        $url="http://ocyt.org.co/";
-         //return redirect()->route('comunicados.index');
-        return \Redirect::to($url);
+        
+        return redirect()->route('respuestaevaluador');
+        //return \Redirect::to($url);
         }
 
 
@@ -243,10 +243,10 @@ class emailController extends Controller
               $invitacion->save();
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
-
+              $correofinanciera="financiera@ocyt.org.co";
           
           
-        \Mail::to($correo2->email)->send(new gestionpago($invitacion, $correo));
+        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo));
 
        
 
@@ -275,7 +275,7 @@ class emailController extends Controller
         // Ship order...
          
         \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
-
+        \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
        
 
          return redirect()->route('comunicados.index');
@@ -303,10 +303,11 @@ class emailController extends Controller
 
         \Mail::to($correo2->email)->send(new norespuesta($invitacion));
 
-        $url="http://ocyt.org.co/";
+        //$url="http://ocyt.org.co/";
         //return back();
         //return redirect()->route('comunicados.index');
-        return \Redirect::to($url);
+        //return \Redirect::to($url);
+        return redirect()->route('norespuestaevaluador');
         }
 
 
@@ -314,7 +315,7 @@ class emailController extends Controller
         { 
 
 
-          flash('Haz enviado un correo para la finalizacion de la evaluación!')->success();
+          flash('Se ha finalizado la evaluación')->success();
 
           Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Finalizacion del id: '.$id);
 
@@ -329,7 +330,7 @@ class emailController extends Controller
           $correo=\App\evaluadores::find($invitacion->id_evaluador);
           $correo2=\App\User::find($correo->id_users);
 
-          \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+         // \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
 
         //return back();
         //return redirect()->route('/home');

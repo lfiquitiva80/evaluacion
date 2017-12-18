@@ -22,5 +22,10 @@ public function setDescripcionProyecto_ArticuloAttribute($value)
         $this->attributes['DescripcionProyecto_Articulo'] = strtoupper($value);
     }
 
+public function criterios_evaluacion()
+    {
+    	return $this->hasMany(criterios_evaluacion::class, 'id_proyectos_articulos');
+    }   
+
 
 }

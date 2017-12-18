@@ -37,6 +37,7 @@ class invitacion extends Mailable
                         'id_evaluador' => $this->invitacion->id_evaluador,
                         'id' => $this->invitacion->id,
                         'Objetivo' => $this->invitacion->Objetivo,
+                        'precio' => $this->invitacion->pago_evaluador,
                     ]);
         
       

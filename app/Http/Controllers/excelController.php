@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\eventos_general;
 use App\participantesevento;
 use App\proyectos_articulos;
+use App\criterios_evaluacion;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
@@ -175,6 +176,7 @@ class excelController extends Controller
             ->select('users.*','evaluadores.*')
             ->get();
       //dd($products);
+            
 
         flash('Se descargo el archivo correctamente de todos los evaluadores!')->important();
         //$input = $request->all();
@@ -188,14 +190,17 @@ class excelController extends Controller
         })->export('xlsx');
     }
 
-
+//descarga la información del proyecto eloy // 
       public function eloy()
     {
-       $products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
+    /*$products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
             ->select('proyectos_articulos.*','criterios_evaluacion.*')
-            ->get();
+            ->get();*/
 
-
+          $products=proyectos_articulos::all();
+          $criterios_evaluacion=DB::table('criterios_evaluacion')->get();
+          
+          //dd($products);
 
             flash('Se descargo el archivo correctamente !')->important();
         //$input = $request->all();
@@ -209,6 +214,8 @@ class excelController extends Controller
             $excel->sheet('criterios_evaluacion', function($sheet) use ($products){
             $sheet->loadView('excel.eloy', ['products' => $products]);
             });
+
+
         })->export('xlsx');
     }
 

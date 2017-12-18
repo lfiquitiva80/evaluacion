@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use PDF;
 use App\participantesevento;
 use App\evaluacion_par;
+use Carbon\Carbon;
 
 class PDFcontroller extends Controller
 {
@@ -73,8 +74,10 @@ class PDFcontroller extends Controller
         $proyectos_articulos= proyectos_articulos::find($id);
 
         $evaluadores= evaluadores::find($proyectos_articulos->id_evaluador);
+
+        $now = Carbon::now('America/Bogota');
                 
-        $pdf = PDF::loadView('pdf.pdfeloy', compact('proyectos_articulos','id','evaluadores'));
+        $pdf = PDF::loadView('pdf.pdfeloy', compact('proyectos_articulos','id','evaluadores','now'));
        
 
         return $pdf->setPaper('letter', 'landscape')->setOptions(['defaultFont' => 'Helvetica'])->download('Certificado.pdf');
