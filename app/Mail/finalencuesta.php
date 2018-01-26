@@ -29,6 +29,6 @@ class finalencuesta extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.finalrespuesta.finalrespuesta')->subject('Gracias por la terminación proyecto y/o artículo'.$this->invitacion->DescripcionProyecto_Articulo);
+        return $this->markdown('emails.finalrespuesta.finalrespuesta')->subject('Gracias por la terminación proyecto y/o artículo '.$this->invitacion->DescripcionProyecto_Articulo);
     }
 }

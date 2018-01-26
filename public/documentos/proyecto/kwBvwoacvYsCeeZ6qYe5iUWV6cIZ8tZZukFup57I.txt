@@ -1,0 +1,32 @@
+Your Account Details
+
+Your account is now active.
+Main Hosting Details
+Control panel username
+b9_19308704
+Control panel password	**********
+Control panel URL
+cpanel.byethost9.com
+MySQL username
+b9_19308704
+MySQL password
+**********
+MySQL hostname
+sql308.byethost9.com
+FTP username
+b9_19308704
+FTP password
+**********
+FTP host name	ftp.byethost9.com
+
+
+
+
+MySQL DB Name: b9_19308704_sires
+MySQL User Name: b9_19308704
+pass: OCyT2016
+MySQL Host Name:	sql308.byethost9.com
+
+Your Website URL's
+Home page
+http://sires.byethost9.com

@@ -34,7 +34,7 @@
         <td>  id_Evaluador</td>
         <td> Correo Invitación</td>
         <td> Correo Aceptación</td>
-        <td> Correo Documentos</td>
+        <!--<td> Correo Documentos</td>-->
         <td> Correo Pago</td>
         <td> Correo Gestión Financiera</td>
         <td> Correo Certificado y pago</td>
@@ -78,7 +78,7 @@
         @endif
         </td>
 
-        <td>
+      <!--  <td>
        @if ($row->correo_documentos!=0)
         <a href="{{ $url = route('documentos',$row->id) }}" class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color:blue;"></a>
         @else
@@ -86,7 +86,7 @@
         @endif
 
 
-        </td>
+        </td>-->
         <td>
           @if ($row->correo_pago!=0)
         <a href="{{ $url = route('pagos',$row->id) }}" class="glyphicon glyphicon-usd" aria-hidden="true" style="color:blue;">

@@ -99,6 +99,15 @@ class proyectos_articulosController extends Controller
                         $rutaimagen4="";
                         }
 
+                        if ($request->hasFile('doc_cuenta_cobro')) {
+
+                        $rutaimagen5 = '/'.'documentos/'.$request->file('doc_cuenta_cobro')->store('proyecto');
+                        }else
+
+                         {
+                        $rutaimagen5="";
+                        }
+
                     $proy_pdf = new proyectos_articulos;
                     $proy_pdf->Nombre_convocatoria=$input['Nombre_convocatoria'];
                     $proy_pdf->Codigo_convocatoria=$input['Codigo_convocatoria'];
@@ -125,6 +134,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->calificacion_proyecto=$rutaimagen2;
                     $proy_pdf->img_proyecto=$rutaimagen3;
                     $proy_pdf->doc_confidencialidad=$rutaimagen4;
+                    $proy_pdf->doc_cuenta_cobro=$rutaimagen5;
                     $proy_pdf->categoria=$input['categoria'];
                     $proy_pdf->CoordinadorProyecto_Articulo=$input['CoordinadorProyecto_Articulo'];
                     $proy_pdf->id_evaluador=$input['id_evaluador'];
@@ -132,6 +142,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->plantilla=$input['plantilla'];
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
+                    $proy_pdf->centro_costos=$input['centro_costos'];
 
 
                     $proy_pdf->save();
@@ -195,7 +206,7 @@ class proyectos_articulosController extends Controller
         //$updates=DB::table('proyectos_articulos')->where('id',"=",$id)->get();
         $updates = proyectos_articulos::find($id);
 
-            if ($request->hasFile('proyecto_pdf')) {
+                         if ($request->hasFile('proyecto_pdf')) {
                         $rutaimagen = '/'.'documentos/'.$request->file('proyecto_pdf')->store('proyecto');
                          } else
 
@@ -231,6 +242,15 @@ class proyectos_articulosController extends Controller
                         $rutaimagen4=$updates->doc_confidencialidad;
                         }
 
+                        if ($request->hasFile('doc_cuenta_cobro')) {
+
+                        $rutaimagen5 = '/'.'documentos/'.$request->file('doc_cuenta_cobro')->store('proyecto');
+                        }else
+
+                         {
+                        $rutaimagen5=$updates->doc_cuenta_cobro;
+                        }
+
                     $proy_pdf = \App\proyectos_articulos::find($id);
                     $proy_pdf->Nombre_convocatoria=$input['Nombre_convocatoria'];
                     $proy_pdf->Codigo_convocatoria=$input['Codigo_convocatoria'];
@@ -255,6 +275,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->calificacion_proyecto=$rutaimagen2;
                     $proy_pdf->img_proyecto=$rutaimagen3;
                     $proy_pdf->doc_confidencialidad=$rutaimagen4;
+                    $proy_pdf->doc_cuenta_cobro=$rutaimagen5;
                     $proy_pdf->categoria=$input['categoria'];
                     $proy_pdf->CoordinadorProyecto_Articulo=$input['CoordinadorProyecto_Articulo'];
                     $proy_pdf->id_evaluador=$input['id_evaluador'];
@@ -262,6 +283,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->plantilla=$input['plantilla'];
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
+                    $proy_pdf->centro_costos=$input['centro_costos'];
 
 
 

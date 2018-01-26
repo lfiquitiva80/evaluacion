@@ -39,7 +39,7 @@
       <td>  Hoja de Vida</td>
       <td>  Documento</td>
       <td>  Cert.Bancario</td>
-      <td>  Cuenta de Cobro</td>
+      <!--<td>  Cuenta de Cobro</td>-->
       <td>  Rut</td>
       <td>  Acción </td>
 
@@ -86,14 +86,14 @@
              <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true" style="color:red;"></span></a>
             @endif
           </a></td>
-          <td><a href="{{$row->cuentacobro}}">
+          <!--<td><a href="{{$row->cuentacobro}}">
             @if(!empty($row->cuentacobro))
               <span class="glyphicon glyphicon-usd" aria-hidden="true"></span></a>
             @else
                <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-usd" aria-hidden="true" style="color:red;"></span></a>
             @endif
 
-          </a></td>
+          </a></td>-->
 
           <td>
           <a href="{{$row->Rut}}">

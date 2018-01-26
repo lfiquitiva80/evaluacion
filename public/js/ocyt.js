@@ -44,4 +44,38 @@
           }     
 
 
+   //Colocar un reloj en la parte principal del la página del HOME  con el id <p id="reloj"></p>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    // add a zero in front of numbers<10
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("reloj").innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(function(){ startTime() }, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+//funciones con jquery iu
+  $( function() {
+    $( document ).tooltip();
+  } );
+
+
+  $(document).ready(function() {
     
+    $( document ).mouseenter(function() {
+  $( '#containerPrincipal' ).effect( "slide", "slow" );
+});
+
+
+  });
+  

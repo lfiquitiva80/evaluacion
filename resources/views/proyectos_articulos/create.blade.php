@@ -110,7 +110,7 @@
 			<option value="Sin Pago">Sin Pago</option>
 		</select>
 		</div>
-
+	
 
 		<div class="form-group" >
 			<label for="">Precio Pago al Investigador o Evaluador</label>
@@ -123,8 +123,14 @@
 			<label for="">Proponente</label>
 			<input type="text" class="form-control" name="CoordinadorProyecto_Articulo" id="CoordinadorProyecto_Articulo" placeholder="Digite un CoordinadorProyecto_Articulo"  >
 		</div>
-	</div>
+	
 
+	<div class="form-group">
+			<label for="">Centro de Costos</label>
+			<input type="text" class="form-control" name="centro_costos" id="centro_costos" placeholder="Digite un Centro de Costos"  >
+		</div>
+	</div>
+	</div>
 
 
 	<div class="row">
@@ -164,6 +170,14 @@
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Documento de confidencialidad</label>
 		<input type="file" class="form-control" name="doc_confidencialidad" id="doc_confidencialidad" placeholder="Digite un nuevo 	img_proyecto">
+	</div>
+	</div>
+
+	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
+		<label for="">Documento de Cuenta de Cobro</label>
+		<input type="file" class="form-control" name="doc_cuenta_cobro" id="doc_cuenta_cobro" placeholder="Digite un nuevo 	img_proyecto">
 	</div>
 	</div>
 

@@ -202,13 +202,13 @@ $municipios = DB::table('municipios')->get();
 	</div>
 	</div>
 
-	<div class="form-group">
+	<!--<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="funcionario">Cuenta de Cobro</label>
 		<input type="file" class="form-control" name="cuentacobro" id="cuentacobro" placeholder="" value="{{$evaluadores->cuentacobro}}" >
 	</div>
-	</div>
+	</div>-->
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">

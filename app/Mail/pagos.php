@@ -31,7 +31,7 @@ class pagos extends Mailable
     {
 
         
-        return $this->markdown('emails.pagos.pagos')->subject('Pago de la evaluación del proyecto y/o artículo'.$this->invitacion->DescripcionProyecto_Articulo)->with([
+        return $this->markdown('emails.pagos.pagos')->subject('Pago de la evaluación del proyecto y/o artículo '.$this->invitacion->DescripcionProyecto_Articulo)->with([
                         'DescripcionProyecto_Articulo' => $this->invitacion->DescripcionProyecto_Articulo,
                         'id_evaluador' => $this->invitacion->id_evaluador,
                         'pago_evaluador' => $this->invitacion->pago_evaluador,

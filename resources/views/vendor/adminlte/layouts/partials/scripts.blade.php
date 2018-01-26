@@ -11,10 +11,14 @@
 <script src="{{ url (asset('/js/Chart.bundle.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/highcharts.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/vue.js')) }}" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
 <script src="node_modules/vue/dist/vue.js"></script>
 
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Ionicons -->

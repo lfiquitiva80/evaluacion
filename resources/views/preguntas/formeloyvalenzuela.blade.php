@@ -76,7 +76,7 @@
             </tr>
             <tr >
                 <td >
-
+                <center>
                 <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
@@ -88,9 +88,10 @@
                 }
                 
                 ?>	
-                
+                </center>
                 </td>
                 <td >
+                    <center>
                 	 <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
@@ -101,9 +102,10 @@
                 	echo date("m");
                 }
                 
-                ?>	
+                ?>	</center>
                 </td >
                 <td colspan="2">
+                    <center>
 				 <?php 
 
                 if (!empty($proyectos_articulos->Fecha_Devolucion_Evaluador)) {
@@ -115,7 +117,7 @@
                 }
                 
                 ?>
-                
+                </center>
                 </td>
                 
                
@@ -216,6 +218,27 @@
     	
     	</div>   
                 </td>
+
+             <script type="text/javascript">
+                 $(document).ready(function() {
+                    
+                     $('#Puntaje_evaluador').blur(function(event) {
+
+                        $('#Puntaje_evaluador').each(function(e) {
+                            var valor = parseInt($(this).val());
+                            var max= parseInt(this.max);
+                            if (valor>max) {
+                                alert("El Valor no está Permitido, debe ser menor a " + max);
+
+                            }    
+                        });
+                                                    
+                        
+                     });
+
+                 });
+
+             </script>   
                 
                 <td colspan="2">
                     <div class="form-group">
@@ -473,7 +496,7 @@
         <td colspan="8">  
         <div class="panel panel-default">
             <div class="panel-body">
-                <strong>Nota:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum deserunt expedita, rem nesciunt omnis, tempore ex. In sit dolores totam quibusdam at veritatis nihil sint? Sunt veniam eius quis repellendus!
+                <strong>Nota:</strong> 
             </div>
         </div>
         </td>
@@ -496,16 +519,18 @@
                 <br>
                 <br>
                 <br>    
-               
-                    @if(empty($evaluadores->FirmaDigital))
+                    
+                    @if(!empty($evaluadores->FirmaDigital))
+                    @if (Auth::user()->TipoUsers==0)
                     <img src="<?php echo "/".$evaluadores->FirmaDigital; ?>" height="40%" width="40%">
+                    @endif
                     @else
                     
                     @endif
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>    
-                <br><strong>Nombre:</strong>{{$evaluadores->NombreEvaluador}}
-                <br><strong>Documento: {{$evaluadores->Cedula}}</strong> 
+                <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
+                <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
                 </center>    
                 
                   

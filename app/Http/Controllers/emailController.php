@@ -167,7 +167,7 @@ class emailController extends Controller
        $correo2=\App\User::find($correo->id_users);  
          
         \Mail::to($correo2->email)->send(new aceptacion($invitacion));
-        \Mail::to($correo2->email)->send(new documentos($invitacion));
+       // \Mail::to($correo2->email)->send(new documentos($invitacion));
 
        
 
@@ -241,12 +241,13 @@ class emailController extends Controller
               $invitacion = \App\proyectos_articulos::find($id);
               $invitacion->correo_gestion_pago=1;
               $invitacion->save();
+              $evaluador = \App\evaluadores::find($invitacion->id_evaluador);
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
-              $correofinanciera="financiera@ocyt.org.co";
+              $correofinanciera="lfiquitiva@ocyt.org.co";
           
           
-        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo));
+        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
 
        
 

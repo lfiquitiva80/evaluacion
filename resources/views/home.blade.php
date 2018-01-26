@@ -10,7 +10,7 @@
 
 
 
-Fecha de Ingreso al sistema  {{ $date }}
+Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 <div class="container">
 
 
@@ -18,7 +18,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 
 </h2>
 
-<div class="jumbotron">
+<div class="jumbotron" id="containerPrincipal">
   <div class="container">
     <h1>PROCESO DE EVALUACIÓN DE PROYECTOS Y/O ARTÍCULOS</h1>
     <p>A continuación encontrará los siguientes pasos, para la correspondiente evaluación del Proyecto y/o artículo que fue aceptada en la notificación enviada por email</p>
@@ -339,6 +339,7 @@ Fecha de Ingreso al sistema  {{ $date }}
     <li class="active"><a data-toggle="tab" href="#Evaluaciones">Evaluaciones</a></li>
     <li><a data-toggle="tab" href="#Históricos">Históricos</a></li>
     <li><a data-toggle="tab" href="#Documentos">Documentos</a></li>
+    <!--<li><a data-toggle="tab" href="#cuentadecobro">Cuenta de Cobro</a></li>-->
     <!--<li><a data-toggle="tab" href="#Finalizar">Finalizar</a></li>-->
   </ul>
 
@@ -501,7 +502,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 
       <td>  Descripción Proyecto Artículo</td>
       <td>  Proyecto PDF</td>
-
+      <td>  Cuenta de Cobro </td>
       <td>  id_evaluador</td>
       <td>  Evaluacion_par</td>
       <td>  Certificado</td>
@@ -517,11 +518,22 @@ Fecha de Ingreso al sistema  {{ $date }}
     <tr>
 
           <td>{{$row->id}}</td>
-
-          <!--<td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}" target="_blank">{{$row->DescripcionProyecto_Articulo}}</a></td>-->
           <td>{{$row->DescripcionProyecto_Articulo}}</td>
-
           <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+
+          
+           @if (!empty($row->doc_cuenta_cobro))
+          <td><a href="{{$row->doc_cuenta_cobro}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de cuenta de cobro"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a></td>
+          @else
+          <td>
+
+          <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de Cuenta de Cobro, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
+
+          </td>
+          @endif
+          </td>
+
+        
 
           <td>
           <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}">
@@ -612,7 +624,7 @@ Fecha de Ingreso al sistema  {{ $date }}
       <td>  Hoja de Vida</td>
       <td>  Documento de identidad en PDF</td>
       <td>  Certificado Bancario</td>
-      <td>  Cuenta de Cobro</td>
+      <!--<td>  Cuenta de Cobro</td>-->
       <td>  Rut / Pasaporte </td>
 
       <td>  Acción </td>
@@ -628,7 +640,7 @@ Fecha de Ingreso al sistema  {{ $date }}
 
           <td>{{$row->id}}</td>
           <td><?php $comment = App\User::find($row->id_users); echo $comment->name;  ?></td>
-          <td><a href="{{$row->FirmaDigital}}" target="_blank">
+          <td><a href="{{$row->FirmaDigital}}" >
             @if(!empty($row->FirmaDigital))
               <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a>
             @else
@@ -636,7 +648,7 @@ Fecha de Ingreso al sistema  {{ $date }}
             @endif
           </a></td>
           <td>
-            <a href="{{$row->HV}}" target="_blank">
+            <a href="{{$row->HV}}" >
             @if(!empty($row->HV))
               <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></a>
             @else
@@ -645,31 +657,31 @@ Fecha de Ingreso al sistema  {{ $date }}
 
           </td>
            <td>
-          <a href="{{$row->Cedula_pdf}}" target="_blank">
+          <a href="{{$row->Cedula_pdf}}" >
              @if(!empty($row->Cedula_pdf))
               <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span></a>
             @else
               <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-modal-window" aria-hidden="true" style="color:red;"></span></a>
             @endif
           </a></td>
-          <td><a href="{{$row->Certificado_Bancario}}" target="_blank">
+          <td><a href="{{$row->Certificado_Bancario}}" >
              @if(!empty($row->Certificado_Bancario))
               <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></a>
             @else
              <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true" style="color:red;"></span></a>
             @endif
           </a></td>
-          <td><a href="{{$row->cuentacobro}}" target="_blank">
+          <!--<td><a href="{{$row->cuentacobro}}" target="_blank">
             @if(!empty($row->cuentacobro))
               <span class="glyphicon glyphicon-usd" aria-hidden="true"></span></a>
             @else
                <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-usd" aria-hidden="true" style="color:red;"></span></a>
             @endif
 
-          </a></td>
+          </a></td>-->
 
           <td>
-          <a href="{{$row->Rut}}" target="_blank">
+          <a href="{{$row->Rut}}" >
             @if(!empty($row->Rut))
               <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
             @else
@@ -699,12 +711,11 @@ Fecha de Ingreso al sistema  {{ $date }}
 </div>
 
     </div>
-  <div id="Finalizar" class="tab-pane fade">
-      <h3>Finalizar</h3>
-
-
-
       </div>
+
+
+     
+
 
 
 

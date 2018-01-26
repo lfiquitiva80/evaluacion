@@ -37,6 +37,7 @@
       <td>  Proyecto (Documentos)</td>
       <td>  Doc. Calificación</td>
       <td>  Doc. Confidencialidad</td>
+      <td>  Doc. Cuenta de Cobro</td>
       <td>  id_evaluador</td>
       <td>  Evaluación Dinámica</td>
       <td>  Imprimir</td>
@@ -78,6 +79,16 @@
           <td>
 
           <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de Confidencialidad, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
+
+          </td>
+          @endif
+
+          @if (!empty($row->doc_cuenta_cobro))
+          <td><a href="{{$row->doc_cuenta_cobro}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de cuenta de cobro"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
+          @else
+          <td>
+
+          <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de cuenta de Cbro, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
 
           </td>
           @endif

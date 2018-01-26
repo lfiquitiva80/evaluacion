@@ -198,9 +198,9 @@ class excelController extends Controller
             ->get();*/
 
           $products=proyectos_articulos::all();
-          $criterios_evaluacion=DB::table('criterios_evaluacion')->get();
-          
-          //dd($products);
+          $criterios_evaluacion=DB::table('criterios_evaluacion')->get()->first();
+            
+            //dd($criterios_evaluacion->proyectos_articulos);
 
             flash('Se descargo el archivo correctamente !')->important();
         //$input = $request->all();

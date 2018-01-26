@@ -135,9 +135,19 @@
 		<label for="">Documento de confidencialidad</label>
 		<input type="file" class="form-control" name="doc_confidencialidad" id="doc_confidencialidad" placeholder="Digite un nuevo 	doc_confidencialidad" value="{{$proyectos_articulos->doc_confidencialidad}}">
 	</div>
+	</div> 
+
+	 <div class="form-group">
+    	<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
+		<label for="NombreDepartamento">Cuenta de Cobro</label>
+		<input type="file" class="form-control" name="doc_cuenta_cobro" id="doc_cuenta_cobro" placeholder="Suba una cuenta de cobro" value="{{$proyectos_articulos->calificacion_proyecto}}">
+	</div>
 	</div>       
 
 	<div class="form-group"><input type="hidden" class="form-control" name="Nombre_convocatoria" id="Nombre_convocatoria" placeholder="Nombre_convocatoria" value="{{$proyectos_articulos->Nombre_convocatoria}}"
+></div>
+<div class="form-group"><input type="hidden" class="form-control" name="centro_costos" id="centro_costos" placeholder="Nombre_convocatoria" value="{{$proyectos_articulos->Nombre_convocatoria}}"
 ></div>
 <div class="form-group"><input type="hidden" class="form-control" name="Codigo_convocatoria" id="Codigo_convocatoria" placeholder="Codigo_convocatoria" value="{{$proyectos_articulos->Codigo_convocatoria}}"
 ></div>

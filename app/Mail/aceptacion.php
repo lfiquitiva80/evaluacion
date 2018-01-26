@@ -31,10 +31,11 @@ class aceptacion extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.aceptacion.aceptacion')->subject('Gracias por evaluar el proyecto y/o artículo'.$this->invitacion->DescripcionProyecto_Articulo)
+        return $this->markdown('emails.aceptacion.aceptacion')->subject('Gracias por evaluar el proyecto y/o artículo '.$this->invitacion->DescripcionProyecto_Articulo)
                         ->with([
                         'DescripcionProyecto_Articulo' => $this->invitacion->DescripcionProyecto_Articulo,
                         'id_evaluador' => $this->invitacion->id_evaluador,
+                        'proponente' => $this->invitacion->CoordinadorProyecto_Articulo,
                     ]);;
     }
 }

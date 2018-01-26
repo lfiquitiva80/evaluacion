@@ -342,8 +342,8 @@
                 
                 <center>
 
-                <br>Fecha de revisión (Director DIEF de facultad):
-                <br>Certífico que la información consignada fue diligenciada por el par evaluador correspondiente.
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>

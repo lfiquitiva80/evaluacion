@@ -39,7 +39,25 @@
 
   {!! Form::close() !!}
 
-  <a href="{{ $url = route('preguntaseloy', $id) }}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Click para previsualizar"><i class="fa fa-eye" aria-hidden="true"></i> Previsualizar</a>  
+  <?php 
+  if (is_null($id)) {
+
+   $formdiseno= App\proyectos_articulos::all()->first();  
+
+  } else {
+   
+   $formdiseno= App\proyectos_articulos::find($id);  
+  }
+  
+  
+  
+  ?>
+
+  @if($formdiseno->plantilla=="PlantillaEloy")
+  <a href="{{ $url = route('preguntaseloy', $id) }}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Click para previsualizar"><i class="fa fa-eye" aria-hidden="true"></i> Previsualizar Eloy</a> 
+  @else
+  <a href="{{ $url = route('preguntas.edit', $id) }}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Click para previsualizar"><i class="fa fa-eye" aria-hidden="true"></i> Previsualizar Innpulsa</a> 
+  @endif
   </div>
    </div>
  </div>

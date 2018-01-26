@@ -8,6 +8,7 @@
                                 <th>DescripcionProyecto_Articulo</th>
                                 <th>area</th>
                                 <th>id_evaluador</th>
+                                <th>prueba</th>
                                 <th>Fecha de Evaluación</th>
                                 <th>recomendacion_proyecto</th>
                                 <th>caracteristicas</th>
@@ -30,6 +31,8 @@
                                       <td>{{$row->DescripcionProyecto_Articulo}}</td>
                                       <td>{{$row->area}}</td>
                                       <td><?php $comment = App\evaluadores::find($row->id_evaluador); echo $comment->NombreEvaluador?></td>
+
+                                      <td>{{$productsts->criterios_evaluacion()}}</td>
 
                                       <td>{{$row->Fecha_Devolucion_Evaluador}}</td>
                                     

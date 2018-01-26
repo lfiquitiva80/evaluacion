@@ -29,10 +29,10 @@
                 height: 100%;
             }
             body {
-                margin: 0;
+                margin: 1cm;
                 padding: 0;
-                width: 100%;
-                color: black;
+                width: 25%;
+                color: white;
                 display: table;
                 font-weight: 100;
                 font-family: 'arial';
@@ -41,7 +41,7 @@
                 
             }
             .container {
-                text-align: center;
+                text-align: justify;
                 display: table-cell;
                 vertical-align: middle;
             }
@@ -50,7 +50,7 @@
                 display: inline-block;
             }
             .title {
-                font-size: 72px;
+                font-size:  42px;
                 margin-bottom: 40px;
             }
         </style>

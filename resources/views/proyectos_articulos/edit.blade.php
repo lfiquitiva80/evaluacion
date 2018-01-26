@@ -100,6 +100,13 @@
 	</div>
 
 	<div class="form-group">
+			<label for="">Centro de Costos</label>
+			<input type="text" class="form-control" name="centro_costos" id="centro_costos" placeholder="Digite un Centro de Costos" value="{{$proyectos_articulos->centro_costos}}" >
+		</div>
+	
+	
+
+	<div class="form-group">
 		<label for="">Precio Pago al Investigador o Evaluador</label>
 		<input type="text" class="form-control" name="pago_evaluador" id="pago_evaluador" placeholder="Digite un pago_evaluador"  value="{{$proyectos_articulos->pago_evaluador}}">
 	</div>
