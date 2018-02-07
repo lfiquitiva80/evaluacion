@@ -23,7 +23,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. Agradecemos su amable colaboraci&oacute;n y participaci&oacute;n como evaluador de los proyectos de investigaci&oacute;n de la {{$proponente}}</span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">. Para los fines pertinentes, adjunto remito los siguientes documentos:</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. Agradecemos su amable colaboraci&oacute;n y participaci&oacute;n como evaluador de los proyectos de investigaci&oacute;n de la {{$proponente}}</span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">. Para los fines pertinentes, en la plataforma encontrar&aacute; los siguientes documentos:</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 

@@ -317,7 +317,7 @@
                 <td colspan="8">
                  <div class="form-group">
                 <label for="">Concepto final de la evaluacion del Proyecto</label>
-                <textarea class="ckeditor" name="concepto_final" id="concepto_final" placeholder="concepto_final" value="{{$row->concepto_final}}">{{$row->concepto_final}}</textarea>
+                <textarea class="text" name="concepto_final" id="concepto_final" placeholder="concepto_final" value="{{$row->concepto_final}}" cols="140" rows="10">{{$row->concepto_final}}</textarea>
                 </div>
 
                 </td>
@@ -365,7 +365,7 @@
 
          <tr>
         <td colspan="8">  
-        <div class="panel panel-default">
+        <!--<div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><strong>Para uso exclusivo de las Direcciones de investigación y Extensión de Facultad</strong></h3>
             </div>
@@ -379,18 +379,27 @@
                 <br>
                 <br>
                 <br>
-                <br>    
+                <br>
+                 @if(!empty($evaluadores->FirmaDigital))
+                    @if (Auth::user()->TipoUsers==0)
+                    <img src="<?php echo "/".$evaluadores->FirmaDigital; ?>" height="40%" width="40%">
+                    @endif
+                    @else
+                    
+                    @endif    
                 
                     
                     <br>__________________________________________________
-                <br>Director de Investigación y Extensión de Facultad
-                </center>    
+                <br><strong>FIRMA DE EVALUADOR</strong> -->   
+                <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
+                <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
+                <!--</center>    
                 
                   
 
                 </div>
             </div>
-        </div>
+        </div>-->
         </td>  
 
 

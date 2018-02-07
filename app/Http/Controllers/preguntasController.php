@@ -78,8 +78,9 @@ class preguntasController extends Controller
        Log::info('El usuario '. \Auth::user()->name .' Se mostro la vista para el Id: '.$id); 
        $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();
          $proyectos_articulos= proyectos_articulos::find($id);
+         $evaluadores=DB::table('evaluadores')->where('id',"=",$proyectos_articulos->id_evaluador)->first();
             //dd($proyectos_articulos);
-        return view('preguntas.show', compact('preguntas','proyectos_articulos','id'));
+        return view('preguntas.show', compact('preguntas','proyectos_articulos','id','evaluadores'));
     }
 
     /**
@@ -92,9 +93,10 @@ class preguntasController extends Controller
     {
          $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();
          $proyectos_articulos= proyectos_articulos::find($id);
+         $evaluadores=DB::table('evaluadores')->where('id',"=",$proyectos_articulos->id_evaluador)->first();
          Log::info('El usuario '. \Auth::user()->name .' Se ingreso a edicion para el Id: '.$id); 
             //dd($proyectos_articulos);
-        return view('preguntas.edit', compact('preguntas','proyectos_articulos','id'));
+        return view('preguntas.edit', compact('preguntas','proyectos_articulos','id','evaluadores'));
     }
 
     /**

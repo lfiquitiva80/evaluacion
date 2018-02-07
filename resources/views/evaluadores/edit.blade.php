@@ -46,6 +46,13 @@
 	</div>
 
 	<div class="form-group">
+		<label for="NombreDepartamento">Fecha de Nacimiento</label>
+		<input type="date" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->Fecha_Nacimiento}}">Su fecha de Nacimiento es: {{$evaluadores->Fecha_Nacimiento}}
+	</div>
+
+	
+
+	<div class="form-group">
 		<label for="email">email (*) Campo Obligatorio</label>
 		<input type="text" class="form-control" name="email" id="email" placeholder="Digite una email"  value="{{$evaluadores->email}}">
 	</div>
@@ -123,6 +130,16 @@
 		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Direccion" value="{{$evaluadores->Direccion}}" >
 	</div>
 
+		
+
+
+
+	<div class="form-group">
+		<label for="Direccion">Nombre del Banco</label>
+		<input type="text" class="form-control" name="nombrebanco" id="nombrebanco" placeholder="Digite nombre del Banco" value="{{$evaluadores->nombrebanco}}" >
+	</div>
+	
+
 
 
 	<div class="form-group">
@@ -175,6 +192,12 @@ $municipios = DB::table('municipios')->get();
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="NombreDepartamento">Firma Digital</label>
 		<input type="file" class="form-control" name="FirmaDigital" id="FirmaDigital" placeholder="Suba la hoja de Vida"  value="{{$evaluadores->FirmaDigital}}" >
+		@if(!empty($evaluadores->FirmaDigital))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 	</div>
 	</div>
 
@@ -183,6 +206,12 @@ $municipios = DB::table('municipios')->get();
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="NombreDepartamento">Hoja de Vida</label>
 		<input type="file" class="form-control" name="HV" id="HV" placeholder="Suba la hoja de Vida"  value="{{$evaluadores->HV}}" >
+		@if(!empty($evaluadores->HV))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 	</div>
 	</div>
 
@@ -191,6 +220,12 @@ $municipios = DB::table('municipios')->get();
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="funcionario">Subir el Documento de Identidad</label>
 		<input type="file" class="form-control" name="Cedula_pdf" id="Cedula_pdf" placeholder="Digite el cargo" value="{{$evaluadores->Cedula_pdf}}" >
+		@if(!empty($evaluadores->Cedula_pdf))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 	</div>
 	</div>
 
@@ -199,22 +234,27 @@ $municipios = DB::table('municipios')->get();
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="funcionario">Certificado_Bancario</label>
 		<input type="file" class="form-control" name="Certificado_Bancario" id="Certificado_Bancario" placeholder="Digite Certificado_Bancario" >
+		@if(!empty($evaluadores->Certificado_Bancario))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 	</div>
 	</div>
 
-	<!--<div class="form-group">
-		<div class="btn btn-default btn-file">
-			<i class="fa fa-paperclip"></i> Attachment
-		<label for="funcionario">Cuenta de Cobro</label>
-		<input type="file" class="form-control" name="cuentacobro" id="cuentacobro" placeholder="" value="{{$evaluadores->cuentacobro}}" >
-	</div>
-	</div>-->
-
+		
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Attachment
 		<label for="funcionario">Rut si es nacionalidad Colombiana o Pasaporte si es extranjero</label>
 		<input type="file" class="form-control" name="Rut" id="Rut" placeholder="Rut" value="{{$evaluadores->Rut}}" >
+		@if(!empty($evaluadores->Rut))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 		
 	</div>
 	</div>

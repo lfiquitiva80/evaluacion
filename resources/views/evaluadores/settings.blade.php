@@ -59,7 +59,7 @@
 			<label for="">Usuario:</label>
 
 			 @if (Auth::user()->TipoUsers==0)
-			<select name="id_users" id="id_users" class="form-control" required="required" placeholder="" disabled>
+			<select name="id_users" id="id_users" class="form-control" required="required" placeholder="" >
 
 
 			  @foreach($Usuarios as $row)

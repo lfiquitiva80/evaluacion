@@ -139,6 +139,7 @@ class evaluadoresController extends Controller
                     $documentos->FirmaDigital=$patch6;
                     $documentos->TipoDocumento=$request->input('TipoDocumento');
                     $documentos->Ciudad_expedicion=$request->input('Ciudad_expedicion');
+                    $documentos->Fecha_Nacimiento=$request->input('Fecha_Nacimiento');
 
                     $documentos->save();
 
@@ -246,7 +247,7 @@ class evaluadoresController extends Controller
         
 
         //$updates=DB::table('evaluadores')->where('id',"=",$id)->update($input); 
-        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal'),'TipoDocumento' => $request->input ('TipoDocumento'),'Ciudad_expedicion' => $request->input ('Ciudad_expedicion')]);
+        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal'),'TipoDocumento' => $request->input ('TipoDocumento'),'Ciudad_expedicion' => $request->input ('Ciudad_expedicion'),'Fecha_Nacimiento' => $request->input ('Fecha_Nacimiento')]);
 
 
       

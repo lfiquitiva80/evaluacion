@@ -1,5 +1,5 @@
 @component('mail::message')
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Bogot&aacute;,</span></span><span style="font-family:&quot;Arial&quot;,sans-serif">&nbsp;D.C.,&nbsp;</span><?php
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Bogot&aacute;,</span></span><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">&nbsp;D.C.,&nbsp;<?php
  
 $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
 $meses = array("enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
@@ -7,17 +7,17 @@ $meses = array("enero","febrero","marzo","abril","mayo","junio","julio","agosto"
 echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 //Salida: Viernes 24 de Febrero del 2012
  
-?></span></span></span></p>
+?></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo.</span></span></span></span></span></p>
+<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo.</span></span></span></span></span></p>-->
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><strong><span style="color:#000000; font-family:Arial, sans-serif"><span style="font-size:14.6667px">Area Financiera</span></span></strong></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Reciba un cordial saludo. De manera atenta, agradezco&nbsp; su ayuda con la gesti&oacute;n del pago del jurado evaluador <strong><em><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. De manera atenta, agradezco&nbsp; su ayuda con la gesti&oacute;n del pago del jurado evaluador <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
-          ?></em></strong>, quien nos apoy&oacute; en el proyecto <em>{{$DescripcionProyecto_Articulo}}</em> que en la actualidad se est&aacute; desarrollando para la <em>{{$Objetivo}}</em> /( Centro de Costos: {{$centrocostos}} ). Una vez se realice el pago, agradecer&iacute;a conf&iacute;rmar,  para de esta manera informar al jurado y remitir el certificado por los servicios prestados.</span></span></span></p>
+          ?>, quien nos apoy&oacute; en el proyecto {{$DescripcionProyecto_Articulo}} que en la actualidad se est&aacute; desarrollando para la {{$Objetivo}}/( Centro de Costos: {{$centrocostos}} ). Una vez se realice el pago, agradecer&iacute;a conf&iacute;rmar,  para de esta manera informar al jurado y remitir el certificado por los servicios prestados.</span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
@@ -47,7 +47,7 @@ $cuentadecobro2 = asset($cuentadecobro2);
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">{{ Auth::user()->name }} </span></span></strong></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">{{ Auth::user()->name }} </span></span></strong></span></span></p>
 
 
 

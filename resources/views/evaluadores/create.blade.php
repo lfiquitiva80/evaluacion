@@ -49,6 +49,11 @@
 		<label for="">Nombre Evaluador</label>
 		<input type="text" class="form-control" name="NombreEvaluador" id="NombreEvaluador" placeholder="Digite el Nombre del evaluador">
 	</div>
+
+	<div class="form-group">
+		<label for="">Fecha de Nacimiento</label>
+		<input type="date" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento" placeholder="Digite la fecha de Nacicimiento">
+	</div>
 	
 	<div class="form-group">
 		<label for="email">email(*) Campo Obligatorio</label>
@@ -86,28 +91,28 @@
 	<div class="form-group ">
 		
 		<label for="">Documentos de Identidad</label>
-		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula"  >
+		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite el documento de identidad"  >
 		
 	</div>
 
 	<div class="form-group ">
 		
 		<label for="">Ciudad de Expedición del Documento de Identidad</label>
-		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula"  >
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite la Ciudad de Expedición"  >
 		
 	</div>
 
 	<div class="form-group">
 		<label for="Telefono">Teléfono</label>
-		<input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="Digite un Telefono"  >
+		<input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="Digite un Teléfono"  >
 	</div>
 
 	<div class="form-group">
 		<label for="Direccion">Dirección</label>
-		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Direccion"  >
+		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Dirección"  >
 	</div>
 
-	
+		
 
 	<div class="form-group">
 		<label for="Codigo_postal">Código_postal</label>
@@ -145,13 +150,13 @@ $municipios = DB::table('municipios')->get();
 </select>
 </div>-->
 
-	<div class="form-group">
+	<!--<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="">Firma Digital</label>
 		<input type="file" class="form-control" name="FirmaDigital" id="FirmaDigital" placeholder="Suba la hoja de Vida" value="Sin informacion">
 		</div>
-	</div>
+	</div>-->
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
@@ -177,13 +182,13 @@ $municipios = DB::table('municipios')->get();
 	</div>
 	</div>
 
-	<div class="form-group">
+	<!--<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Adjuntar
 		<label for="funcionario">Cuenta de Cobro</label>
 		<input type="file" class="form-control" name="cuentacobro" id="cuentacobro" placeholder="" value="Sin informacion">
 	</div>
-	</div>
+	</div>-->
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">

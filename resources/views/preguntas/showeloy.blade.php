@@ -460,7 +460,7 @@
         <td colspan="8">  
         <div class="panel panel-default">
             <div class="panel-body">
-                <strong>Nota:</strong>  
+                <strong></strong>  
             </div>
         </div>
         </td>
@@ -468,7 +468,7 @@
 
          <tr>
         <td colspan="8">  
-        <div class="panel panel-default">
+        <!--<div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><strong>Para uso exclusivo de los datos del evaluador : </strong></h3>
             </div>
@@ -491,16 +491,16 @@
                     
                     @endif
                     <br>__________________________________________________
-                <br><strong>FIRMA DE EVALUADOR</strong>    
+                <br><strong>FIRMA DE EVALUADOR</strong>    -->
                 <br><strong>Nombre:</strong>{{$evaluadores->NombreEvaluador}}
                 <br><strong>Documento: {{$evaluadores->Cedula}}</strong> 
-                </center>
+                <!--</center>
                 
                   
 
                 </div>
             </div>
-        </div>
+        </div>-->
         </td>  
 
 

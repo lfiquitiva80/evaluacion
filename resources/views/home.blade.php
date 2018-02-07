@@ -18,7 +18,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
 </h2>
 
-<div class="jumbotron" id="containerPrincipal">
+<div class="jumbotron" >
   <div class="container">
     <h1>PROCESO DE EVALUACIÓN DE PROYECTOS Y/O ARTÍCULOS</h1>
     <p>A continuación encontrará los siguientes pasos, para la correspondiente evaluación del Proyecto y/o artículo que fue aceptada en la notificación enviada por email</p>
@@ -353,7 +353,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
       <td>  id  </td>
       <td>  Descripción Proyecto Articulo</td>
       <td>  Proyecto (Documentos)</td>
-      <td>  Doc. Calificación</td>
+      <td>  Cuenta de Cobro</td>
       <td>  Doc. Confidencialidad</td>
       <td>  Evaluador</td>
       <td>  Evaluación Dinámica</td>
@@ -381,7 +381,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <td>Falta por subir</td>
           @endif
 
-          @if (!empty($row->calificacion_proyecto))
+        <!--  @if (!empty($row->calificacion_proyecto))
           <td><a href="{{$row->calificacion_proyecto}}"  data-toggle="tooltip" data-placement="top" title="Descargar el archivo de CALIFICACION" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" ></span></a>
           @else
           <td>
@@ -389,9 +389,14 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info"  data-toggle="tooltip" data-placement="top" title="Cargar o Subir Documento de CALIFICACION"><span class="glyphicon glyphicon-open-file" aria-hidden="true" ></span></a>
 
           </td>
-          @endif
+          @endif-->
+          <td>
+          <a href="{{ $url = route('cuentacobro', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Revisar la cuenta de Cobro">Revisar la cuenta de Cobro</a>
 
-           @if (!empty($row->doc_confidencialidad))
+          </td>
+
+
+          <!-- @if (!empty($row->doc_confidencialidad))
           <td><a href="{{$row->doc_confidencialidad}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de Confidencialidad"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
           @else
           <td>
@@ -399,7 +404,14 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de Confidencialidad, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
 
           </td>
-          @endif
+          @endif-->
+
+        
+          <td>
+          <a href="{{ $url = route('confidencialidad', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad">Revisar Confidencialidad</a>
+
+          </td>
+        
 
 
           </td>
@@ -428,7 +440,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
 
   <td>
-  @if (empty($row->calificacion_proyecto) || empty($row->doc_confidencialidad))
+  @if (empty($row->Fecha_inicio))
   Falta iniciar la evaluación
   @else
 
@@ -564,8 +576,13 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 -->
         </td>
         <td>
+          @if($row->certificadoypago==1)
           <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado</a>
+          @else
+          
+          @endif
         </td>
+        <td><a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Cargar o Subir Documento de CALIFICACION"><span class="glyphicon glyphicon-open-file" aria-hidden="true"> Editar</span></a></td>
 
 
 

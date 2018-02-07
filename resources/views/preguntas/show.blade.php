@@ -217,7 +217,8 @@
                     
             
         
-            <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" step="10" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}">
+            <!--<input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" step="10" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}">-->
+            <br>{{$row->Puntaje_evaluador}}</br>
         </div>   
                 </td>
                 <td>
@@ -334,7 +335,7 @@
 
          <tr>
         <td colspan="8">  
-        <div class="panel panel-default">
+        <!--<div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><strong>Para uso exclusivo de las Direcciones de investigación y Extensión de Facultad</strong></h3>
             </div>
@@ -349,17 +350,26 @@
                 <br>
                 <br>
                 <br>    
+                 @if(!empty($evaluadores->FirmaDigital))
+                    @if (Auth::user()->TipoUsers==0)
+                    <img src="<?php echo "/".$evaluadores->FirmaDigital; ?>" height="40%" width="40%">
+                    @endif
+                    @else
+                    
+                    @endif    
                 
                     
                     <br>__________________________________________________
-                <br>Director de Investigación y Extensión de Facultad
-                </center>    
+                <br><strong>FIRMA DE EVALUADOR</strong>-->    
+                <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
+                <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
+                <!--</center>    
                 
                   
 
                 </div>
             </div>
-        </div>
+        </div>-->
         </td>  
 
 

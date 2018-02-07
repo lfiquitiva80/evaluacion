@@ -24,8 +24,12 @@ public function setDescripcionProyecto_ArticuloAttribute($value)
 
 public function criterios_evaluacion()
     {
-    	return $this->hasMany(criterios_evaluacion::class, 'id_proyectos_articulos');
-    }   
+    	return $this->belongsTo(criterios_evaluacion::class,'id');
+    } 
 
+public function evaluadores()
+    {
+    	return $this->belongsTo(evaluadores::class,'id_evaluador');
+    } 
 
 }

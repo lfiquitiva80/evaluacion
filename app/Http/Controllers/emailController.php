@@ -322,6 +322,7 @@ class emailController extends Controller
 
           $invitacion = \App\proyectos_articulos::find($id);
           $invitacion->proyecto_completado=1;
+          $invitacion->correo_pago=1;
           $date = Carbon::now();
           $invitacion->Fecha_Devolucion_Evaluador=$date;
 
@@ -331,7 +332,10 @@ class emailController extends Controller
           $correo=\App\evaluadores::find($invitacion->id_evaluador);
           $correo2=\App\User::find($correo->id_users);
 
-         // \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+         \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+         \Mail::to($correo2->email)->send(new pagos($invitacion));
+
+
 
         //return back();
         //return redirect()->route('/home');

@@ -22,7 +22,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. Agradecemos su amable colaboraci&oacute;n y participaci&oacute;n como evaluador de los proyectos de investigaci&oacute;n de la {{$proponente}}</span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">. Para los fines pertinentes, adjunto remito los siguientes documentos:</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. Agradecemos su amable colaboraci&oacute;n y participaci&oacute;n como evaluador de los proyectos de investigaci&oacute;n de la {{$proponente}}</span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">. Para los fines pertinentes, en la plataforma encontrar&aacute; los siguientes documentos:</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
@@ -39,8 +39,10 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 A continuación, podrá ingresar a la plataforma para gestión de evaluaciones del OCyT a través del siguiente usuario =   <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->email;
-          ?>
-
+          ?> y la contraseña = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          $comment2 = App\User::find($comment->id_users); echo "OCyT2017";
+?>
+<!--mcrypt_decrypt($comment2->password)-->
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 Si ya tiene contraseña asignada por favor dar click al siguiente boton verde.
@@ -54,12 +56,12 @@ Ingresar a la página de evaluación.
 <?php $url = asset('password/reset');?>
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-Si no tiene contraseña por favor dar click en el boton azul
+<!--Si no tiene contraseña por favor dar click en el boton azul
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 @component('mail::button', ['url' => $url, 'color' => 'blue'])
-Ingresar para confirmar contraseña.
-@endcomponent
+Ingresar para confirmar contraseñ<a href="" class=""></a>
+@endcomponent-->
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 Adicionalmente, en la plataforma en la parte superior derecha en el icono de ayuda podrá descargar el manual para evaluadores, en caso de que tenga inquietudes sobre la plataforma. 
@@ -75,18 +77,18 @@ Adicionalmente, en la plataforma en la parte superior derecha en el icono de ayu
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Sin otro particular, cordialmente,</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Sin otro particular, cordialmente,</span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Clara In&eacute;s Pardo Mart&iacute;nez</span></span></strong></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Clara In&eacute;s Pardo Mart&iacute;nez</span></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Directora Ejecutiva</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Directora Ejecutiva</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Observatorio Colombiano de Ciencia y Tecnolog&iacute;a</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Observatorio Colombiano de Ciencia y Tecnolog&iacute;a</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><a href="http://ocyt.org.co" style="color:blue; text-decoration:underline">http://ocyt.org.co</a></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"><a href="http://ocyt.org.co" style="color:blue; text-decoration:underline">http://ocyt.org.co</a></span></span></span></span></p>
 
 <div>
 <div>

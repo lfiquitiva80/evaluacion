@@ -191,16 +191,18 @@ class excelController extends Controller
     }
 
 //descarga la información del proyecto eloy // 
-      public function eloy()
+      
+public function eloy()
     {
-    /*$products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
+           try {
+        
+       /*$products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
             ->select('proyectos_articulos.*','criterios_evaluacion.*')
             ->get();*/
 
-          $products=proyectos_articulos::all();
-          $criterios_evaluacion=DB::table('criterios_evaluacion')->get()->first();
-            
-            //dd($criterios_evaluacion->proyectos_articulos);
+             $products=proyectos_articulos::where('plantilla','PlantillaEloy')->get();
+
+             //dd($products);
 
             flash('Se descargo el archivo correctamente !')->important();
         //$input = $request->all();
@@ -214,10 +216,61 @@ class excelController extends Controller
             $excel->sheet('criterios_evaluacion', function($sheet) use ($products){
             $sheet->loadView('excel.eloy', ['products' => $products]);
             });
-
-
         })->export('xlsx');
+
+          } 
+            
+              catch(\Exception $e)
+        {
+            //$var_error=$e->get_message();
+            flash('No puedes sacar el reporte porque tiene un proyecto sin asignar ninguna pregunta, para ELOY por favor revisar!')->error()->important();
+        } 
+
+        return redirect()->route('excel.index');
     }
+
+
+
+    public function innpulsa()
+    {
+           try {
+        
+       /*$products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
+            ->select('proyectos_articulos.*','criterios_evaluacion.*')
+            ->get();*/
+
+             $products=proyectos_articulos::where('plantilla','PlantillaInnpulsa')->get();
+
+             //dd($products);
+
+            flash('Se descargo el archivo correctamente !')->important();
+        //$input = $request->all();
+
+        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte para Innpulsa');
+
+           //$monolog = Log::getMonolog();
+        //dd($monolog);
+
+        \Excel::create('criterios_evaluacion', function($excel)use ($products) {
+            $excel->sheet('criterios_evaluacion', function($sheet) use ($products){
+            $sheet->loadView('excel.innpulsa', ['products' => $products]);
+            });
+        })->export('xlsx');
+
+          } 
+            
+              catch(\Exception $e)
+        {
+            //$var_error=$e->get_message();
+            flash('No puedes sacar el reporte porque tiene un proyecto sin asignar ninguna pregunta, para INNPULSA por favor revisar!')->error()->important();
+        } 
+
+        return redirect()->route('excel.index');
+    }
+
+
+
+
 
 
        public function allcriterios()

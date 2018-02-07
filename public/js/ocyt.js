@@ -70,12 +70,5 @@ function checkTime(i) {
   } );
 
 
-  $(document).ready(function() {
-    
-    $( document ).mouseenter(function() {
-  $( '#containerPrincipal' ).effect( "slide", "slow" );
-});
-
-
-  });
+  
   

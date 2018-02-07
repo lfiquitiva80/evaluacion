@@ -23,7 +23,7 @@
 <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 	
 
-	<div class="panel panel-success">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title"></h3>
 		</div>
@@ -66,16 +66,20 @@
 	</select>
 	</div>
 
-	<div class="form-group">
-		<label for="">Imagen del proyecto</label>
-		<input type="file" class="form-control" name="img_proyecto" id="img_proyecto" placeholder="Digite un nuevo 	img_proyecto" value="{{$proyectos_articulos->img_proyecto}}">
-	</div>
-
+	
+		
 
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Proyecto PDF</label>
 		<input type="file" class="form-control" name="proyecto_pdf" id="proyecto_pdf" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->proyecto_pdf}}">
+		@if(!empty($proyectos_articulos->proyecto_pdf))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
 	</div>
 
 	<div class="form-group" >
@@ -145,7 +149,9 @@
 	</div>
 
 
-
+	<center><button type="submit" class="btn btn-info ">Actualizar</button>
+	</center>
+	<p>
 
 	<div class="row">
         <div class="col-md-12">
@@ -157,22 +163,49 @@
               <h3 class="box-title">Datos Adicionales para otros proyectos</h3>
 
               <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" ><i class="fa fa-minus"></i>
                 </button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" >
               <div style="width:100%;">
              
     <div class="form-group">
+    	<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="NombreDepartamento">Calificacion proyecto</label>
 		<input type="file" class="form-control" name="calificacion_proyecto" id="calificacion_proyecto" placeholder="Digite un nuevo 	calificacion_proyecto" value="{{$proyectos_articulos->calificacion_proyecto}}">
+		@if(!empty($proyectos_articulos->calificacion_proyecto))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+	</div>
+
+	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
+		<label for="">Imagen del proyecto</label>
+		<input type="file" class="form-control" name="img_proyecto" id="img_proyecto" placeholder="Digite un nuevo 	img_proyecto" value="{{$proyectos_articulos->img_proyecto}}">
+		@if(!empty($proyectos_articulos->img_proyecto))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
+
 	</div> 
 
 	<div class="form-group">
+		<div class="btn btn-default btn-file">
+			<i class="fa fa-paperclip"></i> Attachment
 		<label for="">Documento de confidencialidad</label>
 		<input type="file" class="form-control" name="doc_confidencialidad" id="doc_confidencialidad" placeholder="Digite un nuevo 	doc_confidencialidad" value="{{$proyectos_articulos->doc_confidencialidad}}">
+		@if(!empty($proyectos_articulos->doc_confidencialidad))
+		<i class="fa fa-check-square" aria-hidden="true"> </i>
+		@else
+		<i class="fa fa-times-circle" aria-hidden="true"> </i>
+		@endif
 	</div>       
 
 	<div class="form-group"><label for="">Nombre_convocatoria</label><input type="text" class="form-control" name="Nombre_convocatoria" id="Nombre_convocatoria" placeholder="Nombre_convocatoria" value="{{$proyectos_articulos->Nombre_convocatoria}}"

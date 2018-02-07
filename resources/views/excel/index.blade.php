@@ -25,11 +25,28 @@
 		  <a href="{{ $url = route('allusers') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los usuarios</a>
 		  <a href="{{ $url = route('allevaluadores') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los evaluadores</a>
 		  <a href="{{ $url = route('allcriterios') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los criterios de evaluación</a>
-		  <a href="{{ $url = route('eloy') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Todos los criterios de evaluación por Plantilla</a>
-		  </center>
+		  
+			
+			
+
+		 
 		</div>
-	</div>
+			<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Reportes a Excel por plantillas
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="{{ $url = route('eloy') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Reporte en Excel Proyecto Eloy</a></li>
+    <li><a href="{{ $url = route('innpulsa') }}" class="list-group-item"><i class="fa fa-table" aria-hidden="true"></i>Reporte en Excel Proyecto Innpulsa</a></li>
+    	
+  </ul>
 </div>
+ </center>
+	</div>
+
+</div>
+
 			
 		</div>
 	</div>	

@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 use App\Mail\confirmacionpagofinanciera;
+use App\proyectos_articulos;
+use App\cuentacobro;
 
 
 class gestionpagoController extends Controller
@@ -131,6 +133,34 @@ class gestionpagoController extends Controller
 
          return redirect()->route('gestion_pago.index');
         } 
+
+
+
+         public function cuentacobro($id)
+
+            {
+                  $proyectos_articulos = proyectos_articulos::find($id);
+                  $cuenta= cuentacobro::where('proyecto_articulo_id',$id)->first();
+                  //dd($cuenta);
+
+
+
+              return view('documentos.cuentacobro', compact('proyectos_articulos','cuenta'));
+
+            }
+
+     public function confidencialidad($id)
+
+            {
+                 $proyectos_articulos = proyectos_articulos::find($id);
+                
+                 $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+                 
+
+
+
+              return view('documentos.confidencialidad', compact('proyectos_articulos','dt'));   
+            }
 
 
 }

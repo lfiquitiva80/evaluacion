@@ -137,6 +137,8 @@ Route::resource('participantes','participantesController');
 
 Route::resource('area_tematica','areaTematicaController');
 
+Route::resource('cuentadecobro','cuentacobroController');
+
 Route::resource('departamento','departamentoController');
 
 Route::resource('evento_areatematica','evento_areatematicaController');
@@ -179,6 +181,8 @@ Route::get('allcriterios', 'excelController@allcriterios')->name('allcriterios')
 
 Route::get('eloy', 'excelController@eloy')->name('eloy');
 
+Route::get('innpulsa', 'excelController@innpulsa')->name('innpulsa');
+
 Route::resource('evaluadores','evaluadoresController');
 
 Route::get('settings','evaluadoresController@perfil')->name('settings');
@@ -216,6 +220,10 @@ Route::resource('dashboard', 'dashboardController');
 Route::resource('gestion_pago', 'gestionpagoController');
 
 Route::get('confirmación_financiera/{id}', 'gestionpagoController@confirmacionpago')->name('confirmacionpago');
+
+Route::get('cuentacobro/{id}', 'gestionpagoController@cuentacobro')->name('cuentacobro');
+
+Route::get('confidencialidad/{id}', 'gestionpagoController@confidencialidad')->name('confidencialidad');
 
 Route::get('arreglo_criterios', 'preguntasController@ArregloCriterios')->name('arreglo_criterios');
 

@@ -214,31 +214,13 @@
                 <div class="col-xs-3">
     		<label for="">Puntaje Asignado</label>
                     
-            <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}">        
+           <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}"> 
+           
     	
     	</div>   
                 </td>
 
-             <script type="text/javascript">
-                 $(document).ready(function() {
-                    
-                     $('#Puntaje_evaluador').blur(function(event) {
-
-                        $('#Puntaje_evaluador').each(function(e) {
-                            var valor = parseInt($(this).val());
-                            var max= parseInt(this.max);
-                            if (valor>max) {
-                                alert("El Valor no está Permitido, debe ser menor a " + max);
-
-                            }    
-                        });
-                                                    
-                        
-                     });
-
-                 });
-
-             </script>   
+             
                 
                 <td colspan="2">
                     <div class="form-group">
@@ -324,7 +306,7 @@
                 <td colspan="8">
                  <div class="form-group">
                 <label for="">Concepto final de la evaluacion del Proyecto</label>
-                <textarea class="ckeditor" name="concepto_final" id="concepto_final" placeholder="concepto_final" value="{{$row->concepto_final}}">{{$row->concepto_final}}</textarea>
+                <br><textarea class="text" name="concepto_final" id="concepto_final" placeholder="concepto_final" value="{{$row->concepto_final}}" cols="150" rows="10">{{$row->concepto_final}}</textarea>
                 </div>
 
                 </td>
@@ -496,7 +478,7 @@
         <td colspan="8">  
         <div class="panel panel-default">
             <div class="panel-body">
-                <strong>Nota:</strong> 
+                <strong></strong> 
             </div>
         </div>
         </td>
@@ -504,7 +486,7 @@
 
          <tr>
         <td colspan="8">  
-        <div class="panel panel-default">
+       <!-- <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><strong>Para uso exclusivo de los datos del evaluador : </strong></h3>
             </div>
@@ -528,16 +510,16 @@
                     
                     @endif
                     <br>__________________________________________________
-                <br><strong>FIRMA DE EVALUADOR</strong>    
+                <br><strong>FIRMA DE EVALUADOR</strong>   --> 
                 <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
                 <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
-                </center>    
+                <!--</center>    
                 
                   
 
                 </div>
             </div>
-        </div>
+        </div>-->
         </td>  
 
 

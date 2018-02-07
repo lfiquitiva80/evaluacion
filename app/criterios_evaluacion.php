@@ -11,8 +11,8 @@ class criterios_evaluacion extends Model
 
 
     public function proyectos_articulos()
-{
-	return $this->belongsTo(proyectos_articulos::class, 'id');
+{	
+	return $this->belongsTo(proyectos_articulos::class,'id_proyectos_articulos');
 }
 
 }

@@ -63,7 +63,7 @@
             
             <li class="treeview">
 
-                <a href="{{ url('eventos_general') }}"><i class="fa fa-file-excel-o" aria-hidden="true"></i><span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-file-excel-o" aria-hidden="true"></i><span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ $url = route('excel.index') }}">Reporte de Excel</a></li>
                                     </ul>
