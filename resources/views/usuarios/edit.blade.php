@@ -84,9 +84,15 @@
 									@if ($usuarios->TipoUsers==0)
 									<option value="0" selected>Estandar</option>
 									<option value="1">Administrador</option>
-									@else
+                                    <option value="2">Financiera</option>
+									@elseif
 									<option value="0" >Estandar</option>
 									<option value="1" selected>Administrador</option>
+                                    <option value="2">Financiera</option>
+                                    @else
+                                    <option value="0" >Estandar</option>
+                                    <option value="1" >Administrador</option>
+                                    <option value="2" selected>Financiera</option>
 
 									@endif
 

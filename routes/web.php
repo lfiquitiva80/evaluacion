@@ -193,7 +193,15 @@ Route::resource('evaluacion_par','evaluacion_parController');
 
 Route::resource('comunicados', 'comunicadosController');
 
+Route::resource('confidencialidad', 'confidencialidadController');
+
+Route::get('crearconfidencialidad/{id}', 'confidencialidadController@confidencialidad')->name('crearconfidencialidad');
+
 Route::get('rectificacion','comunicadosController@rectificacion_errores')->name('rectificacion_errores');
+
+Route::get('soporte','comunicadosController@soporte')->name('soporte');
+
+Route::get('enviarcorreosoporte','comunicadosController@enviarcorreosoporte')->name('enviarcorreosoporte');
 
 Route::resource('criterios_evaluacion', 'criterios_evaluacionController');
 
@@ -221,7 +229,9 @@ Route::resource('gestion_pago', 'gestionpagoController');
 
 Route::get('confirmación_financiera/{id}', 'gestionpagoController@confirmacionpago')->name('confirmacionpago');
 
-Route::get('cuentacobro/{id}', 'gestionpagoController@cuentacobro')->name('cuentacobro');
+Route::get('doccuentacobro/{id}', 'gestionpagoController@cuentacobro')->name('cuentacobro');
+
+Route::get('crearcuentacobro/{id}', 'cuentacobroController@crearcuentacobro')->name('infofinanciera');
 
 Route::get('confidencialidad/{id}', 'gestionpagoController@confidencialidad')->name('confidencialidad');
 

@@ -116,4 +116,14 @@ class cuentacobroController extends Controller
         //return redirect()->route('criterios_evaluacion.index');
         return back();
     }
+
+
+    public function crearcuentacobro($id)
+    {   
+       
+        return view('cuentadecobro.create',compact('id'));
+
+    }
+
+
 }

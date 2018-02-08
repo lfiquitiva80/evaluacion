@@ -37,9 +37,11 @@
             @if (Auth::user()->TipoUsers==0)
             
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            @else
+            <li class="active"><a href="{{ url('enviarcorreosoporte') }}"><i class="fa fa-envelope-square"></i><span>Soporte</span></a></li>
+            @elseif (Auth::user()->TipoUsers==1)
             <li class="active"><a href="{{ url('dashboard') }}"><i class='fa fa-dashboard'></i> <span>Dashboard</span></a></li>
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="active"><a href="{{ url('enviarcorreosoporte') }}"><i class="fa fa-envelope-square"></i><span>Soporte</span></a></li>
             
             
             <li class="active"><a href="{{ url('usuarios') }}"><i class='fa fa-user-plus'></i> <span>Usuarios</span></a></li>
@@ -56,18 +58,24 @@
 <!--
             <li class="active"><a href="{{ url('departamento') }}"><i class="fa fa-map"></i> <span>Departamento</span></a></li>
             <li class="active"><a href="{{ url('municipios') }}"><i class="fa fa-street-view"></i> <span>Ciudades</span></a></li>-->
-            
 
-          
-           
-            
-            <li class="treeview">
+                <li class="treeview">
 
                 <a href="#"><i class="fa fa-file-excel-o" aria-hidden="true"></i><span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ $url = route('excel.index') }}">Reporte de Excel</a></li>
                                     </ul>
             </li>
+
+            
+            @else
+
+            <li class="active"><a href="{{ url('gestion_pago') }}"><i class="fa fa-money" aria-hidden="true"></i><span>Gestión Pago</span></a></li>
+            <li class="active"><a href="{{ url('enviarcorreosoporte') }}"><i class="far fa-envelope-square"></i> <span>Soporte</span></a></li>
+          
+           
+            
+        
 
              @endif
         </ul><!-- /.sidebar-menu -->

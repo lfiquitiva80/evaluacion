@@ -107,19 +107,6 @@ class comunicadosController extends Controller
         $Contenido = $request->input('contenido');
 
 
-       // dd($request->file('adjunto'));
-
-
-         /*if ($request->hasFile('adjunto')) {
-                        $adjunto = '/'.'documentos/'.$request->file('adjunto')->store('proyecto');
-                         } else
-
-                         {
-                        $adjunto="";
-                        }
-
-                        //dd($attachment);*/
-
     \Mail::to($request->input('To'))
     ->cc($request->input('Cc'))
     ->send(new rectificacion($data,$Subject,$Contenido));
@@ -135,6 +122,35 @@ class comunicadosController extends Controller
 
 
           return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
+    }
+
+
+
+    public function soporte(Request $request)
+    {
+
+        $data= $request->all();
+        $Subject = $request->input('Subject');
+        $Contenido = $request->input('contenido');
+
+    \Mail::to($request->input('To'))
+    ->cc($request->input('Cc'))
+    ->send(new rectificacion($data,$Subject,$Contenido));
+
+        Log::info('El usuario '. \Auth::user()->name .' Ingreso a soporte tecnico');
+         flash('Haz enviado un correo a Soporte!')->success();
+
+
+            return redirect()->route('homedos');
+    }
+
+    public function enviarcorreosoporte(Request $request)
+    {
+         //$proyectos_articulos= proyectos_articulos::findOrFail($id);
+        Log::info('El usuario '. \Auth::user()->name .'Ingreso a enviar un mail a soporte');
+
+        //dd($eventosg);
+        return view('comunicados_evaluadores.soporte');
     }
 
 

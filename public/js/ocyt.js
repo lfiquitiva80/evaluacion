@@ -16,7 +16,15 @@
                                 total = parseInt( total ) + parseInt( $(this).val() );    
                             }                       
                         });
-                        $('#Total_evaluacion').val( total );
+
+                          if (total>=75) {
+                              $('#Total_evaluacion').val( total );
+                              $('#aprobo').html( "SI APROBÓ" );    
+                          }else {
+                              $('#Total_evaluacion').val( total );
+                              $('#aprobo').html( "NO APROBÓ" );   
+                          }
+                        
                     });
                 });
 
@@ -70,5 +78,17 @@ function checkTime(i) {
   } );
 
 
-  
-  
+ 
+       
+$(document).ready(function() {
+            $('#preguntarguardar').click(function(event) {
+
+                var txt;
+var r = confirm("Verificar si guardo antes de Salir \n Aceptar para Regresar \n Cancelar para Guardar");
+if (r == true) {
+    txt = "You pressed OK!";
+} else {
+    event.preventDefault();
+}
+              });
+        });

@@ -11,7 +11,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">ACUERDO DE CONFIDENCIALIDAD Y DECLARACI&Oacute;N DE CONFLICTO DE INTERESES</span></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;<em>mayor de edad</em>&nbsp;y domiciliado(a) en la ciudad de {!! Form::open(['route' => 'confidencialidad.store', 'method'=>'POST']) !!}  <input type="text" name="ciudaddomiciliario" id="ciudaddomiciliario" placeholder="digite el domiciliado(a) en la ciudad de" required size="80">, identificado(a) como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;<em>mayor de edad</em>&nbsp;y domiciliado(a) en la ciudad de {{$confidencialidad->ciudaddomiciliario}}, identificado(a) como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">CONSIDERACIONES</span></span></strong></span></span></p>
 
@@ -93,7 +93,15 @@
 		<tr>
 			<td>
 			<div>
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>, identificado con el documento de identidad n&uacute;mero {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} de {{$proyectos_articulos->evaluadores->Ciudad_expedicion}} </span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">declaro que he le&iacute;do y entiendo las posibles situaciones causales de conflicto de inter&eacute;s y doy fe de que  <input type="radio" name="doyfe" value="0" > No <input type="radio" name="doyfe" value="1"> Si<br>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>, identificado con el documento de identidad n&uacute;mero {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} de {{$proyectos_articulos->evaluadores->Ciudad_expedicion}} </span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">declaro que he le&iacute;do y entiendo las posibles situaciones causales de conflicto de inter&eacute;s y doy fe de que 
+	
+				@if($confidencialidad->doyfe==0)
+			 <input type="radio" name="doyfe" value="0" checked> No <input type="radio" name="doyfe" value="1"> Si
+				@else
+				<input type="radio" name="doyfe" value="0" > No <input type="radio" name="doyfe" value="1" checked> Si
+				@endif
+
+			 <br>
 					
 						
 
@@ -130,8 +138,7 @@
 					<tr>
 						<td style="height:49.1pt; vertical-align:top; width:419.05pt">
 						<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Tipo de inter&eacute;s:</span></span></span></span></p>
-						<textarea cols="180" rows="10" name="tipointeres" id="tipointeres"></textarea> 
-						
+						{{$confidencialidad->tipointeres}}
 						</td>
 					</tr>
 				</tbody>
@@ -180,15 +187,9 @@ echo $meses[date($dt->month)-1];
 		</tr>
 	</tbody>
 </table>
-	<input type="hidden" name="proyectos_articulos_id" id="proyectos_articulos_id" value="{{$proyectos_articulos->id}}">
-	<input type="hidden" name="fecha_acepto_terminos" id="fecha_acepto_terminos" value="{{$date}}">
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" value="1" name="aceptoterminos" id="aceptoterminos" required>
-			Si, Acepto terminos de la confidencialidad
-		</label>
-	</div>
-	<button type="submit" class="btn btn-primary">Acepto, los terminos de la confidencialidad</button>
+	<input type="hidden" name="proyectos_articulos_id" id="proyectos_articulos_id" value="{{$confidencialidad->proyectos_articulos_id}}">
+
+	
 
 
 

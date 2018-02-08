@@ -162,7 +162,7 @@
                     4.
                 </td>
                 <td colspan="1">
-                    Parámetro o ítem a evaluar
+                    Criterios o ítem a evaluar
                 </td >
                 <td colspan="1" >
                     <center>Puntaje Asignado</center>

@@ -94,6 +94,8 @@
                                 <select class="form-control" name="TipoUsers" id="TipoUsers">
                                     <option value="0">Estándar</option>
                                     <option value="1">Administrador</option>
+                                    <option value="2">Financiera</option>
+                                    
                                     
                                 </select>
 

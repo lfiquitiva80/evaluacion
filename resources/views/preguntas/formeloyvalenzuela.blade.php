@@ -24,10 +24,14 @@
         </div>
     @endif
       
+   
+      
+     
+   
     
- 
+    
 
-     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
+     <a href="{{ URL::previous() }}" class="btn btn-primary" id="preguntarguardar"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
 	
 
@@ -43,7 +47,7 @@
                     <center><legend>FORMULARIO DE EVALUACIÓN<BR>
         CONVOCATORIA PREMIO ELOY VALENZUELA 2017</legend><BR></center>
                 </th>
-                
+                <button type="submit" class="btn btn-primary pull-right" >Guardar</button>
             </tr>
             <tr>
                 <th  colspan="6" >
@@ -171,7 +175,7 @@
                     4.
                 </td>
                 <td colspan="1">
-                    <strong>Parámetro o ítem a evaluar</strong>
+                    <strong>Criterio o ítem a evaluar</strong>
                 </td >
                 <td colspan="1" >
                     <strong><center>Puntaje Asignado</center></strong>
@@ -214,7 +218,7 @@
                 <div class="col-xs-3">
     		<label for="">Puntaje Asignado</label>
                     
-           <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}"> 
+           <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}" size="20"> 
            
     	
     	</div>   
@@ -245,11 +249,11 @@
                     PUNTAJE TOTAL
 
                 </td>
-                <td></td>
+                <td><center><strong><p id="aprobo"></center></strong></p></td>
                 <td >
                    <div class="form-group" id="app">
             <label for="">Total_evaluacion</label>
-            <input type="text" class="form-control" name="Total_evaluacion"  id="Total_evaluacion" placeholder="Total_evaluacion" value="{{$row->Total_evaluacion}}" readonly>
+            <input type="text" class="form-control" name="Total_evaluacion"  id="Total_evaluacion" placeholder="Total_evaluacion" value="{{$row->Total_evaluacion}}" readonly >
         </div>
 
                 </td>
@@ -559,7 +563,7 @@
     </div>
       
        
-
+    
  
        
         

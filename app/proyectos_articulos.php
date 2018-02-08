@@ -32,4 +32,10 @@ public function evaluadores()
     	return $this->belongsTo(evaluadores::class,'id_evaluador');
     } 
 
+public function confidencialidad()
+    {
+        return $this->belongsTo(confidencialidad::class,'proyectos_articulos_id');
+    } 
+
+
 }

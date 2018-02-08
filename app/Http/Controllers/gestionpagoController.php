@@ -140,7 +140,7 @@ class gestionpagoController extends Controller
 
             {
                   $proyectos_articulos = proyectos_articulos::find($id);
-                  $cuenta= cuentacobro::where('proyecto_articulo_id',$id)->first();
+                  $cuenta= cuentacobro::where('proyectos_articulos_id',$id)->first();
                   //dd($cuenta);
 
 

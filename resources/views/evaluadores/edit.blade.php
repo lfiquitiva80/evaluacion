@@ -42,19 +42,19 @@
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Nombre Evaluador</label>
-		<input type="text" class="form-control" name="NombreEvaluador" id="NombreEvaluador" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->NombreEvaluador}}">
+		<input type="text" class="form-control" name="NombreEvaluador" id="NombreEvaluador" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->NombreEvaluador}}" readonly="readonly">
 	</div>
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Fecha de Nacimiento</label>
-		<input type="date" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->Fecha_Nacimiento}}">Su fecha de Nacimiento es: {{$evaluadores->Fecha_Nacimiento}}
+		<input type="date" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->Fecha_Nacimiento}}" >Su fecha de Nacimiento es: {{$evaluadores->Fecha_Nacimiento}}
 	</div>
 
 	
 
 	<div class="form-group">
-		<label for="email">email (*) Campo Obligatorio</label>
-		<input type="text" class="form-control" name="email" id="email" placeholder="Digite una email"  value="{{$evaluadores->email}}">
+		<!--<label for="email">email (*) Campo Obligatorio</label>-->
+		<input type="hidden" class="form-control" name="email" id="email" placeholder="Digite una email"  value="{{$evaluadores->email}}">
 	</div>
 
 
@@ -67,13 +67,13 @@
 
 			 @if (Auth::user()->TipoUsers==0)
 			
-		<input type="hidden" class="form-control" name="id_users" id="id_users" placeholder="Digite el Nombre del evaluador" value="{{$evaluadores->id_users}}" readonly>
+		<input type="hidden" class="form-control" name="id_users" id="id_users" placeholder="Digite el Nombre del evaluador" value="{{$evaluadores->id_users}}" readonly="readonly">
 		
 
 			@else
 
 			<label for="">Usuario:</label>
-			<select name="id_users" id="id_users" class="form-control" required="required" placeholder="" >
+			<select name="id_users" id="id_users" class="form-control" required="required" placeholder="" readonly="readonly">
 
 
 			  @foreach($Usuarios as $row)
@@ -96,7 +96,7 @@
 
 <div class="form-group ">
 		<label for="">Tipo de Documento de Identidad</label>
-			<select name="TipoDocumento" id="TipoDocumento" class="form-control" >
+			<select name="TipoDocumento" id="TipoDocumento" class="form-control" required>
 				@foreach($Tipo as $row)
 
 				@if ($evaluadores->TipoDocumento==$row->id)
@@ -111,36 +111,24 @@
 
 
 	<div class="form-group">
-		<label for="NombreDepartamento">Documentos de Identidad</label>
-		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula" value="{{$evaluadores->Cedula}}" >
+		<label for="NombreDepartamento">Documentos de Identidad</label required>
+		<input type="text" class="form-control" name="Cedula" id="Cedula" placeholder="Digite una Cedula" value="{{$evaluadores->Cedula}}" required>
 	</div>
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Ciudad de Expedición del Documento de Identidad</label>
-		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" >
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" required>
 	</div>
 
 	<div class="form-group">
 		<label for="Telefono">Teléfono</label>
-		<input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="Digite un Telefono"  value="{{$evaluadores->Telefono}}">
+		<input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="Digite un Telefono"  value="{{$evaluadores->Telefono}}" required>
 	</div>
 
 	<div class="form-group">
 		<label for="Direccion">Dirección</label>
-		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Direccion" value="{{$evaluadores->Direccion}}" >
+		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Direccion" value="{{$evaluadores->Direccion}}" required>
 	</div>
-
-		
-
-
-
-	<div class="form-group">
-		<label for="Direccion">Nombre del Banco</label>
-		<input type="text" class="form-control" name="nombrebanco" id="nombrebanco" placeholder="Digite nombre del Banco" value="{{$evaluadores->nombrebanco}}" >
-	</div>
-	
-
-
 
 	<div class="form-group">
 		<label for="Codigo_postal">Código_postal</label>
@@ -187,18 +175,7 @@ $municipios = DB::table('municipios')->get();
 </select>
 </div>
 -->
-	<div class="form-group">
-		<div class="btn btn-default btn-file">
-			<i class="fa fa-paperclip"></i> Attachment
-		<label for="NombreDepartamento">Firma Digital</label>
-		<input type="file" class="form-control" name="FirmaDigital" id="FirmaDigital" placeholder="Suba la hoja de Vida"  value="{{$evaluadores->FirmaDigital}}" >
-		@if(!empty($evaluadores->FirmaDigital))
-		<i class="fa fa-check-square" aria-hidden="true"> </i>
-		@else
-		<i class="fa fa-times-circle" aria-hidden="true"> </i>
-		@endif
 
-	</div>
 	</div>
 
 	<div class="form-group">
