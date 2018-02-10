@@ -87,6 +87,7 @@ class usuariosController extends Controller
             'name'     => $request['name'],
             'email'    => $request['email'],
             'password' => bcrypt($request['password']),
+            'passworddos' => \Crypt::encrypt($request['password']),
             'TipoUsers' => $request['TipoUsers'],
             'id_tratamiento' => $request['id_tratamiento'],
             ];
@@ -134,6 +135,8 @@ class usuariosController extends Controller
     public function edit($id)
     {
             $usuarios= User::findOrFail($id);
+            //dd(\Crypt::decrypt($usuarios->passworddos));
+
             $cartas = tratamiento_carta::all();
             //$users= DB::table('users')->get();
             //$usuarios->notify(new notificacionadmin($usuarios));
@@ -163,6 +166,7 @@ class usuariosController extends Controller
             'name'     => $request['name'],
             'email'    => $request['email'],
             'password' => bcrypt($request['password']),
+            'passworddos' => \Crypt::encrypt($request['password']),
             'TipoUsers' => $request['TipoUsers'],
             'id_tratamiento' => $request['id_tratamiento'],
         ];
@@ -178,9 +182,14 @@ class usuariosController extends Controller
         $updates=DB::table('evaluadores')->where('id_users',"=",$id)->update($input2);   
 
 
+        if (\Auth::user()->TipoUsers==0){
+         return redirect()->route('homedos');
+         }
+        else{
+            return redirect()->route('usuarios.index');
+        }
 
-
-        return redirect()->route('usuarios.index');
+        
     }
 
     /**

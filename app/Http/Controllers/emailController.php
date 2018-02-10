@@ -276,7 +276,7 @@ class emailController extends Controller
         // Ship order...
          
         \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
-        \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+        //\Mail::to($correo2->email)->send(new finalencuesta($invitacion));
        
 
          return redirect()->route('comunicados.index');
@@ -312,7 +312,7 @@ class emailController extends Controller
         }
 
 
-        public function finalevaluacion($id)
+        public static function finalevaluacion($id)
         { 
 
 

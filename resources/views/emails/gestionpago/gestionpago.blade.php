@@ -37,7 +37,8 @@ $cuentadecobro2 = asset($cuentadecobro2);
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><span style="color:#000000; font-family:Arial, sans-serif"><span style="font-size:14.6667px"><a href="<?php echo $hv;?>">Hoja de Vida</a></span></span>.</li>
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Cedula_pdf;?>">Documento de Identidad</a></li>
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Certificado_Bancario;?>">Certificado Bancario</a></li>
-	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $cuentadecobro2;?>">Cuenta de Cobro</a></li>
+	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="{{ $url = route('cuentacobro', $id) }}">Cuenta de Cobro</a></li>
+	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="{{ $url = route('confidencialidad.show', $id) }}">Documento de Confidencialidad</a></li>
 	<li style="margin-left: 0cm; margin-right: 0cm; text-align: justify;"><a href="<?php echo $Rut;?>">Rut si es nacionalidad Colombiana o Pasaporte si es extranjero.</a></li>
 </ul>
 

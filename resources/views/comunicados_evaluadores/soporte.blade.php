@@ -48,7 +48,8 @@
                 <input class="form-control" name="Subject" placeholder="Subject:" placeholder="Digite un inquietud">
               </div>
               <div class="form-group">
-                    <textarea name="contenido" id="compose-textarea" class="ckeditor" style="height: 300px">
+                <label for="">Mensaje :</label>
+                    <textarea name="contenido" id="compose-textarea" class="text" style="height: 300px" cols="148">
                       
                     </textarea>
               </div>
@@ -67,7 +68,7 @@
             <div class="box-footer">
               <div class="pull-right">
                 
-                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Enviar</button>
               </div>
               
             </div>

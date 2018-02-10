@@ -48,6 +48,7 @@
       <td>  id  </td>
       <td>  Name</td>
       <td>  email  </td>
+      
 
       <td>  TipoUsers  </td>
       <td>  Acción </td>
@@ -64,6 +65,7 @@
           <td>{{$row->id}}</td>
           <td>{{$row->name}}</td>
           <td>{{$row->email}}</td>
+
           <td><?php if ($row->TipoUsers==0) {
             echo "Estándar";
           } else {

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\cuentacobro;
+use App\proyectos_articulos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
+use App\Mail\gestionpago;
+use Carbon\Carbon;
 
 class cuentacobroController extends Controller
 {
@@ -32,6 +35,7 @@ class cuentacobroController extends Controller
      */
     public function create()
     {
+
        return view('cuentadecobro.create');
     }
 
@@ -47,10 +51,25 @@ class cuentacobroController extends Controller
         Log::info('El usuario '. \Auth::user()->name .' Creo una cuenta de cobro: ');
 
         $input = $request->all();
+        $id = $input['proyectos_articulos_id'];
 
         $cuentacobro=cuentacobro::create($input);
 
-       return redirect()->route('cuentadecobro.index');
+        Log::info('El usuario '. \Auth::user()->name .' Envio un correo para gestionar el pago con el área financiera: '.$id);
+              flash('Haz enviado un correo para gestionar el pago con el área financiera!')->success();
+
+              $invitacion = \App\proyectos_articulos::find($id);
+              $invitacion->correo_gestion_pago=1;
+              $invitacion->save();
+              $evaluador = \App\evaluadores::find($invitacion->id_evaluador);
+              $correo=\App\evaluadores::find($invitacion->id_evaluador);
+              $correo2=\App\User::find($correo->id_users);  
+              $correofinanciera="lfiquitiva@ocyt.org.co";
+          
+          
+        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
+
+       return redirect()->route('homedos');
     }
 
     /**
@@ -120,8 +139,10 @@ class cuentacobroController extends Controller
 
     public function crearcuentacobro($id)
     {   
-       
-        return view('cuentadecobro.create',compact('id'));
+        $proyectos_articulos = proyectos_articulos::find($id);
+        $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
+       //dd($fecha_nacimiento);
+        return view('documentos.crearcuentacobro',compact('id','proyectos_articulos','fecha_nacimiento'));
 
     }
 

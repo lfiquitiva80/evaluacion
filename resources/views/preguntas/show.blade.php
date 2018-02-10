@@ -361,8 +361,11 @@
                     
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>-->    
-                <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
-                <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
+                <br><strong>Nombre:</strong>{{$proyectos_articulos->evaluadores->NombreEvaluador}}
+                <br>Cedula:<strong>{{$proyectos_articulos->evaluadores->Cedula}}</strong>
+
+                <br>Fecha de Nacimiento:<strong>{{$fecha_nacimiento->toFormattedDateString()}}</strong>  
+                <!--</center>
                 <!--</center>    
                 
                   

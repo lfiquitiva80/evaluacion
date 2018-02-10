@@ -227,7 +227,7 @@
                     PUNTAJE TOTAL
 
                 </td>
-                <td></td>
+                <td><center><strong><p id="aprobo"></center></strong></p></td>
                 <td >
                    <div class="form-group" id="app">
             <label for="">Total_evaluacion</label>
@@ -492,8 +492,10 @@
                     @endif
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>    -->
-                <br><strong>Nombre:</strong>{{$evaluadores->NombreEvaluador}}
-                <br><strong>Documento: {{$evaluadores->Cedula}}</strong> 
+                 <br><strong>Nombre:</strong>{{$proyectos_articulos->evaluadores->NombreEvaluador}}
+                <br>Cedula:<strong>{{$proyectos_articulos->evaluadores->Cedula}}</strong>
+
+                <br>Fecha de Nacimiento:<strong>{{$fecha_nacimiento->toFormattedDateString()}}</strong>  
                 <!--</center>
                 
                   

@@ -135,6 +135,7 @@ class preguntasController extends Controller
 
                           $date = Carbon::now();
                           $invitacion->Fecha_inicio=$date;
+                          $invitacion->aprobo=input('aprobo');
                           $invitacion->save();
 
                          } 
@@ -274,6 +275,7 @@ class preguntasController extends Controller
          $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();
 
          $proyectos_articulos= proyectos_articulos::find($id);
+         $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
 
          $evaluadores=DB::table('evaluadores')->where('id',"=",$proyectos_articulos->id_evaluador)->first();
          //dd($evaluadores);
@@ -281,7 +283,7 @@ class preguntasController extends Controller
          
          Log::info('El usuario '. \Auth::user()->name .' Se ingreso a edicion del formulario Eloy Valenzuela para el Id: '.$id); 
             //dd($proyectos_articulos);
-        return view('preguntas.formeloyvalenzuela', compact('preguntas','proyectos_articulos','id','evaluadores'));
+        return view('preguntas.formeloyvalenzuela', compact('preguntas','proyectos_articulos','id','evaluadores','fecha_nacimiento'));
     }
 
 
@@ -290,9 +292,13 @@ class preguntasController extends Controller
          $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();
          $proyectos_articulos= proyectos_articulos::find($id);
          $evaluadores=DB::table('evaluadores')->where('id',"=",$proyectos_articulos->id_evaluador)->first();
+
          $proyectos_articulos= proyectos_articulos::find($id);
+
+         $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
+
          Log::info('El usuario '. \Auth::user()->name .' Se ingreso a show del formulario Eloy Valenzuela para el Id: '.$id); 
-        return view('preguntas.showeloy', compact('preguntas','proyectos_articulos','id','evaluadores'));
+        return view('preguntas.showeloy', compact('preguntas','proyectos_articulos','id','evaluadores','fecha_nacimiento'));
 
 
     }

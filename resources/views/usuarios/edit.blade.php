@@ -72,6 +72,10 @@
                             </div>
                         </div>
 
+                        @if (Auth::user()->TipoUsers==0)
+                        
+                        @else
+                        
 
 
                         <div class="form-group">
@@ -85,7 +89,7 @@
 									<option value="0" selected>Estandar</option>
 									<option value="1">Administrador</option>
                                     <option value="2">Financiera</option>
-									@elseif
+									@elseif ($usuarios->TipoUsers==1)
 									<option value="0" >Estandar</option>
 									<option value="1" selected>Administrador</option>
                                     <option value="2">Financiera</option>
@@ -100,6 +104,7 @@
 
                             </div>
                         </div>
+                          @endif
 
                          <div class="form-group">
                             <label for="" class="col-md-4 control-label">Tratamiento para Cartas y Certificados</label>
@@ -122,7 +127,7 @@
                             </div>
                         </div>
 
-
+                       
 
 
                         <div class="form-group">

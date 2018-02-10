@@ -44,6 +44,7 @@
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
+                                   <!-- <label><strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Importante utilizar navegador Chrome o el Navegador Mozilla</strong></label>-->
                                 </div>
                             </div>
                         </div>
@@ -65,4 +66,11 @@
         </div>
     </div>
 </div>
+
+<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <div class="alert alert-info" role="alert"> 
+                                <h4> Aviso Importante: </h4> 
+                                <p> Para el correcto funcionamiento de la plataforma de evaluadores se aconseja utilizar el navegador web <b> <i><a href="https://www.google.com/chrome/" target="_blank"> Chrome </a> o  <a href="https://www.mozilla.org/es-ES/firefox/new/" target="_blank"> Mozilla Firefox </a> </i> </b></p>
+                            </div>
+                        </div>
 @endsection

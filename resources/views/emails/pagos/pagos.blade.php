@@ -23,6 +23,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
           ?> ,</b>
 <p></p>
 
+
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
@@ -34,7 +35,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 <ol>
      <li style="text-align:justify"><span style="font-size:11pt"><span style="color:black"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif">Hoja de vida.</span></span></span></span></span></li>
      <li style="text-align:justify"><span style="font-size:11pt"><span style="color:black"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif">Certificaci&oacute;n bancaria en la que se registre la cuenta en la que se le consignar&aacute;.</span></span></span></span></span></li>
-     <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Cuenta de Cobro por valor de $350.000&nbsp;con n&uacute;mero de c&eacute;dula (diligenciar </span></span></span><a href="http://evaluator.ocyt.org.co/imgplantillas/MODELO.doc" style="color:blue; text-decoration:underline"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#3869d4">Carta Modelo</span></span></span></a><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"> y adjuntarlo con su firma).</span></span></span></span></span></li>
+     <li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Cuenta de Cobro se hace en linea, por la plataforma de evaluadores</li>
      <li style="text-align:justify"><span style="font-size:11pt"><span style="color:black"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif">Copia de la c&eacute;dula de ciudadan&iacute;a en formato pdf. </span></span></span></span></span></li>
      <li style="text-align:justify"><span style="font-size:11pt"><span style="color:black"><span style="font-family:Calibri,sans-serif"><span style="background-color:white"><span style="font-family:&quot;Arial&quot;,sans-serif">RUT actualizado (en caso de que realice actividades econ&oacute;micas en el territorio colombiano) o Copia del pasaporte (en caso de que sea extranjero y no realice actividades econ&oacute;micas en el territorio colombiano).</span></span></span></span></span></li>
 </ol>

@@ -35,7 +35,7 @@
       <td>  id  </td>
       <td>  Nombre Evaluador</td>
       <td>  Correo  </td>
-      <td>  Firma Digital</td>
+     
       <td>  Hoja de Vida</td>
       <td>  Documento</td>
       <td>  Cert.Bancario</td>
@@ -55,13 +55,13 @@
           <td>{{$row->id}}</td>
           <td>{{$row->NombreEvaluador}}</td>
           <td><?php $comment = App\User::find($row->id_users); echo $comment->email;  ?></td>
-          <td><a href="{{$row->FirmaDigital}}">
+         <!-- <td><a href="{{$row->FirmaDigital}}">
             @if(!empty($row->FirmaDigital))
               <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a>
             @else
               <a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-info"><span class="glyphicon glyphicon-check" aria-hidden="true" style="color:red;"></span></a>
             @endif
-          </a></td>
+          </a></td>-->
           <td>
             <a href="{{$row->HV}}">
             @if(!empty($row->HV))

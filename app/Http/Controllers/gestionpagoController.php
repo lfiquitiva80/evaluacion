@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Mail\confirmacionpagofinanciera;
 use App\proyectos_articulos;
 use App\cuentacobro;
+use App\Mail\certificadoypago;
 
 
 class gestionpagoController extends Controller
@@ -122,12 +123,15 @@ class gestionpagoController extends Controller
         
             $date = Carbon::now();
             $invitacion->Fecha_Pago_Financiera=$date;
+            $invitacion->certificadoypago=1;
             $invitacion->save();
 
            $correo=\App\evaluadores::find($invitacion->id_evaluador);
            $correo2=\App\User::find($correo->id_users);  
              
             \Mail::to($correo2->email)->send(new confirmacionpagofinanciera($invitacion, $correo));
+            \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
+
 
        
 
@@ -141,11 +145,13 @@ class gestionpagoController extends Controller
             {
                   $proyectos_articulos = proyectos_articulos::find($id);
                   $cuenta= cuentacobro::where('proyectos_articulos_id',$id)->first();
+                  $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
+
                   //dd($cuenta);
 
 
 
-              return view('documentos.cuentacobro', compact('proyectos_articulos','cuenta'));
+              return view('documentos.cuentacobro', compact('proyectos_articulos','cuenta','fecha_nacimiento'));
 
             }
 
@@ -155,11 +161,12 @@ class gestionpagoController extends Controller
                  $proyectos_articulos = proyectos_articulos::find($id);
                 
                  $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+                 $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
                  
 
 
 
-              return view('documentos.confidencialidad', compact('proyectos_articulos','dt'));   
+              return view('documentos.confidencialidad', compact('proyectos_articulos','dt','fecha_nacimiento'));   
             }
 
 

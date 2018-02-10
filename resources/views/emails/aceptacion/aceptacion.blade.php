@@ -37,17 +37,17 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-A continuación, podrá ingresar a la plataforma para gestión de evaluaciones del OCyT a través del siguiente usuario =   <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">A continuación, podrá ingresar a la plataforma para gestión de evaluaciones del OCyT a través del siguiente: <br> usuario =   <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->email;
-          ?> y la contraseña = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
-          $comment2 = App\User::find($comment->id_users); echo "OCyT2017";
+          ?> <br> Contraseña = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          $comment2 = App\User::find($comment->id_users); echo  \Crypt::decrypt($comment2->passworddos);
 ?>
 <!--mcrypt_decrypt($comment2->password)-->
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 Si ya tiene contraseña asignada por favor dar click al siguiente boton verde.
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
-
+</p>
 @component('mail::button', ['url' => 'http://evaluator.ocyt.org.co/', 'color' => 'green'])
 Ingresar a la página de evaluación.
 @endcomponent          

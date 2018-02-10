@@ -237,6 +237,10 @@ Route::get('confidencialidad/{id}', 'gestionpagoController@confidencialidad')->n
 
 Route::get('arreglo_criterios', 'preguntasController@ArregloCriterios')->name('arreglo_criterios');
 
+Route::get('siaceptopago/{id}', 'proyectos_articulosController@siAceptoElPago')->name('siAceptoElPago');
+
+Route::get('noaceptopago/{id}', 'proyectos_articulosController@noAceptoElPago')->name('noAceptoElPago');
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 Route::get('error', function(){     abort(500); });

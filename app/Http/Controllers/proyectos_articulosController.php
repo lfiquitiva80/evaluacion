@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
+use App\Mail\certificadonopago;
 
 
 class proyectos_articulosController extends Controller
@@ -143,6 +144,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
                     $proy_pdf->centro_costos=$input['centro_costos'];
+                    $proy_pdf->precioletras=$input['precioletras'];
 
 
                     $proy_pdf->save();
@@ -284,6 +286,7 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->sepaga=$input['sepaga'];
                     $proy_pdf->area=$input['area'];
                     $proy_pdf->centro_costos=$input['centro_costos'];
+                    $proy_pdf->precioletras=$input['precioletras'];
 
 
 
@@ -375,6 +378,49 @@ class proyectos_articulosController extends Controller
 
     }
 
+    public function siAceptoElPago($id)
+    {
+        $siAcepto = proyectos_articulos::find($id);
+        //dd($invitacion);
+        $siAcepto->acepto_pago="siaceptopago";
+        $siAcepto->save();
+        flash('Haz aceptado el pago!')->important();
+          Log::info('El usuario '. \Auth::user()->name .' acepto el pago para el id : '.$id);
+          emailController::finalevaluacion($id);
+        return back();
+    }
+
+     public function noAceptoElPago($id)
+    {
+        $noAcepto = proyectos_articulos::find($id);
+        //dd($invitacion);
+        $noAcepto->acepto_pago="noaceptopago";
+        $noAcepto->save();
+        flash('No aceptado el pago!')->important();
+          Log::info('El usuario '. \Auth::user()->name .' No acepto el pago para el id : '.$id);
+         
+         Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Certificado id: '.$id);
+              flash('Haz enviado un correo de certificado!')->success();
+
+              $invitacion = \App\proyectos_articulos::find($id);
+              $invitacion->certificadoypago=0;
+              $invitacion->proyecto_completado=1;
+              $invitacion->correo_pago=0;
+              $date = Carbon::now();
+              $invitacion->Fecha_Devolucion_Evaluador=$date;
+              $invitacion->save();
+              $correo=\App\evaluadores::find($invitacion->id_evaluador);
+              $correo2=\App\User::find($correo->id_users);  
+
+          
+        // Ship order...
+         
+        \Mail::to($correo2->email)->send(new certificadonopago($invitacion));
+
+
+
+        return back();
+    }
 
 
 

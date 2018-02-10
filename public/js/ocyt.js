@@ -19,10 +19,10 @@
 
                           if (total>=75) {
                               $('#Total_evaluacion').val( total );
-                              $('#aprobo').html( "SI APROBÓ" );    
+                              $('#aprobo').val( "SI APROBÓ" );    
                           }else {
                               $('#Total_evaluacion').val( total );
-                              $('#aprobo').html( "NO APROBÓ" );   
+                              $('#aprobo').val( "NO APROBÓ" );   
                           }
                         
                     });
@@ -53,7 +53,7 @@
 
 
    //Colocar un reloj en la parte principal del la página del HOME  con el id <p id="reloj"></p>
-function startTime() {
+/*function startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -70,7 +70,7 @@ function checkTime(i) {
         i = "0" + i;
     }
     return i;
-}
+}*/
 
 //funciones con jquery iu
   $( function() {
@@ -92,3 +92,7 @@ if (r == true) {
 }
               });
         });
+
+
+
+

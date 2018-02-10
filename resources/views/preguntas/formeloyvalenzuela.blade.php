@@ -208,17 +208,21 @@
             	</td>
 
                 	
-                <td colspan="1">
+                <td colspan="1" title="{{$row->ayuda}}">
                    
-                    <input type="hidden" class="form-control" name="id[]"  id="id" placeholder="Id" readonly="readonly" value="{{$row->id}}">
+                    <input type="hidden" class="form-control" name="id[]"  id="id" placeholder="Id" readonly="readonly" value="{{$row->id}}" >
                     <?php echo $row->Desc_criterio_eval ?>
+                    
                
                 </td>
+                                       
+
+
                 <td>
                 <div class="col-xs-3">
     		<label for="">Puntaje Asignado</label>
                     
-           <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}" size="20"> 
+           <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}" size="20" > 
            
     	
     	</div>   
@@ -249,7 +253,7 @@
                     PUNTAJE TOTAL
 
                 </td>
-                <td><center><strong><p id="aprobo"></center></strong></p></td>
+                <td><center><strong><input type="text" name="aprobo" id="aprobo"></center></strong></td>
                 <td >
                    <div class="form-group" id="app">
             <label for="">Total_evaluacion</label>
@@ -264,6 +268,9 @@
                 
                 
             </tr>
+
+
+       
 
         <!--Este codigo realiza el calculo de Total-->
 
@@ -515,8 +522,10 @@
                     @endif
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong>   --> 
-                <br><strong>Nombre:</strong>@if (Auth::user()->TipoUsers==0){{$evaluadores->NombreEvaluador}}@endif
-                <br><strong>Documento:@if (Auth::user()->TipoUsers==0) {{$evaluadores->Cedula}}@endif</strong> 
+                <br><strong>Nombre:</strong>{{$proyectos_articulos->evaluadores->NombreEvaluador}}
+                <br>Cedula:<strong>{{$proyectos_articulos->evaluadores->Cedula}}</strong>
+
+                <br>Fecha de Nacimiento:<strong>{{$fecha_nacimiento->toFormattedDateString()}}</strong>  
                 <!--</center>    
                 
                   

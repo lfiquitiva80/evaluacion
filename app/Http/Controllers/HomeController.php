@@ -52,7 +52,7 @@ class HomeController extends Controller
     $historicos=DB::table('proyectos_articulos')->where([
     ['id_evaluador','=',$evaluadores->id],
     ['proyecto_completado', '=', '1'],
-])->get();       
+])->orderBy('id', 'desc')->get();;       
 
      $evaluadores=DB::table('evaluadores')->where('id_users','=',\Auth::user()->id)->get();
 

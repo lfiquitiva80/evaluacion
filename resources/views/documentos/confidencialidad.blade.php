@@ -93,7 +93,8 @@
 		<tr>
 			<td>
 			<div>
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>, identificado con el documento de identidad n&uacute;mero {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} de {{$proyectos_articulos->evaluadores->Ciudad_expedicion}} </span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">declaro que he le&iacute;do y entiendo las posibles situaciones causales de conflicto de inter&eacute;s y doy fe de que  <input type="radio" name="doyfe" value="0" > No <input type="radio" name="doyfe" value="1"> Si<br>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>, identificado con el documento de identidad n&uacute;mero {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} de {{$proyectos_articulos->evaluadores->Ciudad_expedicion}} </span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">declaro que he le&iacute;do y entiendo las posibles situaciones causales de conflicto de inter&eacute;s y doy fe de que 
+				<br> <input type="radio" name="doyfe" value="0" checked> No <input type="radio" name="doyfe" value="1"> Si<br>
 					
 						
 
@@ -168,11 +169,13 @@ echo $meses[date($dt->month)-1];
 		<td colspan="2" style="height:50.6pt; width:100.0%">
 		<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">__________________________</span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60"></span></span></span></span></span></p>
+
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre. {{$proyectos_articulos->evaluadores->NombreEvaluador}}</span></span></span></span></span></p>
 
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} </span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$proyectos_articulos->evaluadores->Fecha_Nacimiento}} </span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$fecha_nacimiento->toFormattedDateString()}} </span></span></span></span></span></p>
 
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Lugar de expedici&oacute;n: {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}</span></span></span></span></span></p>
 			</td>

@@ -32,7 +32,7 @@
 
 
 	<div class="panel panel-success">
-		<div class="panel-heading">
+		<div class="panel-default">
 			<h3 class="panel-title"></h3>
 		</div>
 		<div class="panel-body">
@@ -117,6 +117,11 @@
 			<input type="text" class="form-control" name="pago_evaluador" id="pago_evaluador" placeholder="Digite un pago_evaluador"  >
 		</div>
 
+		<div class="form-group" >
+			<label for="">Precio en letras</label>
+			<input type="text" class="form-control" name="precioletras" id="precioletras" placeholder="Digite el precio en letras ejemplo Docientos mil pesos Moneda Corriente"  >
+		</div>
+
 
 
 		<div class="form-group">
@@ -133,7 +138,7 @@
 	</div>
 
 
-	<div class="row">
+	<div class="row" >
         <div class="col-md-12">
           <!-- Line chart -->
           <div class="box box-primary">
@@ -148,14 +153,18 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body" id="ocultarproyecto">
               <div style="width:100%;">
 
     <div class="form-group">
 		<label for="">Grupo_Investigacion</label>
 		<input type="text" class="form-control" name="Grupo_Investigacion" id="Grupo_Investigacion" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo">
 	</div>
-
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#ocultarproyecto').hide();
+		});
+	</script>
 
     <div class="form-group">
     	<div class="btn btn-default btn-file">

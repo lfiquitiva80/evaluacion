@@ -129,7 +129,9 @@ class comunicadosController extends Controller
     public function soporte(Request $request)
     {
 
-        $data= $request->all();
+        try {
+
+            $data= $request->all();
         $Subject = $request->input('Subject');
         $Contenido = $request->input('contenido');
 
@@ -139,6 +141,14 @@ class comunicadosController extends Controller
 
         Log::info('El usuario '. \Auth::user()->name .' Ingreso a soporte tecnico');
          flash('Haz enviado un correo a Soporte!')->success();
+            
+        } catch (\Exception $e) {
+
+            flash('-No se puede enviar el correo, no se encontro el servidor de correos!')->success();
+            
+        }
+
+        
 
 
             return redirect()->route('homedos');

@@ -71,11 +71,12 @@ class confidencialidadController extends Controller
        $confidencialidad= confidencialidad::where('proyectos_articulos_id',$id)->first();
         $proyectos_articulos = proyectos_articulos::find($confidencialidad->proyectos_articulos_id)->first();
         $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+        $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
            //dd($proyectos_articulos);
         
          Log::info('El usuario '. \Auth::user()->name .' esta editando: '.$confidencialidad);
         //dd($eventosg);
-        return view('documentos.showconfidencialidad', compact('confidencialidad', 'proyectos_articulos','dt'));
+        return view('documentos.showconfidencialidad', compact('confidencialidad', 'proyectos_articulos','dt','fecha_nacimiento'));
     }
 
     /**
@@ -92,11 +93,12 @@ class confidencialidadController extends Controller
         $confidencialidad= confidencialidad::findOrFail($id);
         $proyectos_articulos = proyectos_articulos::find($confidencialidad->proyectos_articulos_id)->first();
         $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+        $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
            //dd($proyectos_articulos);
         
          Log::info('El usuario '. \Auth::user()->name .' esta editando: '.$confidencialidad);
         //dd($eventosg);
-        return view('documentos.editconfidencialidad', compact('confidencialidad', 'proyectos_articulos','dt'));
+        return view('documentos.editconfidencialidad', compact('confidencialidad', 'proyectos_articulos','dt','fecha_nacimiento'));
     }
 
     /**
@@ -135,8 +137,10 @@ class confidencialidadController extends Controller
     {
          $proyectos_articulos = proyectos_articulos::find($id);
          $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+         $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
+
          $date = Carbon::now();
-         return view('documentos.confidencialidad', compact('proyectos_articulos','dt','date')); 
+         return view('documentos.confidencialidad', compact('proyectos_articulos','dt','date','fecha_nacimiento')); 
 
     }
 }

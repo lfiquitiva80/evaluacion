@@ -35,15 +35,13 @@
       <td>  id  </td>
       <td>  Descripción Proyecto Articulo</td>
       <td>  Proyecto (Documentos)</td>
-      <td>  Doc. Calificación</td>
+      <!--<td>  Cuenta de Cobro</td>-->
       <td>  Doc. Confidencialidad</td>
-      <td>  Doc. Cuenta de Cobro</td>
-      <td>  id_evaluador</td>
+      <td>  Evaluador</td>
       <td>  Evaluación Dinámica</td>
       <td>  Imprimir</td>
       <!--<td>  Evaluacion_par</td>-->
       <td>  Finalizar Evaluación</td>
-      <!--<td>  Acción </td>-->
 
 
 
@@ -54,77 +52,70 @@
   @foreach($proyectos_articulos as $row)
     <tr>
 
-                    <td>{{$row->id}}</td>
-          <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}">{{$row->DescripcionProyecto_Articulo}}</a></td>
+          <td>{{$row->id}}</td>
+         <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}" >{{$row->DescripcionProyecto_Articulo}}</a>
           
+
           @if (!empty($row->proyecto_pdf))
-          <td><a href="{{$row->proyecto_pdf}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+          <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
           @else
           <td>Falta por subir</td>
           @endif
 
-          @if (!empty($row->calificacion_proyecto))
-          <td><a href="{{$row->calificacion_proyecto}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de CALIFICACION" ><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" ></span></a>
-          @else
-          <td>
-
-          <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info"  data-toggle="tooltip" data-placement="top" title="Cargar o Subir Documento de CALIFICACION"><span class="glyphicon glyphicon-open-file" aria-hidden="true" ></span></a>
+            <?php   $confidencialidad= App\confidencialidad::where('proyectos_articulos_id', $row->id)->first(); //echo $confidencialidad->doyfe;     ?>
+          <td >
+              @if (count($confidencialidad)>=1)
+          
+          <a href="{{ $url = route('confidencialidad.show', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" ><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
+              @else 
+          <a href="{{ $url = route('crearconfidencialidad', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Aceptar el documento de confidencialidad para continuar" ><i class="fa fa-bell" aria-hidden="true"></i> Aceptar Confidencialidad</a>    
+          
+              @endif
+          </td>
+        
+        
 
           </td>
-          @endif
-
-           @if (!empty($row->doc_confidencialidad))
-          <td><a href="{{$row->doc_confidencialidad}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de Confidencialidad"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
-          @else
-          <td>
-
-          <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de Confidencialidad, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
-
-          </td>
-          @endif
-
-          @if (!empty($row->doc_cuenta_cobro))
-          <td><a href="{{$row->doc_cuenta_cobro}}" data-toggle="tooltip" data-placement="top" title="Descargar el archivo de cuenta de cobro"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></a>
-          @else
-          <td>
-
-          <a href="{{ $url = route('subircal', $row->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Subir o cargar el Documento de cuenta de Cbro, !Hace falta!"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></a>
-
-          </td>
-          @endif
-
-
-          </td>
-          <td>
+          <td >
           <a href="{{ $url = route('evaluadores.edit', $row->id_evaluador) }}" data-toggle="tooltip" data-placement="top" title="Subir o Actualizar sus Documentos">
           <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users;
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?>
-          </a></td>
-          <td><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
+         </a></td>
+         @if (count($confidencialidad)>=1)
+          <td ><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Eloy</a>
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i> Inicio Evaluación Innpulsa</a>
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
           @endif</td>
 
           <td>
              @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" target="_blank" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
+          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
           @else
-          <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
+          <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default"  data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
           @endif
           </td>
+          @else
+          <td>No puede iniciar porque no ha aceptado la confidencialidad</td>          
+          <td>No puede iniciar porque no ha aceptado la confidencialidad</td>
+          @endif
+
+
+          
+
+
 
 
 
 
   <td>
-  @if (empty($row->calificacion_proyecto) || empty($row->doc_confidencialidad))
+  @if (empty($row->Fecha_inicio))
   Falta iniciar la evaluación
-@else
+  @else
 
-<a class="btn btn-default" data-toggle="modal" href='#modal-{{$row->id}}' data-placement="top" title="Click para Finalizar al evaluación">Finalizar Evaluación</a>
+<!--<a class="btn btn-default" data-toggle="modal" href='#modal-{{$row->id}}' data-placement="top" title="Click para Finalizar al evaluación">Finalizar Evaluación</a>
 <div class="modal fade" id="modal-{{$row->id}}">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -137,21 +128,64 @@
         <li><strong>Antes de Finalizar verificar lo siguiente:</strong></li>
         <li>1.Revisar que haya cargado el documento de Calificación del Proyecto</li>
         <li>2. Revisar que haya cargado el Documento de Confidencialidad</li>
-        <li>3. Revisar que haya Cargado su Hoja de Vida, Rut , etc.., para el pago</li>
+        <li>3. Revisar que haya Cargado su Hoja de Vida, RUT actualizado O Pasaporte , etc.., para el pago</li>
         <li>4. Revisar que haya terminado la Evaluación.</li>
+      
+        
 
        </lu>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-default" >Finalizar la evaluacion</a>
+        <a href="{{ $url = route('finalevaluacion',$row->id) }}" class="btn btn-default" id="confirmar" >Finalizar la evaluación</a>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<a class="btn btn-default" data-toggle="modal" href='#pago-{{$row->id}}' data-placement="top" title="Click para Confirmar Pago">Confirmación Pago y Terminación evaluación</a>
+<div class="modal fade" id="pago-{{$row->id}}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirmación Pago y Terminación evaluación</h4>
+      </div>
+      <div class="modal-body">
+       <lu>
+        <li><strong>Si o No acepta el pago de {{$row->pago_evaluador}} , por el proyecto {{$row->DescripcionProyecto_Articulo}} </strong></li>
+      </lu>
+
+      <lu>
+        <strong>Antes de Finalizar verificar lo siguiente:</strong>
+        <hr>
+        <li> Revisar que haya Cargado su Hoja de Vida, RUT actualizado O Pasaporte , etc.., para el pago</li>
+        <li>Revisar que haya terminado la Evaluación.</li>
+      
+        
+
+       </lu>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="{{ $url = route('siAceptoElPago',$row->id) }}" class="btn btn-default" id="confirmar" >Si acepto el pago</a>
+        <a href="{{ $url = route('noAceptoElPago',$row->id) }}" class="btn btn-default" id="confirmar" >No acepto el pago</a>
       </div>
     </div>
   </div>
 </div>
+
 @endif
           </td>
+
+  
+
+ 
+ 
+
+         
 
 
 
@@ -175,6 +209,7 @@
 
     </tr>
   </tbody>
+
 
   @endforeach
 

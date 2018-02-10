@@ -98,6 +98,8 @@
 		</select>
 		</div>
 
+		
+
 	<div class="form-group">
 		<label for="">Coordinador/Proponente</label>
 		<input type="text" class="form-control" name="CoordinadorProyecto_Articulo" id="CoordinadorProyecto_Articulo" placeholder="Digite un CoordinadorProyecto_Articulo" value="{{$proyectos_articulos->CoordinadorProyecto_Articulo}}" >
@@ -114,6 +116,11 @@
 		<label for="">Precio Pago al Investigador o Evaluador</label>
 		<input type="text" class="form-control" name="pago_evaluador" id="pago_evaluador" placeholder="Digite un pago_evaluador"  value="{{$proyectos_articulos->pago_evaluador}}">
 	</div>
+
+	<div class="form-group" >
+			<label for="">Precio en letras</label>
+			<input type="text" class="form-control" name="precioletras" id="precioletras" placeholder="Digite el precio en letras ejemplo Docientos mil pesos Moneda Corriente" value="{{$proyectos_articulos->precioletras}}">
+		</div>
 
 
 			<?php  $evaluadores = DB::table('evaluadores')->get();?>
@@ -168,7 +175,7 @@
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body" >
+            <div class="box-body" id="ocultarproyectoedit">
               <div style="width:100%;">
              
     <div class="form-group">
@@ -182,6 +189,12 @@
 		<i class="fa fa-times-circle" aria-hidden="true"> </i>
 		@endif
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#ocultarproyectoedit').hide();
+		});
+	</script>
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">

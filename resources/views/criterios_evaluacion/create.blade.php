@@ -40,7 +40,7 @@
 			<select name="id_proyectos_articulos" id="id_proyectos_articulos" class="form-control" required="required" placeholder="id_proyectos_articulos" >
 
 			  @foreach($proyectos_articulos as $row)
-					<option value="{{$row->id}}" >{{$row->id}} {{$row->DescripcionProyecto_Articulo}}</option>
+					<option value="{{$row->id}}" selected>{{$row->id}} {{$row->DescripcionProyecto_Articulo}}</option>
 				@endforeach
 			</select>
 	</div>
@@ -56,17 +56,20 @@
 
 	<div class="form-group">
 	<label for="Desc_criterio_eval">CRITERIOS DE EVALUACIÓN</label>
-	<textarea class="ckeditor" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval"></textarea>
+	<textarea class="text" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" cols="148" rows="5"></textarea>
 	</div>
 
-
-
+<!--ckeditor-->
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Puntaje Máximo</label>
 		<input type="text" class="form-control" name="Puntaje_Maximo" id="Puntaje_Maximo" placeholder="Digite un Puntaje_Maximo"  required>
 	</div>
 
+	<div class="form-group">
+		<label for="">Ayuda para el Evaluador</label>
+		<textarea class="text" name="ayuda" id="ayuda" placeholder="Ayuda para el evaluador" cols="148" rows="5"></textarea>
+	</div>
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Puntaje_evaluador</label>

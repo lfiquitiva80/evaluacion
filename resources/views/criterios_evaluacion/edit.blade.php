@@ -57,7 +57,7 @@
 
 	<div class="form-group">
 	<label for="Desc_criterio_eval">CRITERIOS DE EVALUACIÓN</label>
-	<textarea class="ckeditor" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" value="{{$criterios_evaluacion->Desc_criterio_eval}}">{{$criterios_evaluacion->Desc_criterio_eval}}</textarea>
+	<textarea type="text" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" value="{{$criterios_evaluacion->Desc_criterio_eval}}" cols="148" rows="5">{{$criterios_evaluacion->Desc_criterio_eval}}</textarea>
 	</div>
 
 
@@ -66,6 +66,11 @@
 	<div class="form-group">
 		<label for="NombreDepartamento">Puntaje Máximo (*) Campo Obligatorio</label>
 		<input type="text" class="form-control" name="Puntaje_Maximo" id="Puntaje_Maximo" placeholder="Digite un Puntaje_Maximo" value="{{$criterios_evaluacion->Puntaje_Maximo}}" required>
+	</div>
+
+	<div class="form-group">
+		<label for="">Ayuda para el Evaluador</label>
+		<textarea class="text" name="ayuda" id="ayuda" placeholder="Ayuda para el evaluador" cols="148" rows="5">{{$criterios_evaluacion->ayuda}}</textarea>
 	</div>
 
 
