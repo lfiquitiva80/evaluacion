@@ -45,11 +45,19 @@
 		<input type="text" class="form-control" name="NombreEvaluador" id="NombreEvaluador" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->NombreEvaluador}}" readonly="readonly">
 	</div>
 
-	<div class="form-group">
+<div class="form-group">
 		<label for="NombreDepartamento">Fecha de Nacimiento</label>
-		<input type="date" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento" placeholder="Digite el Nombre del evaluador" value=" {{$evaluadores->Fecha_Nacimiento}}" >Su fecha de Nacimiento es: {{$evaluadores->Fecha_Nacimiento}}
+		<input type="text" class="form-control" name="Fecha_Nacimiento" id="Fecha_Nacimiento"  value=" {{$evaluadores->Fecha_Nacimiento}}" required>
 	</div>
-
+<script type="text/javascript">
+$( function() {
+    	$( "#Fecha_Nacimiento" ).datepicker();
+    	//$( "#Fecha_Nacimiento" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+    	$( "#Fecha_Nacimiento" ).on( "mousedown", function() {
+      $( "#Fecha_Nacimiento" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+    });
+  } );
+  </script>
 	
 
 	<div class="form-group">

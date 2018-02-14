@@ -24,7 +24,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Reciba un cordial saludo. Agradecemos su amable colaboraci&oacute;n y participaci&oacute;n como evaluador de los proyectos de investigaci&oacute;n de la {{$proponente}}</span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">. Para los fines pertinentes, en la plataforma encontrar&aacute; los siguientes documentos:</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
+
 
 <ol>
 	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Documentos del proyecto a evaluar.</span></span></span></span></span></span></li>
@@ -32,6 +32,8 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Acuerdo de confidencialidad: documento en el que usted se compromete a guardar reserva sobre el proyecto evaluado, as&iacute; como los documentos y contenidos del mismo. Este formato, deber&aacute; ser diligenciado y firmado.</span></span></span></span></span></span></li>
 	
 </ol>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">De otra parte, le agradezco gestionar los documentos mencionados en los numerales 1 a 3 a m&aacute;s tardar el pr&oacute;ximo <strong><u><?php  $dt_2SemanasDespues = date('Y-M-d', strtotime('+2 week')); $dt_2SemanasDespues;?><?php echo date('d', strtotime('+2 week'))." de ".$meses[date('n', strtotime('+2 week'))-1]. " del ".date('Y', strtotime('+2 week')) ;?></u></strong></span></span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">, fecha en la cual se le indicar&aacute; el procedimiento para pago y entrega del certificado en el que consta su participaci&oacute;n como evaluador.</span></span></span></span></span></span></p>
 
@@ -42,7 +44,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
           ?> <br> Contraseña = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo  \Crypt::decrypt($comment2->passworddos);
 ?>
-<!--mcrypt_decrypt($comment2->password)-->
+
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 Si ya tiene contraseña asignada por favor dar click al siguiente boton verde.

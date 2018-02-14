@@ -128,17 +128,21 @@ class preguntasController extends Controller
         
 
 
-                         $invitacion = \App\proyectos_articulos::find($id);
-                         
-                        
+                            $invitacion = \App\proyectos_articulos::find($id);
+                            
+
                          if (empty($invitacion->Fecha_inicio)) {
 
                           $date = Carbon::now();
                           $invitacion->Fecha_inicio=$date;
-                          $invitacion->aprobo=input('aprobo');
+                          $invitacion->aprobo=$request->input('aprobo');
+                          $invitacion->Facultad=$request->input('Facultad');
                           $invitacion->save();
 
                          } 
+
+
+
                      
         
                     if (\Auth::user()->TipoUsers==0){
@@ -228,6 +232,18 @@ class preguntasController extends Controller
              $input = [
                 'DescripcionProyecto_Articulo' => $proyectos_articulos->DescripcionProyecto_Articulo."-Copia ".$i,
                 'id_evaluador' => $evaluadores->id,
+                'CODIGO' => $proyectos_articulos->CODIGO,
+                'CARPETA_ARCHIVO_O_INFORME' => $proyectos_articulos->CARPETA_ARCHIVO_O_INFORME,
+                'CONVOCATORIA' => $proyectos_articulos->CONVOCATORIA,
+                'ANIO' => $proyectos_articulos->ANIO,
+                'INVESTIGADOR_PRINCIPAL' => $proyectos_articulos->INVESTIGADOR_PRINCIPAL,
+                'POSIBLES_EVALUADORES' => $proyectos_articulos->POSIBLES_EVALUADORES,
+                'DEPENDENCIA' => $proyectos_articulos->DEPENDENCIA,
+                'centro_costos' => $proyectos_articulos->centro_costos,
+                'CoordinadorProyecto_Articulo' => $proyectos_articulos->CoordinadorProyecto_Articulo,
+                'Facultad' => $proyectos_articulos->Facultad,
+                'precioletras' => $proyectos_articulos->precioletras,
+                'proyecto_pdf' => $proyectos_articulos->proyecto_pdf,
                 'categoria' => $proyectos_articulos->categoria,
                 'area' => $proyectos_articulos->area,
                 'plantilla' => $proyectos_articulos->plantilla,
@@ -253,6 +269,7 @@ class preguntasController extends Controller
             'DescripcionEvaluacion' => $value->DescripcionEvaluacion,
             'Desc_criterio_eval' => $value->Desc_criterio_eval,
             'Puntaje_Maximo' => $value->Puntaje_Maximo,
+            'ayuda' => $value->ayuda,
             'Deficiente' => $value->Deficiente,
             'Aceptable' => $value->Aceptable,
             'Sobresaliente' => $value->Sobresaliente,

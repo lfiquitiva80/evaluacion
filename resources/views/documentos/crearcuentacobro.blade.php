@@ -38,6 +38,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">La suma en menci&oacute;n se debe consignar en la:</span></strong></span></span></p>
 
+<div id="cuentalocal">
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Cuenta No.: <input type="text" name="numerocuenta" size="20"> Tipo de cuenta (ahorros, corriente): <select name="tipo_cuenta" id="tipo_cuenta" >
 
    
@@ -45,9 +46,9 @@
     <option value="Corriente">Corriente</option>
   
   </select>del Banco: <input type="text" name="nombrebanco" id="nombrebanco" size="20"></span></span></span></p>
+</div>
 
-
-
+<div id="cuentaextrajera">
 
 <p><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">En caso de que el dinero se deba consignar en una cuenta bancaria del exterior, certifico que la informaci&oacute;n del banco beneficiario y la del banco intermediario es la que a continuaci&oacute;n se especifica:</span></span></span></p>
 
@@ -218,7 +219,7 @@
 	</tbody>
 </table>
 
-
+</div>
 
 
 
@@ -294,7 +295,46 @@
 		</div>
 	
 	
+<script>
+  $( function() {
 
+  	$("#cuentalocal").hide();	
+    $("#cuentaextrajera").hide();
+
+    $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height: "auto",
+      width: 500,
+      modal: true,
+      buttons: {
+        "Cuenta Local": function() {
+        
+       		$("#cuentalocal").show();
+       		$( this ).dialog( "close" );	
+
+        },
+
+        "Cuenta Extranjera": function() {
+        $("#cuentaextrajera").show();
+       		$( this ).dialog( "close" );		
+         
+        },
+
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="dialog-confirm" title="Qué tipo de cuenta es?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Si su cuenta es de Colombia click en el boton de cuenta Local <br> Si su cuenta es extranjera click en el boton de Cuenta Extranjera </p>
+</div>
+
+ 
 
 
 

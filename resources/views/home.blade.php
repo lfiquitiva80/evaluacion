@@ -38,7 +38,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#Evaluaciones">Evaluaciones por Iniciar</a></li>
-    	
+      
     <li><a data-toggle="tab" href="#Documentos" id="doc">Documentos para Gestionar el Pago</a></li>
     <li><a data-toggle="tab" href="#Financiera">Cuenta de Cobro en Linea</a></li>
     <li><a data-toggle="tab" href="#Históricos">Evaluaciones Terminadas</a></li>
@@ -54,7 +54,8 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
   <thead>
     <tr>
       <td>  id  </td>
-      <td>  Descripción Proyecto Articulo</td>
+      <td style="width:150%">  Descripción Proyecto Articulo</td>
+      
       <td>  Proyecto (Documentos)</td>
       <!--<td>  Cuenta de Cobro</td>-->
       <td>  Doc. Confidencialidad</td>
@@ -78,21 +79,36 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
           <td>{{$row->id}}</td>
          <!-- <td><a href="{{ $url = route('proyectos_articulos.edit',$row->id) }}" target="_blank">{{$row->DescripcionProyecto_Articulo}}</a></td>-->
-          <td>{{$row->DescripcionProyecto_Articulo}}</td>
-
+          <td >{{$row->DescripcionProyecto_Articulo}}</td>
+          
           @if (!empty($row->proyecto_pdf))
-          <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+          <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar" class="btn btn-success"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" >  Descargar<br> los Documentos<br> del Proyecto</span></a></td>
           @else
           <td>Falta por subir</td>
           @endif
 
             <?php   $confidencialidad= App\confidencialidad::where('proyectos_articulos_id', $row->id)->first(); //echo $confidencialidad->doyfe;     ?>
-          <td >
+          <!--<td >
               @if (count($confidencialidad)>=1)
           
           <a href="{{ $url = route('confidencialidad.show', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" ><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
+              @elseif (empty($row->Fecha_Aceptacion))
+              Falta por aceptar el proyecto por el correo
               @else 
           <a href="{{ $url = route('crearconfidencialidad', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Aceptar el documento de confidencialidad para continuar" ><i class="fa fa-bell" aria-hidden="true"></i> Aceptar Confidencialidad</a>    
+          
+              @endif
+          </td>-->
+
+
+                    <td >
+              @if (count($confidencialidad)>=1)
+          
+          <a href="{{ $url = route('showconfidencialidadutadeo', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" ><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
+              @elseif (empty($row->Fecha_Aceptacion))
+              Falta por aceptar el proyecto por el correo
+              @else 
+          <a href="{{ $url = route('crearconfidencialidadutadeo', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Aceptar el documento de confidencialidad para continuar" ><i class="fa fa-bell" aria-hidden="true"></i> Aceptar Confidencialidad</a>    
           
               @endif
           </td>
@@ -109,15 +125,25 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
          @if (count($confidencialidad)>=1)
           <td ><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Eloy</a>
+          @elseif($row->plantilla=="PlantillaUtadeo")
+          <a href="{{ $url = route('utadeo.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Utadeo</a>
+          
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación</a>
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Innpulsa</a>
+
           @endif</td>
+
 
           <td>
              @if ($row->plantilla=="PlantillaEloy")
           <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
-          @else
+           @elseif($row->plantilla=="PlantillaUtadeo")
+
+           <a href="{{ $url = route('utadeo.show', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><i class="glyphicon glyphicon-print" aria-hidden="true"></i> </a>
+
+           @else
+
           <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default"  data-toggle="tooltip" data-placement="top" title="Click para imprimir la Evaluación asignada"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
           @endif
           </td>
@@ -125,6 +151,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <td>No puede iniciar porque no ha aceptado la confidencialidad</td>          
           <td>No puede iniciar porque no ha aceptado la confidencialidad</td>
           @endif
+
 
 
           
@@ -168,7 +195,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
   </div>
 </div>-->
 
-<a class="btn btn-default" data-toggle="modal" href='#pago-{{$row->id}}' data-placement="top" title="Click para Confirmar Pago">Confirmación Pago y Terminación evaluación</a>
+<a class="btn btn-default" data-toggle="modal" href='#pago-{{$row->id}}' data-placement="top" title="Click para Confirmar Pago">Terminación evaluación<br> y Confirmación de pago</a>
 <div class="modal fade" id="pago-{{$row->id}}">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -296,14 +323,26 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
          </a>-->
            @if ($row->plantilla=="PlantillaEloy")
           <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-primary" target="_blank">Vista Eloy</a>
-          @else
-          <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank">Vista Innpulsa</a>
-          @endif
+          @elseif ($row->plantilla=="PlantillaUtadeo")
+           <a href="{{ $url = route('utadeo.show', $row->id) }}" class="btn btn-primary" target="_blank">Vista Utadeo</a>
+           @else
+            <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank">Vista Innpulsa</a>
+          @endif 
+
+         
 
         </td>
         <td>
           @if($row->certificadoypago==1 || $row->acepto_pago=="noaceptopago")
-          <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado</a>
+          
+
+          @if ($row->plantilla=="PlantillaEloy")
+          <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado Eloy</a>
+          @elseif ($row->plantilla=="PlantillaUtadeo")
+           <a href="{{ $url = route('certificadotadeo', $row->id) }}" class="btn btn-info">Certificado Utadeo</a>
+           @else
+            <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado Eloy</a>
+          @endif 
           @else
           
           @endif
@@ -324,7 +363,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 </div>
     </div>
 
-	<div id="Financiera" class="tab-pane fade">
+  <div id="Financiera" class="tab-pane fade">
       <h3>Cuenta de Cobro en Linea</h3>
       <div class="table-responsive">
 <table class="table table-hover" >
@@ -364,8 +403,8 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
          <td>
           <a href="{{ $url = route('cuentacobro', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar la cuenta de Cobro"><i class="glyphicon glyphicon-search" aria-hidden="true"></i> Vista cuenta de Cobro</a>
-		  </td>
-		  @else
+      </td>
+      @else
          <!--<td><a href="{{ $url = route('infofinanciera', $row->id ) }}" class="btn btn-primary" title="Click para actualizar información financiera para la cuenta de cobro"><i class="fa fa-users" aria-hidden="true"></i>Realizar la Cuenta de cobro</a></td>-->
     
       <td>
@@ -439,7 +478,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <a href="{{ $url = route('infofinanciera', $row->id ) }}" class="btn btn-primary" title="Click para actualizar información financiera para la cuenta de cobro"><i class="fa fa-users" aria-hidden="true"></i>Realizar la Cuenta de cobro</a>
+                  <a href="{{ $url = route('infofinanciera', $row->id ) }}" class="btn btn-primary" title="Click para actualizar información financiera para la cuenta de cobro"><i class="fa fa-users" aria-hidden="true"></i>generar cuenta de cobro</a>
                 </div>
               </div>
             </div>
@@ -566,11 +605,11 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
             @else
              <a href="{{ $url = route('evaluadores.edit', $row->id) }}" title="Falta por subir el  RUT actualizado O Pasaporte"><span class="fa fa-close" aria-hidden="true" style="color:red;"> RUT actualizado O Pasaporte</span></a>
             @endif
-			
-        	</td>
+      
+          </td>
 
-        	 
-		
+           
+    
 
         <td><a href="{{ $url = route('evaluadores.edit', $row->id) }}" class="btn btn-success" title="Click aqui para subir los documentos faltantes y actualizar la información"><i class="fa fa-pencil" aria-hidden="true" ></i> Actualizar la información y Subir Documentos Faltantes</a></td>
 

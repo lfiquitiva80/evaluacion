@@ -70,7 +70,7 @@
 
 	<div class="form-group">
 		<label for="">Ayuda para el Evaluador</label>
-		<textarea class="text" name="ayuda" id="ayuda" placeholder="Ayuda para el evaluador" cols="148" rows="5">{{$criterios_evaluacion->ayuda}}</textarea>
+		<textarea class="ckeditor" name="ayuda" id="ayuda" placeholder="Ayuda para el evaluador" cols="148" rows="5">{{$criterios_evaluacion->ayuda}}</textarea>
 	</div>
 
 

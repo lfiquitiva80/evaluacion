@@ -15,7 +15,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><strong><span style="color:#000000; font-family:Arial, sans-serif"><span style="font-size:14.6667px">Confirmación Pago </span></span></strong></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Recibe un cordial saludo. Confirmamos el pago al jurado evaluador <strong><em><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Recibe un cordial saludo. Confirmamos el pago al jurado evaluador <strong><em><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?></em></strong>, quien nos apoy&oacute; en el proyecto <em>{{$DescripcionProyecto_Articulo}}</em> que en la actualidad se est&aacute; desarrollando para la <em>{{$Objetivo}}</em>. </span></span></span></p>
 

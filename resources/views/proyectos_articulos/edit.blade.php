@@ -41,26 +41,80 @@
 	</div>
 
 	<div class="form-group">
-	<label for="">Categoria</label>
-	<input type="text" class="form-control" name="categoria" id="categoria" placeholder="Digite un categoria" value="{{$proyectos_articulos->categoria}}" >
-	</div>
+			<label for="">CODIGO</label>
+			<input type="text" class="form-control" name="CODIGO" id="CODIGO" placeholder="Digite un CODIGO" value="{{$proyectos_articulos->CODIGO}}">
+		</div>
 
+		<div class="form-group">
+			<label for="">CARPETA  / ARCHIVO O INFORME</label>
+			<input type="text" class="form-control" name="CARPETA_ARCHIVO_O_INFORME" id="CARPETA_ARCHIVO_O_INFORME" placeholder="Digite un CARPETA_ARCHIVO_O_INFORME" value="{{$proyectos_articulos->CARPETA_ARCHIVO_O_INFORME}}" >
+		</div>
 
+		<div class="form-group">
+			<label for="">FACULTAD</label>
+			<input type="text" class="form-control" name="Facultad" id="Facultad" placeholder="Digite Facultad"  value="{{$proyectos_articulos->Facultad}}">
+		</div>
+
+		<div class="form-group">
+			<label for="">DEPENDENCIA</label>
+			<input type="text" class="form-control" name="DEPENDENCIA" id="DEPENDENCIA" placeholder="Digite DEPENDENCIA" value="{{$proyectos_articulos->DEPENDENCIA}} ">
+		</div>
+
+		<div class="form-group">
+			<label for="">CONVOCATORIA</label>
+			<input type="text" class="form-control" name="CONVOCATORIA" id="CONVOCATORIA" placeholder="Digite CONVOCATORIA" value="{{$proyectos_articulos->CONVOCATORIA}} ">
+		</div>
+
+		<div class="form-group">
+			<label for="">AÑO</label>
+			<input type="text" class="form-control" name="ANIO" id="ANIO" placeholder="Digite ANIO"  value="{{$proyectos_articulos->ANIO}}">
+		</div>
+
+		<div class="form-group">
+			<label for="">INVESTIGADOR PRINCIPAL</label>
+			<input type="text" class="form-control" name="INVESTIGADOR_PRINCIPAL" id="INVESTIGADOR_PRINCIPAL" placeholder="Digite INVESTIGADOR PRINCIPAL" value="{{$proyectos_articulos->INVESTIGADOR_PRINCIPAL}}">
+		</div>
+
+		<div class="form-group">
+			<label for="">POSIBLES EVALUADORES</label>
+			<input type="text" class="form-control" name="POSIBLES_EVALUADORES" id="POSIBLES_EVALUADORES" placeholder="Digite INVESTIGADOR PRINCIPAL" value="{{$proyectos_articulos->POSIBLES_EVALUADORES}}">
+		</div>
+		<?php  $evaluadores = DB::table('evaluadores')->get();?>
 	<div class="form-group">
-		<label for="">Área</label>
-		<input type="text" class="form-control" name="area" id="area" placeholder="Digite un área" value="{{$proyectos_articulos->area}}" >
-	</div>
+		<label for="">EVALUADOR DESIGNADO</label>
+		<select name="id_evaluador" id="id_evaluador" class="form-control" required="required" placeholder="" >
+		
 
+		  @foreach($evaluadores as $row)
+	  	@if ($proyectos_articulos->id_evaluador==$row->id)
+			<option value="{{$row->id}}" selected>{{$row->NombreEvaluador}}</option>
+		@else
+		<option value="{{$row->id}}">{{$row->NombreEvaluador}}</option>
+		@endif
+
+			@endforeach
+		</select>
+</div>
+
+
+	
+	
 
 	<div class="form-group">
 	<label for="">plantilla</label>
 	<select name="plantilla" id="plantilla" class="form-control" value="{{$proyectos_articulos->plantilla}}">
 		@if ($proyectos_articulos->plantilla=="PlantillaEloy")
-		<option value="PlantillaEloy" selected>PlantillaEloy</option>
-		<option value="PlantillaInnpulsa">PlantillaInnpulsa</option>
-		@else
+		<option value="PlantillaEloy" selected>Plantilla Eloy</option>
+		<option value="PlantillaInnpulsa">Plantilla Innpulsa</option>
+		<option value="PlantillaUtadeo">Plantilla Utadeo</option>
+		@elseif ($proyectos_articulos->plantilla=="PlantillaInnpulsa")
 		<option value="PlantillaEloy" >PlantillaEloy</option>
 		<option value="PlantillaInnpulsa" selected>PlantillaInnpulsa</option>
+		<option value="PlantillaUtadeo">Plantilla Utadeo</option>
+		@else
+		<option value="PlantillaEloy" >PlantillaEloy</option>
+		<option value="PlantillaInnpulsa" >PlantillaInnpulsa</option>
+		<option value="PlantillaUtadeo" selected>Plantilla Utadeo</option>
 
 		@endif
 	</select>
@@ -123,33 +177,15 @@
 		</div>
 
 
-			<?php  $evaluadores = DB::table('evaluadores')->get();?>
+			
 			
 
 	
 		
 
-<div class="form-group">
-		<label for="">Id_Evaluador:</label>
-		<select name="id_evaluador" id="id_evaluador" class="form-control" required="required" placeholder="" >
-		
-
-		  @foreach($evaluadores as $row)
-	  	@if ($proyectos_articulos->id_evaluador==$row->id)
-			<option value="{{$row->id}}" selected>{{$row->NombreEvaluador}}</option>
-		@else
-		<option value="{{$row->id}}">{{$row->NombreEvaluador}}</option>
-		@endif
-
-			@endforeach
-		</select>
-</div>
 
 
-	<div class="form-group">
-		<label for="NombreDepartamento">Grupo_Investigacion</label>
-		<input type="text" class="form-control" name="Grupo_Investigacion" id="Grupo_Investigacion" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->Grupo_Investigacion}}">
-	</div>
+	
 
 
 		</div>
@@ -195,6 +231,22 @@
 			$('#ocultarproyectoedit').hide();
 		});
 	</script>
+
+	<div class="form-group">
+		<label for="NombreDepartamento">Grupo_Investigacion</label>
+		<input type="text" class="form-control" name="Grupo_Investigacion" id="Grupo_Investigacion" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" value="{{$proyectos_articulos->Grupo_Investigacion}}">
+	</div>
+
+	<div class="form-group">
+	<label for="">Categoria</label>
+	<input type="text" class="form-control" name="categoria" id="categoria" placeholder="Digite un categoria" value="{{$proyectos_articulos->categoria}}" >
+	</div>
+
+
+	<div class="form-group">
+		<label for="">Área</label>
+		<input type="text" class="form-control" name="area" id="area" placeholder="Digite un área" value="{{$proyectos_articulos->area}}" >
+	</div>
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">

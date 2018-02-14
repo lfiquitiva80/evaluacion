@@ -4,6 +4,7 @@
   {{ trans('adminlte_lang::message.home') }}
 @endsection
 @section('main-content')
+<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><em><span style="font-family:&quot;Century Gothic&quot;,sans-serif">Documento soporte a la nota de contabilidad autorizada por el articulo del Decreto reglamentado 380/96 de la ley 223/95 sobre compras a personas que pertenecen al regimen simplificado.</span></em></span></span></p>
 
@@ -248,7 +249,7 @@
 			        duration: 1000
 			      },
 			      hide: {
-			        effect: "explode",
+			        effect: "blind",
 			        duration: 1000
       }
 

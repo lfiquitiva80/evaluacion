@@ -66,6 +66,8 @@ Route::get('pdfevaluacion2/{id}', 'PDFcontroller@Certificado2')->name('pdfevalua
 
 Route::get('certificadoeloy/{id}', 'PDFcontroller@certificadoeloy')->name('certificadoeloy');
 
+Route::get('certificadotadeo/{id}', 'PDFcontroller@certificadotadeo')->name('certificadotadeo');
+
 Route::get('emailnorespuesta/{id}', 'emailController@norespuesta')->name('norespuesta');
 
 Route::get('aceptacion/{id}', 'emailController@aceptacion')->name('aceptacion');
@@ -181,6 +183,8 @@ Route::get('allcriterios', 'excelController@allcriterios')->name('allcriterios')
 
 Route::get('eloy', 'excelController@eloy')->name('eloy');
 
+Route::get('excelutadeo', 'excelController@utadeo')->name('utadeo');
+
 Route::get('innpulsa', 'excelController@innpulsa')->name('innpulsa');
 
 Route::resource('evaluadores','evaluadoresController');
@@ -189,6 +193,8 @@ Route::get('settings','evaluadoresController@perfil')->name('settings');
 
 Route::resource('proyectos_articulos','proyectos_articulosController');
 
+Route::resource('utadeo','utadeoController');
+
 Route::resource('evaluacion_par','evaluacion_parController');
 
 Route::resource('comunicados', 'comunicadosController');
@@ -196,6 +202,10 @@ Route::resource('comunicados', 'comunicadosController');
 Route::resource('confidencialidad', 'confidencialidadController');
 
 Route::get('crearconfidencialidad/{id}', 'confidencialidadController@confidencialidad')->name('crearconfidencialidad');
+
+Route::get('crearconfidencialidadutadeo/{id}', 'utadeoController@confidencialidadUtadeo')->name('crearconfidencialidadutadeo');
+
+Route::get('showconfidencialidadutadeo/{id}', 'utadeoController@showconfidencialidadUtadeo')->name('showconfidencialidadutadeo');
 
 Route::get('rectificacion','comunicadosController@rectificacion_errores')->name('rectificacion_errores');
 

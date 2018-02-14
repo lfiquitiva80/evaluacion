@@ -43,15 +43,57 @@
 		</div>
 
 		<div class="form-group">
-			<label for="">DescripcionProyecto_Articulo</label>
+			<label for="">DENOMINACIÓN DEL PROYECTO</label>
 			<input type="text" class="form-control" name="DescripcionProyecto_Articulo" id="DescripcionProyecto_Articulo" placeholder="Digite un nuevo 	DescripcionProyecto_Articulo" onchange="Mayusculas()">
 		</div>
+
+		<div class="form-group">
+			<label for="">CODIGO</label>
+			<input type="text" class="form-control" name="CODIGO" id="CODIGO" placeholder="Digite un CODIGO" onchange="Mayusculas()">
+		</div>
+
+		<div class="form-group">
+			<label for="">CARPETA  / ARCHIVO O INFORME</label>
+			<input type="text" class="form-control" name="CARPETA_ARCHIVO_O_INFORME" id="CARPETA_ARCHIVO_O_INFORME" placeholder="Digite un CARPETA_ARCHIVO_O_INFORME" >
+		</div>
+
+		<div class="form-group">
+			<label for="">FACULTAD</label>
+			<input type="text" class="form-control" name="Facultad" id="Facultad" placeholder="Digite Facultad" >
+		</div>
+
+		<div class="form-group">
+			<label for="">DEPENDENCIA</label>
+			<input type="text" class="form-control" name="DEPENDENCIA" id="DEPENDENCIA" placeholder="Digite DEPENDENCIA" >
+		</div>
+
+		<div class="form-group">
+			<label for="">CONVOCATORIA</label>
+			<input type="text" class="form-control" name="CONVOCATORIA" id="CONVOCATORIA" placeholder="Digite CONVOCATORIA" >
+		</div>
+
+		<div class="form-group">
+			<label for="">AÑO</label>
+			<input type="text" class="form-control" name="ANIO" id="ANIO" placeholder="Digite ANIO" >
+		</div>
+
+		<div class="form-group">
+			<label for="">INVESTIGADOR PRINCIPAL</label>
+			<input type="text" class="form-control" name="INVESTIGADOR_PRINCIPAL" id="INVESTIGADOR_PRINCIPAL" placeholder="Digite INVESTIGADOR PRINCIPAL" >
+		</div>
+
+		<div class="form-group">
+			<label for="">POSIBLES EVALUADORES</label>
+			<input type="text" class="form-control" name="POSIBLES_EVALUADORES" id="POSIBLES_EVALUADORES" placeholder="Digite INVESTIGADOR PRINCIPAL" >
+		</div>
+
+
 
 			<?php  $evaluadores = DB::table('evaluadores')->get();?>
 
 
 		<div class="form-group">
-				<label for="">Id_Evaluador:</label>
+				<label for="">EVALUADOR DESIGNADO</label>
 				<select name="id_evaluador" id="id_evaluador" class="form-control" required="required" placeholder="" >
 
 				  @foreach($evaluadores as $row)
@@ -59,34 +101,22 @@
 					@endforeach
 				</select>
 		</div>
+		
+
+		
+
+		</script>
+		
 
         
-		<div class="form-group">
-		<label for="">Categoría</label>
-		<select name="categoria" id="categoria" class="form-control">
-			<option value="Sin Categoría">Sin Categoría</option>
-			<option value="Investigador Consolidado" selected>Investigador Consolidado</option>
-			<option value="Investigador en Formación">Investigador en Formación</option>
-
-		</select>
-		</div>
-
-		<div class="form-group">
-		<label for="">Área</label>
-		<select name="area" id="area" class="form-control">
-			<option value="Ingeniería" selected>Ingeniería</option>
-			<option value="Ciencias">Ciencias</option>
-			.<option value="Salud">Salud</option>
-			<option value="Ciencias Sociales">Ciencias Sociales</option>
-			<option value="Desarrollo Tecnológico e Innovación">Desarrollo Tecnológico e Innovación</option>
-		</select>
-		</div>
+		
 
 		<div class="form-group">
 		<label for="">plantilla</label>
 		<select name="plantilla" id="plantilla" class="form-control">
 			<option value="PlantillaEloy" selected>PlantillaEloy</option>
 			<option value="PlantillaInnpulsa">PlantillaInnpulsa</option>
+			<option value="PlantillaUtadeo">PlantillaUtadeo</option>
 		</select>
 		</div>
 
@@ -165,6 +195,27 @@
 			$('#ocultarproyecto').hide();
 		});
 	</script>
+
+	<div class="form-group">
+		<label for="">Categoría</label>
+		<select name="categoria" id="categoria" class="form-control">
+			<option value="Sin Categoría">Sin Categoría</option>
+			<option value="Investigador Consolidado" selected>Investigador Consolidado</option>
+			<option value="Investigador en Formación">Investigador en Formación</option>
+
+		</select>
+		</div>
+
+		<div class="form-group">
+		<label for="">Área</label>
+		<select name="area" id="area" class="form-control">
+			<option value="Ingeniería" selected>Ingeniería</option>
+			<option value="Ciencias">Ciencias</option>
+			.<option value="Salud">Salud</option>
+			<option value="Ciencias Sociales">Ciencias Sociales</option>
+			<option value="Desarrollo Tecnológico e Innovación">Desarrollo Tecnológico e Innovación</option>
+		</select>
+		</div>
 
     <div class="form-group">
     	<div class="btn btn-default btn-file">
@@ -291,7 +342,7 @@ $municipios = DB::table('municipios')->get();
 
 
 
-
+	
 
 
 

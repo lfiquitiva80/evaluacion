@@ -145,6 +145,14 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->area=$input['area'];
                     $proy_pdf->centro_costos=$input['centro_costos'];
                     $proy_pdf->precioletras=$input['precioletras'];
+                    $proy_pdf->CODIGO=$input['CODIGO'];
+                    $proy_pdf->CARPETA_ARCHIVO_O_INFORME=$input['CARPETA_ARCHIVO_O_INFORME'];
+                    $proy_pdf->Facultad=$input['Facultad'];
+                    $proy_pdf->DEPENDENCIA=$input['DEPENDENCIA'];
+                    $proy_pdf->CONVOCATORIA=$input['CONVOCATORIA'];
+                    $proy_pdf->ANIO=$input['ANIO'];
+                    $proy_pdf->INVESTIGADOR_PRINCIPAL=$input['INVESTIGADOR_PRINCIPAL'];
+                    $proy_pdf->POSIBLES_EVALUADORES=$input['POSIBLES_EVALUADORES'];
 
 
                     $proy_pdf->save();
@@ -287,6 +295,14 @@ class proyectos_articulosController extends Controller
                     $proy_pdf->area=$input['area'];
                     $proy_pdf->centro_costos=$input['centro_costos'];
                     $proy_pdf->precioletras=$input['precioletras'];
+                     $proy_pdf->CODIGO=$input['CODIGO'];
+                    $proy_pdf->CARPETA_ARCHIVO_O_INFORME=$input['CARPETA_ARCHIVO_O_INFORME'];
+                    $proy_pdf->Facultad=$input['Facultad'];
+                    $proy_pdf->DEPENDENCIA=$input['DEPENDENCIA'];
+                    $proy_pdf->CONVOCATORIA=$input['CONVOCATORIA'];
+                    $proy_pdf->ANIO=$input['ANIO'];
+                    $proy_pdf->INVESTIGADOR_PRINCIPAL=$input['INVESTIGADOR_PRINCIPAL'];
+                    $proy_pdf->POSIBLES_EVALUADORES=$input['POSIBLES_EVALUADORES'];
 
 
 

@@ -52,7 +52,7 @@
                 <td colspan="1" rowspan="2" >
                     1.
                 </td>
-                <td colspan="1" rowspan="2">
+                <td colspan="1" rowspan="2" style="width:30%">
                     Fecha de la evaluación:
                 </td >
                 <td >

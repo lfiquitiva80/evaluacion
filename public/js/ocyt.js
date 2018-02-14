@@ -17,12 +17,18 @@
                             }                       
                         });
 
-                          if (total>=75) {
-                              $('#Total_evaluacion').val( total );
-                              $('#aprobo').val( "SI APROBÓ" );    
+                        $('#Total_evaluacion').val( total );
+
+                            
+
+                          if (total>=70) {
+                              $('#nosirecomiento').hide();    
+                              $('#recomendacion').attr('value', '1');;
+                             $('#respuesta').html("Si recomiendo el Proyecto y/o Artículo");
                           }else {
-                              $('#Total_evaluacion').val( total );
-                              $('#aprobo').val( "NO APROBÓ" );   
+                              $('#nosirecomiento').hide();    
+                              $('#recomendacion').attr('value', '0');
+                              $('#respuesta').html("No recomiendo el Proyecto y/o Artículo");
                           }
                         
                     });
@@ -92,7 +98,3 @@ if (r == true) {
 }
               });
         });
-
-
-
-

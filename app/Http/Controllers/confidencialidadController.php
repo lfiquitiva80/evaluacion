@@ -69,8 +69,10 @@ class confidencialidadController extends Controller
     public function show($id)
     {
        $confidencialidad= confidencialidad::where('proyectos_articulos_id',$id)->first();
-        $proyectos_articulos = proyectos_articulos::find($confidencialidad->proyectos_articulos_id)->first();
-        $dt = Carbon::parse($proyectos_articulos->Fecha_Aceptacion);
+       
+        $proyectos_articulos = proyectos_articulos::where('id',$confidencialidad->proyectos_articulos_id)->first();
+        //dd($proyectos_articulos);
+        $dt = Carbon::parse($proyectos_articulos->Fecha_inicio);
         $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
            //dd($proyectos_articulos);
         

@@ -85,6 +85,24 @@ class PDFcontroller extends Controller
 
     }
 
+    public function certificadotadeo($id)
+
+    {
+        //$preguntas=DB::table('plantilla')->where('id',"=",$id)->get(); 
+        $proyectos_articulos= proyectos_articulos::find($id);
+
+        $evaluadores= evaluadores::find($proyectos_articulos->id_evaluador);
+
+        $now = Carbon::now('America/Bogota');
+                
+        $pdf = PDF::loadView('pdf.pdftadeo', compact('proyectos_articulos','id','evaluadores','now'));
+       
+
+        return $pdf->setPaper('letter', 'landscape')->setOptions(['defaultFont' => 'Helvetica'])->download('Certificado.pdf');
+                      
+
+    }
+
 
 
 

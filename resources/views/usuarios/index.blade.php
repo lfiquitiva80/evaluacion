@@ -68,8 +68,10 @@
 
           <td><?php if ($row->TipoUsers==0) {
             echo "Estándar";
-          } else {
-           echo "Administrador";
+          } elseif ($row->TipoUsers==1) {
+            echo "Administrador";
+          } else{
+           echo "Financiera";
           }
            ?></td>
 

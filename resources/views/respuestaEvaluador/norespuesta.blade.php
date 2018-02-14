@@ -32,11 +32,10 @@
                 margin: 1cm;
                 padding: 0;
                 width: 25%;
-                color: white;
+                color: black;
                 display: table;
                 font-weight: 100;
                 font-family: 'arial';
-                background-image: url(img/fondo.jpg);
                 background-size: cover;
                 
             }

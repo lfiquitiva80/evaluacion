@@ -7,6 +7,8 @@
 
 @section('main-content')
 
+<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
+
 <p style="margin-left:0cm; margin-right:0cm; text-align:center">&nbsp;</p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">ACUERDO DE CONFIDENCIALIDAD Y DECLARACI&Oacute;N DE CONFLICTO DE INTERESES</span></span></strong></span></span></p>

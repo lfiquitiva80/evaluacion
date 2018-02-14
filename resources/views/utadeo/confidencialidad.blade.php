@@ -13,7 +13,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">ACUERDO DE CONFIDENCIALIDAD Y DECLARACI&Oacute;N DE CONFLICTO DE INTERESES</span></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;<em>mayor de edad</em>&nbsp;y domiciliado(a) en la ciudad de {!! Form::open(['route' => ['confidencialidad.update', $confidencialidad->id],'method'=>'PATCH','enctype'=>'multipart/form-data','file'=>true]) !!} <input type="text" name="ciudaddomiciliario" id="ciudaddomiciliario" placeholder="digite el domiciliado(a) en la ciudad de" value="{{$confidencialidad->ciudaddomiciliario}}" required>, identificado(a) como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;<em>mayor de edad</em>&nbsp;y domiciliado(a) en la ciudad de {!! Form::open(['route' => 'confidencialidad.store', 'method'=>'POST']) !!}  <input type="text" name="ciudaddomiciliario" id="ciudaddomiciliario" placeholder="digite el domiciliado(a) en la ciudad de" required size="80">, identificado(a) como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">CONSIDERACIONES</span></span></strong></span></span></p>
 
@@ -37,20 +37,37 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<table align="center" border="1" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:solid windowtext 1.0pt; width:100.0%">
+<table align="center" border="1" cellspacing="0" class="MsoTableGrid" style="border:undefined; width:100%; " border="1">
 	<thead>
 		<tr>
-			<td style="width:54.12%">
+			<td style="width:182.65pt">
+			<p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Su afiliaci&oacute;n con la Universidad de Bogot&aacute; Jorge Tadeo Lozano </span></span></strong></span></span></p>
+			</td>
+			<td style="width:160.25pt">
 			<p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Su relaci&oacute;n con una persona que tenga un inter&eacute;s personal en la propuesta o solicitud</span></span></strong></span></span></p>
 			</td>
-			<td style="width:45.88%">
+			<td style="width:135.9pt">
 			<p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Otros tipos </span></span></strong><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">d</span></span></strong><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e afiliaciones o relaciones indirectas</span></span></strong></span></span></p>
 			</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td style="vertical-align:top; width:54.12%">
+			<td style="vertical-align:top; width:182.65pt">
+			<ul>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">E</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">s empleado actual de la instituci&oacute;n como contratista, empleado o una posici&oacute;n similar. </span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Man</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">t</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">i</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">n</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e otros empleos actuales en la instituci&oacute;n, tales como consultor&iacute;as o acuerdos de asesor&iacute;a.</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">T</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">u</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">v</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">o empleo previo en la instituci&oacute;n dentro de los &uacute;ltimos 12 meses.</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">E</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">s sujeto de consideraci&oacute;n actual para empleo en la instituci&oacute;n.</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">T</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">i</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">n</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e acuerdo de reempleo formal o informal con la instituci&oacute;n.</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">T</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">i</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">n</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e propiedades de valores de firmas involucradas en la propuesta o solicitud.</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">E</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">s miembro actual de un comit&eacute; de visitantes o un cuerpo similar en la instituci&oacute;n. (Este se considera conflicto solo en el caso de propuestas o aplicaciones que se originan en el departamento, escuela o laboratorio que el comit&eacute; de visitantes o su equivalente asesora).</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Me</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">m</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">b</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">r</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">e</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">s</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">&iacute;a de un consejo de direcci&oacute;n de cualquier oficina o comit&eacute; de la instituci&oacute;n (La membres&iacute;a ordinaria en una sociedad o asociaci&oacute;n no es considerada como de oficina).</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">In</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">s</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">cr</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">ipci&oacute;n actual como pasante. (Solo se considera conflicto en el caso de propuestas o solicitudes que se originaron en el departamento o &aacute;rea en la cual se encuentra el pasante).</span></span></span></span></li>
+				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Si ha recibido y mantenido honorarios o apoyo financiero de la instituci&oacute;n dentro de los &uacute;ltimos 12 meses.</span></span></span></span></li>
+			</ul>
+			</td>
+			<td style="vertical-align:top; width:160.25pt">
 			<ul>
 				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">R</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">elaci&oacute;n de familia conocida como esposo(a), hijo, hermano o padre.</span></span></span></span></li>
 				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Re</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">laci&oacute;n de negocios o profesional.</span></span></span></span></li>
@@ -59,7 +76,7 @@
 				<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">C</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">o-edici&oacute;n de una revista, compendio o memorias de conferencia dentro de los &uacute;ltimos 24 meses</span></span></span></span></li>
 			</ul>
 			</td>
-			<td style="vertical-align:top; width:45.88%">
+			<td style="vertical-align:top; width:135.9pt">
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">E</span></span><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">l inter&eacute;s de las siguientes personas ser&aacute; considerado como si fuera suyo: </span></span></span></span></p>
 
 			<ul>
@@ -75,13 +92,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
 <table style="border:undefined; width:100%; " border="1">
 	<tbody>
@@ -96,14 +107,7 @@
 			<td>
 			<div>
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>, identificado con el documento de identidad n&uacute;mero {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} de {{$proyectos_articulos->evaluadores->Ciudad_expedicion}} </span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">declaro que he le&iacute;do y entiendo las posibles situaciones causales de conflicto de inter&eacute;s y doy fe de que 
-	
-				@if($confidencialidad->doyfe==0)
-			 <input type="radio" name="doyfe" value="0" checked> No <input type="radio" name="doyfe" value="1"> Si
-				@else
-				<input type="radio" name="doyfe" value="0" > No <input type="radio" name="doyfe" value="1" checked> Si
-				@endif
-
-			 <br>
+				<br> <input type="radio" name="doyfe" value="0" checked> No <input type="radio" name="doyfe" value="1"> Si<br>
 					
 						
 
@@ -140,7 +144,7 @@
 					<tr>
 						<td style="height:49.1pt; vertical-align:top; width:419.05pt">
 						<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Tipo de inter&eacute;s:</span></span></span></span></p>
-						<textarea cols="180" rows="10" name="tipointeres" id="tipointeres">{{$confidencialidad->tipointeres}}</textarea> 
+						<textarea cols="180" rows="10" name="tipointeres" id="tipointeres"></textarea> 
 						
 						</td>
 					</tr>
@@ -178,13 +182,13 @@ echo $meses[date($dt->month)-1];
 		<td colspan="2" style="height:50.6pt; width:100.0%">
 		<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">__________________________</span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60"></span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre: {{$proyectos_articulos->evaluadores->NombreEvaluador}}  </span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre. {{$proyectos_articulos->evaluadores->NombreEvaluador}}</span></span></span></span></span></p>
 
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} </span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$proyectos_articulos->evaluadores->Fecha_Nacimiento}} </span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$fecha_nacimiento->toFormattedDateString()}} </span></span></span></span></span></p>
 
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Lugar de expedici&oacute;n: {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}</span></span></span></span></span></p>
 			</td>
@@ -192,9 +196,15 @@ echo $meses[date($dt->month)-1];
 		</tr>
 	</tbody>
 </table>
-	<input type="hidden" name="proyectos_articulos_id" id="proyectos_articulos_id" value="{{$confidencialidad->proyectos_articulos_id}}">
-
-	<button type="submit" class="btn btn-primary">Guardar Confidencialidad</button>
+	<input type="hidden" name="proyectos_articulos_id" id="proyectos_articulos_id" value="{{$proyectos_articulos->id}}">
+	<input type="hidden" name="fecha_acepto_terminos" id="fecha_acepto_terminos" value="{{$date}}">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" value="1" name="aceptoterminos" id="aceptoterminos" required>
+			Si, Acepto terminos de la confidencialidad
+		</label>
+	</div>
+	<button type="submit" class="btn btn-primary">Acepto, los terminos de la confidencialidad</button>
 
 
 

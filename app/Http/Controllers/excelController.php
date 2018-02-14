@@ -364,4 +364,43 @@ public function eloy()
     {
         //
     }
+
+    public function utadeo()
+    {
+          
+        
+       /*$products=DB::table('criterios_evaluacion')->join('proyectos_articulos', 'id_proyectos_articulos', '=', 'proyectos_articulos.id')
+            ->select('proyectos_articulos.*','criterios_evaluacion.*')
+            ->get();*/
+
+             $products=proyectos_articulos::where('plantilla','PlantillaUtadeo')->get();
+
+             //dd($products);
+
+            flash('Se descargo el archivo correctamente !')->important();
+        //$input = $request->all();
+
+        Log::info('El usuario '. \Auth::user()->name .' Descargo el reporte para Eloy');
+
+           //$monolog = Log::getMonolog();
+        //dd($monolog);
+
+        \Excel::create('criterios_evaluacion', function($excel)use ($products) {
+            $excel->sheet('criterios_evaluacion', function($sheet) use ($products){
+            $sheet->loadView('excel.utadeo', ['products' => $products]);
+            });
+        })->export('xlsx');
+
+           
+            
+         
+
+        return redirect()->route('excel.index');
+    }
+
+
+
+
+
+
 }

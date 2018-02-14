@@ -75,19 +75,20 @@ class usuariosController extends Controller
             'name'     => 'required|max:255',
             'username' => 'sometimes|required|max:255|unique:users',
             'email'    => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            //'password' => 'required|min:6|confirmed',
             
         ]);
 
         flash('Se creo con Exito!')->important();
        Log::info('El usuario '. \Auth::user()->name .' Creo un nuevo usuario: '.$request['name']);
-        
+            $hashed_random_password = str_random(8);
+            //dd($hashed_random_password);
 
          $input = [
             'name'     => $request['name'],
             'email'    => $request['email'],
-            'password' => bcrypt($request['password']),
-            'passworddos' => \Crypt::encrypt($request['password']),
+            'password' => bcrypt($hashed_random_password),
+            'passworddos' => \Crypt::encrypt($hashed_random_password),
             'TipoUsers' => $request['TipoUsers'],
             'id_tratamiento' => $request['id_tratamiento'],
             ];

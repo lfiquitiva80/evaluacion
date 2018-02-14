@@ -219,7 +219,7 @@
 
 
                 <td>
-                <div class="col-xs-3">
+                <div class="col-xs-6">
     		<label for="">Puntaje Asignado</label>
                     
            <input type="number" class="form-control sumados" name="Puntaje_evaluador[]"  id="Puntaje_evaluador" min="0" max="{{$row->Puntaje_Maximo}}" width="1000" height="1000" value="{{$row->Puntaje_evaluador}}" size="20" > 
@@ -253,7 +253,7 @@
                     PUNTAJE TOTAL
 
                 </td>
-                <td><center><strong><input type="text" name="aprobo" id="aprobo"></center></strong></td>
+                <td><center><strong><input type="text" name="aprobo" id="aprobo" readonly></center></strong></td>
                 <td >
                    <div class="form-group" id="app">
             <label for="">Total_evaluacion</label>

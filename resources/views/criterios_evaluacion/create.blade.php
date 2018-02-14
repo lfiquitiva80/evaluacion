@@ -32,8 +32,8 @@
 		<input type="text" class="form-control" name="id"  id="id" placeholder="Id" readonly="readonly">
 	</div>
 	
-		<?php  $proyectos_articulos = DB::table('proyectos_articulos')->get();?>
-
+		
+	<?php  $proyectos_articulos = DB::table('proyectos_articulos')->get();?>
 
 	<div class="form-group">
 			<label for="">	Proyecto y/o Articulos</label>
@@ -56,7 +56,7 @@
 
 	<div class="form-group">
 	<label for="Desc_criterio_eval">CRITERIOS DE EVALUACIÓN</label>
-	<textarea class="text" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" cols="148" rows="5"></textarea>
+	<textarea class="ckeditor" name="Desc_criterio_eval" id="Desc_criterio_eval" placeholder="Desc_criterio_eval" cols="148" rows="5"></textarea>
 	</div>
 
 <!--ckeditor-->

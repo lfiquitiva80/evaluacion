@@ -4,7 +4,7 @@
 <!-- Laravel App -->
 <script src="{{ url (asset('/js/app.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/jquery.dataTables.min.js')) }}" type="text/javascript"></script>
-<script src="{{ url (asset('/js/ocyt.js')) }}" type="text/javascript"></script>
+
 <script src="{{ url (asset('/js/Chart.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/Chart.min.js')) }}" type="text/javascript"></script>
 <script src="{{ url (asset('/js/Chart.bundle.min.js')) }}" type="text/javascript"></script>
@@ -15,7 +15,9 @@
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
 <script src="node_modules/vue/dist/vue.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<script src="{{ url (asset('/js/ocyt.js')) }}" type="text/javascript"></script>
+<script src="jquery.loading.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
