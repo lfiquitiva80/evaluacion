@@ -83,6 +83,8 @@ Route::get('pdf', 'PDFcontroller@index');
 
 Route::get('/home', 'HomeController@index')->name('homedos');
 
+Route::get('/informacion', 'HomeController@info')->name('informacion');
+
 Route::resource('eventos_general','eventosGeneralController');
 
 Route::resource('plantilla','plantillaController');

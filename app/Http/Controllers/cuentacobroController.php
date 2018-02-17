@@ -67,7 +67,7 @@ class cuentacobroController extends Controller
               $correofinanciera="lfiquitiva@ocyt.org.co";
           
           
-        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
+     //   \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
 
        return redirect()->route('homedos');
     }

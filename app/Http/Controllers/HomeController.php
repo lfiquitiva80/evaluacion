@@ -109,6 +109,14 @@ class HomeController extends Controller
         return redirect()->route('homedos');
     }
 
+
+    public function info()
+    {
+        $evaluadores = \App\evaluadores::where('id_users', \Auth::user()->id)->first();
+
+        return redirect()->route('evaluadores.edit', $evaluadores->id);
+    }
+
    
 
 

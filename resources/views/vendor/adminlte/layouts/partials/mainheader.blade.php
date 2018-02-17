@@ -76,7 +76,7 @@
                 <!-- Tasks Menu -->
                 <li class="dropdown tasks-menu">
                     <!-- Menu Toggle Button -->
-                    <a href="{{asset('documentos/Instrucciones para el Evaluador.pdf')}}">
+                    <a href="{{asset('documentos/GuiaEvaluacion.pdf')}}">
                         <i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>
                         <span class="label label-danger">Ayuda</span>
                     </a>
@@ -145,7 +145,8 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{{$url = route('settings') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
+                                    <a href="#" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.profile') }}</a>
+                                    <!--{{$url = route('settings') }}-->
                                 </div>
                                 <div class="pull-right">
                                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat" id="logout"

@@ -7,6 +7,7 @@
 		
     </h1>
 
+
     @include('flash::message')
     
 
@@ -21,3 +22,24 @@
 <script>
     $('#flash-overlay-modal').modal();
 </script>  
+
+ <!--<div class="center-block" id="spinner">
+          <div class="box box-danger">
+            <div class="box-header">
+              <h3 class="box-title">Loading</h3>
+            </div>
+            <div class="box-body">
+              Espere.....
+            </div>
+            <!~~ /.box-body ~~>
+            <!~~ Loading (remove the following to stop the loading)~~>
+            <div class="overlay">
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
+            <!~~ end loading ~~>
+          </div>
+          <!~~ /.box ~~>
+        </div>
+        <!~~ /.col ~~>
+      </div>
+      <!~~ /.row ~~>-->

@@ -89,7 +89,7 @@
 
 
 
-			<?php  $evaluadores = DB::table('evaluadores')->get();?>
+			<?php  $evaluadores = DB::table('evaluadores')->orderBy('NombreEvaluador', 'asc')->get();?>
 
 
 		<div class="form-group">

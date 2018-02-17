@@ -151,6 +151,9 @@
             </div>
             <!-- /.info-box-content -->
           </div>
+
+
+
           <!-- /.info-box -->
           <!--<div class="info-box bg-green">
             <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
@@ -210,6 +213,19 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
+     <div class="row">
+        <div class="col-md-12">
+          <!-- Line chart -->
+          
+              <iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZTE4MWYwOWUtYzE2My00ZWZhLThmYTMtZTBmNTA1NWRmNDY4IiwidCI6IjYxNDQ2YmIzLTY0ZTAtNDhkYy05Yjc5LTgwNDk5ZmE2NjhhYyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+           
+          </div>
+
+        
+
+        </div>
+
 
   </div>
 

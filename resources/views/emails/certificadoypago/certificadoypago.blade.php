@@ -32,7 +32,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Adjunto encontrar&aacute; el certificado por los servicios prestados.</span></span></span></span></span></p>
 
-<?php $url = route('certificadoeloy',$id) ?>
+<?php $url = route('certificadotadeo',$id) ?>
 
 @component('mail::button', ['url' => $url,'color' => 'green'])
 Certificado

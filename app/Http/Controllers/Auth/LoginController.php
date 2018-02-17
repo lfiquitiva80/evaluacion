@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\evaluadores;
 
 class LoginController extends Controller
 {
@@ -39,9 +40,30 @@ class LoginController extends Controller
      * @var string
      */
 
-        
+                        
+          // $evaluadores = evaluadores::where('id_users', Auth::user()->id)->first();
+            
+                
+//                    protected $redirectTo = '/informacion';
+              
+            protected function redirectTo()
+            {
+                $evaluadores = evaluadores::where('id_users', \Auth::user()->id)->first();
 
-            protected $redirectTo = '/home';
+                if (\Auth::user()->TipoUsers==0 && empty($evaluadores->HV) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Fecha_Nacimiento) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Cedula))
+                    {
+                  return '/informacion';
+                } else {
+                    
+                    return '/home';
+                }
+                
+                
+
+               
+            }              
+           
+          
             
             
      

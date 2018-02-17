@@ -332,7 +332,7 @@ class emailController extends Controller
           $correo=\App\evaluadores::find($invitacion->id_evaluador);
           $correo2=\App\User::find($correo->id_users);
 
-         \Mail::to($correo2->email)->send(new finalencuesta($invitacion));
+         //\Mail::to($correo2->email)->send(new finalencuesta($invitacion));
          \Mail::to($correo2->email)->send(new pagos($invitacion));
 
 

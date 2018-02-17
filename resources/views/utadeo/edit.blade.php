@@ -430,7 +430,10 @@
                 
                     
                     <br>__________________________________________________
-                <br><strong>FIRMA DE EVALUADOR</strong> -->   
+                <br><strong>FIRMA DE EVALUADOR</strong> -->  
+
+                <input type="checkbox" checked>Si, Acepto la evaluación
+                <hr> 
                 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">NOMBRE:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->evaluadores->NombreEvaluador}}</b></span></strong></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>
@@ -450,18 +453,20 @@
         </td>  
 
 
-
+        
 
 
         </tr>    
-         <tr>
-                <td colspan="7"> <center><button type="submit" class="btn btn-primary" >Guardar 
-            </button>
-            <br><small>Nota->Guarda parcialmente. Si se evaluo todo por favor dar click a Finalizar con el boton de abajo</small>
+         <tr>   
+
+    <td colspan="7"> <center><button type="submit" class="btn btn-primary" >Guardar </button>
+            <br>
+
         </center><p></td>
 
 
             </tr>
+
 
 
         </table>

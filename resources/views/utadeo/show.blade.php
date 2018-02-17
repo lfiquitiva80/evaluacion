@@ -25,7 +25,7 @@
 
         <legend>Formulario de Evaluación de propuesta de Investigación</legend>
 
-    <a href="{{ URL::previous() }}" class="btn btn-primary" id="preguntarguardar"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
+    <a href="{{ URL::previous() }}" class="btn btn-primary" ><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a><p>
 
         {!! Form::open(['route' => ['preguntas.update', $id],'method'=>'PATCH']) !!}
 
@@ -480,7 +480,10 @@
                 
                     
                     <br>__________________________________________________
-                <br><strong>FIRMA DE EVALUADOR</strong> -->   
+                <br><strong>FIRMA DE EVALUADOR</strong> -->
+                <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif"><input type="checkbox" checked > Si, Acepto la evalución<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->Fecha_Devolucion_Evaluador}}</b></span></strong></span></span></p>
+
+                <hr>
                 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">NOMBRE:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->evaluadores->NombreEvaluador}}</b></span></strong></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>

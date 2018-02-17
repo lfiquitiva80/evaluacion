@@ -32,6 +32,11 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
 
 
+
+
+
+
+
 <div class="container">
   <!--<h2>Dynamic Tabs</h2>
   <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>-->
@@ -277,8 +282,8 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
       <td>  Descripción Proyecto Artículo</td>
       <td>  Proyecto PDF</td>
-     <!-- <td>  Cuenta de Cobro </td>
-      <td>  Confidencialidad</td>-->
+     	<td>  Cuenta de Cobro </td>
+      <td>  Confidencialidad</td>
       <td>  Evaluación Terminada</td>
       <td>  Certificado</td>
       <!--<td>  Acción </td>-->
@@ -295,12 +300,16 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <td>{{$row->id}}</td>
           <td>{{$row->DescripcionProyecto_Articulo}}</td>
           <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span></a></td>
+
+			
+
+
           
            @if ($row->sepaga=="Sin Pago")
           <td>Proyecto sin Pago</td>
           <td>Proyecto sin Pago</td>
-          <!--<td>Proyecto sin Pago</td>
-          <td>Proyecto sin Pago</td>-->
+          <td>Proyecto sin Pago</td>
+          <td>Proyecto sin Pago</td>
         @else
           <!--<td>
           <a href="{{ $url = route('cuentacobro', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Revisar la cuenta de Cobro">Revisar la cuenta de Cobro</a>
@@ -317,6 +326,25 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
         
       </td>
 -->
+			  <td>
+          <a href="{{ $url = route('cuentacobro', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar la cuenta de Cobro"><i class="glyphicon glyphicon-search" aria-hidden="true"></i> Vista cuenta de Cobro</a>
+      </td>	
+			
+
+
+		        <td >
+              @if (count($confidencialidad)>=1)
+          
+          <a href="{{ $url = route('showconfidencialidadutadeo', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" ><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
+              @elseif (empty($row->Fecha_Aceptacion))
+              Falta por aceptar el proyecto por el correo
+              @else 
+          <a href="{{ $url = route('crearconfidencialidadutadeo', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Aceptar el documento de confidencialidad para continuar" ><i class="fa fa-bell" aria-hidden="true"></i> Aceptar Confidencialidad</a>    
+          
+              @endif
+          </td>
+
+
         
           <td>
           <!--<a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default">Vista</a>

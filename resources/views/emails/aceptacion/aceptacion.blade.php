@@ -28,8 +28,8 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <ol>
 	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Documentos del proyecto a evaluar.</span></span></span></span></span></span></li>
-	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Formulario de evaluaci&oacute;n: el cual podr&aacute; desarrollar mediante el aplicativo en l&iacute;nea, el cual le agradecemos firmar para que tenga validez ante la entidad contratante.</span></span></span></span></span></span></li>
-	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Acuerdo de confidencialidad: documento en el que usted se compromete a guardar reserva sobre el proyecto evaluado, as&iacute; como los documentos y contenidos del mismo. Este formato, deber&aacute; ser diligenciado y firmado.</span></span></span></span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Formulario de evaluaci&oacute;n: el cual podr&aacute; desarrollar mediante el aplicativo en l&iacute;nea.</span></span></span></span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Acuerdo de confidencialidad: documento en el que usted se compromete a guardar reserva sobre el proyecto evaluado, as&iacute; como los documentos y contenidos del mismo. Este formato, deber&aacute; ser diligenciado.</span></span></span></span></span></span></li>
 	
 </ol>
 
@@ -39,15 +39,15 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">A continuación, podrá ingresar a la plataforma para gestión de evaluaciones del OCyT a través del siguiente: <br> usuario =   <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">A continuación, podrá ingresar a la plataforma para gestión de evaluaciones del OCyT a través del siguiente: <br> <br><strong> Usuario =   </strong><?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo $comment2->email;
-          ?> <br> Contraseña = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
+          ?> <br> <strong>Contraseña</strong> = <?php $comment = App\evaluadores::find($id_evaluador); $comment->id_users; 
           $comment2 = App\User::find($comment->id_users); echo  \Crypt::decrypt($comment2->passworddos);
 ?>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-Si ya tiene contraseña asignada por favor dar click al siguiente boton verde.
+Con el usuario y contraseña asignados dar clic la siguiente botón verde.
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 </p>
 @component('mail::button', ['url' => 'http://evaluator.ocyt.org.co/', 'color' => 'green'])

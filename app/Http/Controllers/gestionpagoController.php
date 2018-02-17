@@ -130,7 +130,7 @@ class gestionpagoController extends Controller
            $correo2=\App\User::find($correo->id_users);  
              
             \Mail::to($correo2->email)->send(new confirmacionpagofinanciera($invitacion, $correo));
-            \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
+           // \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
 
 
        

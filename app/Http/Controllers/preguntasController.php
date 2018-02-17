@@ -79,8 +79,9 @@ class preguntasController extends Controller
        $preguntas=DB::table('criterios_evaluacion')->where('id_proyectos_articulos',"=",$id)->get();
          $proyectos_articulos= proyectos_articulos::find($id);
          $evaluadores=DB::table('evaluadores')->where('id',"=",$proyectos_articulos->id_evaluador)->first();
+         $fecha_nacimiento = Carbon::parse($proyectos_articulos->evaluadores->Fecha_Nacimiento);
             //dd($proyectos_articulos);
-        return view('preguntas.show', compact('preguntas','proyectos_articulos','id','evaluadores'));
+        return view('preguntas.show', compact('preguntas','proyectos_articulos','id','evaluadores','fecha_nacimiento'));
     }
 
     /**
@@ -136,7 +137,7 @@ class preguntasController extends Controller
                           $date = Carbon::now();
                           $invitacion->Fecha_inicio=$date;
                           $invitacion->aprobo=$request->input('aprobo');
-                          $invitacion->Facultad=$request->input('Facultad');
+                          
                           $invitacion->save();
 
                          } 
@@ -189,6 +190,7 @@ class preguntasController extends Controller
             'DescripcionEvaluacion' => $value->DescripcionEvaluacion,
             'Desc_criterio_eval' => $value->Desc_criterio_eval,
             'Puntaje_Maximo' => $value->Puntaje_Maximo,
+            'ayuda' => $value->ayuda,
             'Deficiente' => $value->Deficiente,
             'Aceptable' => $value->Aceptable,
             'Sobresaliente' => $value->Sobresaliente,

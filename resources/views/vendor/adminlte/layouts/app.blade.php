@@ -6,7 +6,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 @section('htmlheader')
+
+
     @include('adminlte::layouts.partials.htmlheader')
+
+    
+
 @show
 
 
@@ -36,7 +41,9 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini" onload="startTime()">
+<body class="skin-blue sidebar-mini" onload="cargarall">
+       
+
 <div id="app" v-cloak>
     <div class="wrapper">
 
@@ -53,6 +60,7 @@ desired effect
         <section class="content">
             <!-- Your Page Content Here -->
             @yield('main-content')
+     
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

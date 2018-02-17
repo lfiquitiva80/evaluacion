@@ -79,7 +79,7 @@
 			<label for="">POSIBLES EVALUADORES</label>
 			<input type="text" class="form-control" name="POSIBLES_EVALUADORES" id="POSIBLES_EVALUADORES" placeholder="Digite INVESTIGADOR PRINCIPAL" value="{{$proyectos_articulos->POSIBLES_EVALUADORES}}">
 		</div>
-		<?php  $evaluadores = DB::table('evaluadores')->get();?>
+		<?php  $evaluadores = DB::table('evaluadores')->orderBy('NombreEvaluador', 'asc')->get();?>
 	<div class="form-group">
 		<label for="">EVALUADOR DESIGNADO</label>
 		<select name="id_evaluador" id="id_evaluador" class="form-control" required="required" placeholder="" >
