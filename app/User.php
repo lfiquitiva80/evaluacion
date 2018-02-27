@@ -27,7 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    public function tratamiento_carta()
+    {
+        return $this->belongsTo(tratamiento_carta::class, 'id_tratamiento');
+    }
   
    
 }

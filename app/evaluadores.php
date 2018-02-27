@@ -20,4 +20,9 @@ class evaluadores extends Model
 {	
 	return $this->belongsTo(TipoDocumento::class,'TipoDocumento');
 }
+
+		   public function users()
+{	
+	return $this->belongsTo(User::class,'id_users');
+}
 }

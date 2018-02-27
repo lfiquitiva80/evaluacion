@@ -220,4 +220,30 @@ class usuariosController extends Controller
 
         return redirect()->route('usuarios.index');
     }
+
+
+    public function configuracionemail(Request $request)
+    {
+        $input = $request->all();
+        //dd($data);
+                        //$usuarios=DB::table('users')->get();
+                        //$configuracion=evaluadores::update($data);
+
+                            $configuracion = DB::table('users')->get();
+
+                       foreach ($configuracion as $key => $value) {
+                           $datos = DB::table('users')->where('id', '=', $value->id)->update($input);
+                       }
+                       
+                             
+                           
+
+                      
+                     
+       return back();             
+
+    }
+
+
+
 }

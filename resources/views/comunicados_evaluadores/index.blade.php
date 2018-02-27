@@ -143,7 +143,7 @@
         </td>
 
          <td>
-        <a href="{{ $url = route('certificadoeloy', $row->id) }}"><i class="fa fa-file-pdf-o" aria-hidden="true" ></i></a>
+        <a href="{{ $url = route('certificadotadeo', $row->id) }}"><i class="fa fa-file-pdf-o" aria-hidden="true" ></i></a>
         </td>
          <td>
         <a href="{{ $url = route('comunicados.edit', $row->id) }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span></a>

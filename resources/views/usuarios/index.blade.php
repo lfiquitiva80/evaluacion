@@ -31,7 +31,7 @@
  <div class="box-footer">
               <div class="pull-left">
 
-        <a href="{{ $url = route('usuarios.create') }}" class="btn btn-primary"><i class="fa fa-users" aria-hidden="true"></i> Registar Nuevos usuarios</a>
+        <a href="{{ $url = route('usuarios.create') }}" class="btn btn-primary"><i class="fa fa-users" aria-hidden="true"></i> Registrar Nuevos usuarios</a>
 
               </div>
 

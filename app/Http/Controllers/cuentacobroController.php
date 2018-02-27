@@ -64,10 +64,11 @@ class cuentacobroController extends Controller
               $evaluador = \App\evaluadores::find($invitacion->id_evaluador);
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
-              $correofinanciera="lfiquitiva@ocyt.org.co";
+              //$correofinanciera="lfiquitiva@ocyt.org.co";
+              $config_global = \App\config_global::find(1);
           
           
-     //   \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
+       \Mail::to($config_global->email_financiero)->cc($config_global->email_msj_admin)->send(new gestionpago($invitacion, $correo , $evaluador));
 
        return redirect()->route('homedos');
     }

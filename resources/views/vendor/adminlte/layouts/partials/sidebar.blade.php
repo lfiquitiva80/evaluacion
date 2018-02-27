@@ -54,6 +54,8 @@
 
              <li class="active"><a href="{{$url = route('evaluadores.edit', $evaluadores->id) }}"><i class='fa fa-address-card'></i> <span>Información Evaluador</span></a></li>
 
+
+
             
             
             <li class="active"><a href="{{ url('usuarios') }}"><i class='fa fa-user-plus'></i> <span>Usuarios</span></a></li>
@@ -67,6 +69,7 @@
 
             <li class="active"><a href="{{ url('preguntas') }}"><i class="fa fa-question-circle"></i> <span>Sistema de Clonado</span></a></li>
             <li class="active"><a href="{{ url('/logs') }}"><i class="fa fa-cog"></i> <span>Logs del Sistema</span></a></li>
+            <li class="active"><a href="{{$url = route('configuracion_global.index')}}"><i class='fa fa-cogs'></i> <span>Configuraciones</span></a></li>
               <li class="active"><a href="{{ url('enviarcorreosoporte') }}"><i class="fa fa-envelope-square"></i><span>Soporte</span></a></li>
              <li class="active"><a href="{{ $url = route('usuarios.edit', Auth::user()->id) }}"><i class="fa fa-key" aria-hidden="true"></i><span>Cambio de Contraseña</span></a></li>
 <!--

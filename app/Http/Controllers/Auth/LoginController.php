@@ -50,7 +50,7 @@ class LoginController extends Controller
             {
                 $evaluadores = evaluadores::where('id_users', \Auth::user()->id)->first();
 
-                if (\Auth::user()->TipoUsers==0 && empty($evaluadores->HV) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Fecha_Nacimiento) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Cedula))
+                if (\Auth::user()->TipoUsers==0 && empty($evaluadores->Cedula) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Ciudad_expedicion) || \Auth::user()->TipoUsers==0 && empty($evaluadores->Telefono))
                     {
                   return '/informacion';
                 } else {

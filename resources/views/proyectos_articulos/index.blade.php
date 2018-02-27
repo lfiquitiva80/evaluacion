@@ -156,7 +156,7 @@
   </div>
 </div>-->
 
-<a class="btn btn-default" data-toggle="modal" href='#pago-{{$row->id}}' data-placement="top" title="Click para Confirmar Pago">Confirmación Pago y Terminación evaluación</a>
+<a class="btn btn-default" data-toggle="modal" href='#pago-{{$row->id}}' data-placement="top" title="Click para Confirmar Pago">Confirmación Pago <br>y Terminación evaluación</a>
 <div class="modal fade" id="pago-{{$row->id}}">
   <div class="modal-dialog">
     <div class="modal-content">

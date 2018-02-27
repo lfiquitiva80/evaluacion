@@ -426,12 +426,13 @@ class proyectos_articulosController extends Controller
               $invitacion->Fecha_Devolucion_Evaluador=$date;
               $invitacion->save();
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
-              $correo2=\App\User::find($correo->id_users);  
+              $correo2=\App\User::find($correo->id_users); 
+              $config_global = \App\config_global::find(1);   
 
           
         // Ship order...
          
-        \Mail::to($correo2->email)->send(new certificadonopago($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new certificadonopago($invitacion));
 
 
 

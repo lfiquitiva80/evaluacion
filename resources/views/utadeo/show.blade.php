@@ -481,9 +481,15 @@
                     
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong> -->
-                <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif"><input type="checkbox" checked > Si, Acepto la evalución<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->Fecha_Devolucion_Evaluador}}</b></span></strong></span></span></p>
+                 @if ($proyectos_articulos->aprobo==1)
+                <input type="radio" checked name="aprobo" id="aprobo" value="1" disabled>Si <input type="radio" name="aprobo" id="aprobo" value="0" disabled>No <br>Confirmo que he diligenciado la evaluación
+                @else
+                <input type="radio" name="aprobo" id="aprobo" value="1" disabled>Si <input type="radio" name="aprobo" id="aprobo" value="0" checked disabled>No <br>Confirmo que he diligenciado la evaluación
+                
+                @endif
+                <hr> 
 
-                <hr>
+           
                 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">NOMBRE:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->evaluadores->NombreEvaluador}}</b></span></strong></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>

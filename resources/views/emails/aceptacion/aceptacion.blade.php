@@ -47,7 +47,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-Con el usuario y contraseña asignados dar clic la siguiente botón verde.
+Con el usuario y contraseña asignados dar clic al siguiente botón verde.
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 </p>
 @component('mail::button', ['url' => 'http://evaluator.ocyt.org.co/', 'color' => 'green'])

@@ -131,9 +131,10 @@ class emailController extends Controller
         $invitacion->save();
 
        $correo=\App\evaluadores::find($invitacion->id_evaluador);
-       $correo2=\App\User::find($correo->id_users);  
+       $correo2=\App\User::find($correo->id_users); 
+       $config_global = \App\config_global::find(1); 
          
-        \Mail::to($correo2->email)->send(new invitacion($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new invitacion($invitacion));
 
        
         //$url="http://ocyt.org.co/";
@@ -164,9 +165,10 @@ class emailController extends Controller
         $invitacion->save();
 
        $correo=\App\evaluadores::find($invitacion->id_evaluador);
-       $correo2=\App\User::find($correo->id_users);  
+       $correo2=\App\User::find($correo->id_users);
+       $config_global = \App\config_global::find(1);   
          
-        \Mail::to($correo2->email)->send(new aceptacion($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new aceptacion($invitacion));
        // \Mail::to($correo2->email)->send(new documentos($invitacion));
 
        
@@ -244,10 +246,10 @@ class emailController extends Controller
               $evaluador = \App\evaluadores::find($invitacion->id_evaluador);
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
-              $correofinanciera="lfiquitiva@ocyt.org.co";
+              //$correofinanciera="lfiquitiva@ocyt.org.co";
           
           
-        \Mail::to($correofinanciera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
+        \Mail::to($correo2->email_financiera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
 
        
 
@@ -331,9 +333,10 @@ class emailController extends Controller
 
           $correo=\App\evaluadores::find($invitacion->id_evaluador);
           $correo2=\App\User::find($correo->id_users);
+          $config_global = \App\config_global::find(1);
 
          //\Mail::to($correo2->email)->send(new finalencuesta($invitacion));
-         \Mail::to($correo2->email)->send(new pagos($invitacion));
+         \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new pagos($invitacion));
 
 
 

@@ -141,6 +141,8 @@ Route::resource('participantes','participantesController');
 
 Route::resource('area_tematica','areaTematicaController');
 
+Route::resource('configuracion_global','config_globalController');
+
 Route::resource('cuentadecobro','cuentacobroController');
 
 Route::resource('departamento','departamentoController');
@@ -235,7 +237,11 @@ Route::resource('preguntas', 'preguntasController');
 
 Route::resource('usuarios', 'usuariosController');
 
+Route::get('configuracion_email', 'usuariosController@configuracionemail')->name('cambioemail');
+
 Route::resource('dashboard', 'dashboardController');
+
+Route::get('configuraciones', 'dashboardController@configuracion')->name('configuraciones');
 
 Route::resource('gestion_pago', 'gestionpagoController');
 

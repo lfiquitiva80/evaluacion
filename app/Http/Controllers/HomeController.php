@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\eventos_general;
 use App\proyectos_articulos;
+use App\TipoDocumento;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
@@ -55,11 +56,13 @@ class HomeController extends Controller
 ])->orderBy('id', 'desc')->get();;       
 
      $evaluadores=DB::table('evaluadores')->where('id_users','=',\Auth::user()->id)->get();
+     $evaluadores2=DB::table('evaluadores')->where('id_users','=',\Auth::user()->id)->first();
+     $Tipo= TipoDocumento::all();
 
           //return view('evaluadores.index', ['evaluadores' => $evaluadores]);    
 
            //dd($proyectos_articulos); 
-        return view('home', ['proyectos_articulos' => $proyectos_articulos,'evaluadores' => $evaluadores,'historico' => $historicos,'date' => $date]);
+        return view('home', ['proyectos_articulos' => $proyectos_articulos,'evaluadores' => $evaluadores,'historico' => $historicos,'date' => $date,'Tipo' => $Tipo,'evaluadores2' => $evaluadores2]);
     }
 
 
@@ -112,9 +115,11 @@ class HomeController extends Controller
 
     public function info()
     {
-        $evaluadores = \App\evaluadores::where('id_users', \Auth::user()->id)->first();
+        $evaluadores2 = \App\evaluadores::where('id_users', \Auth::user()->id)->first();
+        $Tipo= TipoDocumento::all();
 
-        return redirect()->route('evaluadores.edit', $evaluadores->id);
+       
+         return view('evaluadores.edithome', compact('evaluadores2','Tipo'));
     }
 
    

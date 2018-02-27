@@ -31,16 +31,23 @@ class gestionpagoController extends Controller
 
     // dd($name);
 
-           $comunicados=DB::table('proyectos_articulos')->where(
-    'DescripcionProyecto_Articulo', 'LIKE', '%$name%')->orWhere('correo_gestion_pago', 1)->orderBy('id', 'desc')->Paginate(10);
+          // $comunicados=DB::table('proyectos_articulos')->where(
+    //'DescripcionProyecto_Articulo', 'LIKE', '%$name%')->orWhere('correo_gestion_pago', 1)->orderBy('Fecha_Pago_Financiera', 'asc')->Paginate(10);
+
+           $comunicados=DB::table('proyectos_articulos')->orWhere(function ($query) {
+                $query->where('correo_gestion_pago', 1)
+                      ->whereNull('Fecha_Pago_Financiera');
+            })->Paginate(10);
+
+           //dd($comunicados);
 
            //$filtro=DB::table('proyectos_articulos')->where('correo_gestion_pago','=',1)->get();
-           
+           $comunicados2=DB::table('proyectos_articulos')->whereNotNull('Fecha_Pago_Financiera')->orderBy('Fecha_Pago_Financiera', 'asc')->Paginate(10);
 
 
         
 
-          return view('gestion_pago.index', ['comunicados' => $comunicados]);
+          return view('gestion_pago.index', compact('comunicados','comunicados2'));
     }
 
 
@@ -127,10 +134,12 @@ class gestionpagoController extends Controller
             $invitacion->save();
 
            $correo=\App\evaluadores::find($invitacion->id_evaluador);
-           $correo2=\App\User::find($correo->id_users);  
+           $correo2=\App\User::find($correo->id_users);
+           $config_global = \App\config_global::find(1);  
              
-            \Mail::to($correo2->email)->send(new confirmacionpagofinanciera($invitacion, $correo));
-           // \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
+           // \Mail::to($correo2->email_financiera)->send(new confirmacionpagofinanciera($invitacion, $correo));
+
+           \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new certificadoypago($invitacion));
 
 
        

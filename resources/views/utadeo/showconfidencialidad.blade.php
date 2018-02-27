@@ -11,7 +11,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">ACUERDO DE CONFIDENCIALIDAD Y DECLARACI&Oacute;N DE CONFLICTO DE INTERESES</span></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;<em>mayor de edad</em>&nbsp;y domiciliado(a) en la ciudad de {{$confidencialidad->ciudaddomiciliario}}, identificado(a) como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">Yo, <b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">{{$proyectos_articulos->evaluadores->NombreEvaluador}}</b>,&nbsp;mayor de edad&nbsp;<!--y domiciliado(a) en la ciudad de {{$confidencialidad->ciudaddomiciliario}},--> {{$proyectos_articulos->evaluadores->users->tratamiento_carta->identificado}} como aparece al pie de mi firma, he acordado celebrar con el Observatorio Colombiano de Ciencia y Tecnolog&iacute;a (OCyT), identificado con NIT 830.063.697-4, el presente Acuerdo de Confidencialidad y Declaraci&oacute;n de Conflicto de Intereses que se regir&aacute; por las siguientes cl&aacute;usulas, previas las siguientes:</span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:9.0pt"><span style="font-family:&quot;Arial Narrow&quot;,sans-serif">CONSIDERACIONES</span></span></strong></span></span></p>
 
@@ -185,17 +185,24 @@ echo $meses[date($dt->month)-1];
 <table align="center" cellspacing="0" class="Table" style="border-collapse:collapse; border:undefined; width:92.0%">
 	<tbody>
 		<td colspan="2" style="height:50.6pt; width:100.0%">
-		<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">__________________________</span></span></span></span></span></p>-->
+			@if ($proyectos_articulos->aceptoterminos==1)
+                Si, Acepto terminos de la confidencialidad
+                @else
+                Si, Acepto terminos de la confidencialidad                
+                @endif
+                <hr> 
+		<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre: {{$proyectos_articulos->evaluadores->NombreEvaluador}}  </span></span></span></span></span></p>
+			<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">__________________________</span></span></span></span></span></p>-->
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. {{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}} {{$proyectos_articulos->evaluadores->Cedula}} </span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre: {{$confidencialidad->nombre_evaluador}}  </span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$fecha_nacimiento->toFormattedDateString()}} </span></span></span></span></span></p>
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. {{$confidencialidad->Tipo_documento}} {{$confidencialidad->documento}} </span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Lugar de expedici&oacute;n: {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}</span></span></span></span></span></p>
+			<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$fecha_nacimiento->toFormattedDateString()}} </span></span></span></span></span></p>
+
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Lugar de expedici&oacute;n: {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}</span></span></span></span></span></p>-->
 			</td>
 		
 		</tr>

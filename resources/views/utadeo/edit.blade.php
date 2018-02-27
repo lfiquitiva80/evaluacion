@@ -431,8 +431,12 @@
                     
                     <br>__________________________________________________
                 <br><strong>FIRMA DE EVALUADOR</strong> -->  
-
-                <input type="checkbox" checked>Si, Acepto la evaluación
+                @if ($proyectos_articulos->aprobo==1)
+                <input type="radio" checked name="aprobo" id="aprobo" value="1">Si <input type="radio" name="aprobo" id="aprobo" value="0">No <br>Confirmo que he diligenciado la evaluación
+                @else
+                <input type="radio" name="aprobo" id="aprobo" value="1">Si <input type="radio" name="aprobo" id="aprobo" value="0" checked>No <br>Confirmo que he diligenciado la evaluación
+                
+                @endif
                 <hr> 
                 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">NOMBRE:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->evaluadores->NombreEvaluador}}</b></span></strong></span></span></p>
 

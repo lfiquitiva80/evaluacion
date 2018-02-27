@@ -167,4 +167,15 @@ class dashboardController extends Controller
     {
         //
     }
+
+        public function configuracion()
+    {
+        return view('configuraciones.configuraciones');
+    }
+
+
+
+
+
 }
+

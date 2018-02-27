@@ -45,8 +45,39 @@
     <option value="Ahorros" >Ahorros</option>
     <option value="Corriente">Corriente</option>
   
-  </select>del Banco: <input type="text" name="nombrebanco" id="nombrebanco" size="20"></span></span></span></p>
+  </select>
+
+Seleccione el Banco local
+<select name="nombrebanco" id="nombrebanco">
+	<option value="BANCO DE BOGOTÁ">BANCO DE BOGOTÁ</option>
+	<option value="BANCO POPULAR">BANCO POPULAR</option>
+	<option value="BANCO CORPBANCA COLOMBIA S.A.">BANCO CORPBANCA COLOMBIA S.A.</option>
+	<option value="BANCOLOMBIA S.A.">BANCOLOMBIA S.A.</option>
+	<option value="CITIBANK COLOMBIA">CITIBANK COLOMBIA</option>
+	<option value="BANCO GNB SUDAMERIS COLOMBIA">BANCO GNB SUDAMERIS COLOMBIA</option>
+	<option value="BBVA COLOMBIA">BBVA COLOMBIA</option>
+	<option value="RED MULTIBANCA COLPATRIA S.A.">RED MULTIBANCA COLPATRIA S.A.</option>
+	<option value="BANCO DE OCCIDENTE">BANCO DE OCCIDENTE</option>
+	<option value="BANCO CAJA SOCIAL - BCSC S.A.">BANCO CAJA SOCIAL - BCSC S.A.</option>
+	<option value="BANCO AGRARIO DE COLOMBIA S.A.">BANCO AGRARIO DE COLOMBIA S.A.</option>
+	<option value="BANCO DAVIVIENDA S.A.">BANCO DAVIVIENDA S.A.</option>
+	<option value="BANCO AV VILLAS">BANCO AV VILLAS</option>
+	<option value="BANCO W S.A.">BANCO W S.A.</option>
+	<option value="BANCO PROCREDIT">BANCO PROCREDIT</option>
+	<option value="BANCAMIA">BANCAMIA</option>
+	<option value="BANCO PICHINCHA S.A.">BANCO PICHINCHA S.A.</option>
+	<option value="BANCOOMEVA">BANCOOMEVA</option>
+	<option value="BANCO FALABELLA S.A.">BANCO FALABELLA S.A.</option>
+	<option value="BANCO FINANDINA S.A.">BANCO FINANDINA S.A.</option>
+	<option value="BANCO MULTIBANK S.A">BANCO MULTIBANK S.A</option>
+	<option value="BANCO SANTANDER DE NEGOCIOS COLOMBIA S.A. - BANCO SANTANDER">BANCO SANTANDER DE NEGOCIOS COLOMBIA S.A. - BANCO SANTANDER</option>
+	<option value="BANCO COOPERATIVO COOPCENTRAL">BANCO COOPERATIVO COOPCENTRAL</option>
+	<option value="BANCO COMPARTIR S.A">BANCO COMPARTIR S.A</option>
+
+</select>	
+</span></span></span></p>
 </div>
+
 
 <div id="cuentaextrajera">
 

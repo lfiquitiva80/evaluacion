@@ -130,13 +130,14 @@ class preguntasController extends Controller
 
 
                             $invitacion = \App\proyectos_articulos::find($id);
-                            
+                            $invitacion->aprobo=$request->input('aprobo');
+                            $invitacion->save();
 
                          if (empty($invitacion->Fecha_inicio)) {
 
                           $date = Carbon::now();
                           $invitacion->Fecha_inicio=$date;
-                          $invitacion->aprobo=$request->input('aprobo');
+                          
                           
                           $invitacion->save();
 

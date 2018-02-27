@@ -21,10 +21,29 @@
 
 
 <!--<a href="{{ $url = route('evaluadores.create') }}" class="btn btn-primary">Registar Nuevos evaluadores</a>-->
- <div class="panel-body">
+
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Por pagar</a>
+    </li>
+    <li role="presentation">
+      <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Pagado</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      
+      <div class="panel-body">
 
 <div class="container">
 <p>
+
+
+
 <div class="table-responsive">
 <table class="table table-hover" >
   <thead>
@@ -95,6 +114,99 @@
 </div>
 
 </div>
+      
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab">
+      
+
+          <div class="panel-body">
+
+<div class="container">
+<p>
+
+
+
+<div class="table-responsive">
+<table class="table table-hover" >
+  <thead>
+    <tr>
+        <td>  id  </td>
+        <td>  Proyectos Pendientes por Pago</td>
+        <td>  id_Evaluador</td>
+        <!--<td> Correo Invitación</td>
+        <td> Correo Aceptación</td>
+        <td> Correo Documentos</td>
+        <td> Correo Pago</td>-->
+        <td> Correo Gestion de Pago</td>
+        <td> Fecha de Confirmación de Pago</td>
+        <!--<td> Correo Certificado y pago</td>
+        <td> El Evaluador NO acepto</td>
+        <td> Proyecto Completo</td>
+        <td> Certificado PDF</td>-->
+
+
+  
+    </tr>
+  </thead>
+  <tbody>
+
+  @foreach($comunicados2 as $row)
+    <tr>
+
+          <td>{{$row->id}}</td>
+          <td>{{$row->DescripcionProyecto_Articulo}}</td>
+           <td><a href="{{ $url = route('proyectos_articulos.edit', $row->id) }}">
+          <?php $comment = App\evaluadores::find($row->id_evaluador); $comment->id_users;
+          $comment2 = App\User::find($comment->id_users); echo $comment2->name;
+          ?>
+          </a></td>
+
+
+         
+        
+       @if(empty($row->Fecha_Pago_Financiera))
+       <td>
+        <a href="{{ $url = route('confirmacionpago',$row->id) }}" class="btn btn-success"><i class="fa fa-usd" aria-hidden="true"></i> Confirmar el Pago</a></td>
+        @else
+        <td>
+        <a href="{{ $url = route('confirmacionpago',$row->id) }}" class="btn btn-info"><i class="fa fa-usd" aria-hidden="true"></i> Pago Realizado -Ok</a>
+        @endif
+
+        </td>
+        
+        
+
+        <td>
+        {{$row->Fecha_Pago_Financiera}}
+        </td>
+        </a></td>
+
+  
+
+    </tr>
+  </tbody>
+
+  @endforeach
+
+
+</table>
+</div>
+<center>{{$comunicados->links()}}</center>
+
+</div>
+
+</div>  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+ 
 </div>
 
 

@@ -282,7 +282,22 @@ function nombrefilerut(){
       "BANCO COMPARTIR S.A"
 
     ];
-    $( "#nombrebanco" ).autocomplete({
+    $( "#nombrebanco2" ).selectmenu({
       source: availableTags
     });
   } );
+
+
+
+
+ $(document).ready(function() {
+
+  $("#cerrar").click(function(event) {
+      alert('message?: DOMString');
+
+  });
+   
+ });
+
+
+
