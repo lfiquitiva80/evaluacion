@@ -137,6 +137,12 @@ $( function() {
 		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" required>
 	</div>
 
+
+	<div class="form-group">
+		<label for="Telefono">Indicativo <span style="color:#c0392b">(*) Campo Obligatorio</span></label>
+		<input type="text" class="form-control" name="indicativo" id="indicativo" placeholder="Digite un Telefono"  value="{{$evaluadores->indicativo}}" required>
+	</div>
+
 	<div class="form-group">
 		<label for="Telefono">Teléfono <span style="color:#c0392b">(*) Campo Obligatorio</span></label>
 		<input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="Digite un Telefono"  value="{{$evaluadores->Telefono}}" required>

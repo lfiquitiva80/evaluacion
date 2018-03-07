@@ -263,9 +263,26 @@ Seleccione el Banco local
 <p></p>
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">_________________________________________</span></span></span></p>
 
+
+<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60"></span></span></span></span></span></p>
+
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre. <input type="text" name="nombre_evaluador" size="60" required></span></span></span></span></span></p>
+
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. <select name="Tipo_documento" id="inputTipo_documento"  required="required" >
+				<option value="C.C.">Cédula de ciudadanía</option>
+				<option value="C.E.">Cédula de extranjería</option>
+				<option value="Pasaporte">Pasaporte</option>
+			</select><input type="text" name="documento" required></span></span></span></span></span></p>
+
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60"><!~~Expedida en. <input type="text" name="expedidaen"  required>~~></span></span></span></span></span></p>-->
+
+
+
+
+
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-family:&quot;Arial&quot;,sans-serif">NOMBRE:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$proyectos_articulos->evaluadores->NombreEvaluador}}</b></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>
+<!--<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>-->
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">{{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}}&nbsp;</span><span style="font-family:&quot;Arial&quot;,sans-serif">N&deg; {{$proyectos_articulos->evaluadores->Cedula}} expedida en {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}</span></span></span></p>
 

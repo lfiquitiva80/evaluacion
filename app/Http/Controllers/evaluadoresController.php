@@ -247,7 +247,7 @@ class evaluadoresController extends Controller
         
 
         //$updates=DB::table('evaluadores')->where('id',"=",$id)->update($input); 
-        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal'),'TipoDocumento' => $request->input ('TipoDocumento'),'Ciudad_expedicion' => $request->input ('Ciudad_expedicion'),'Fecha_Nacimiento' => $request->input ('Fecha_Nacimiento')]);
+        $updates=DB::table('evaluadores')->where('id',"=",$id)->update(['NombreEvaluador' => $request->input ('NombreEvaluador'),'id_users' => $request->input ('id_users'),'Cedula' => $request->input ('Cedula'),'Telefono' => $request->input ('Telefono'),'Direccion' => $request->input ('Direccion'),'email' => $request->input ('email'),'Codigo_postal' => $request->input ('Codigo_postal'),'TipoDocumento' => $request->input ('TipoDocumento'),'Ciudad_expedicion' => $request->input ('Ciudad_expedicion'),'Fecha_Nacimiento' => $request->input ('Fecha_Nacimiento'),'indicativo' => $request->input ('indicativo')]);
 
 
       

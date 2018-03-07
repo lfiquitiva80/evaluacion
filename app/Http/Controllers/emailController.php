@@ -196,10 +196,11 @@ class emailController extends Controller
         $invitacion->save();
 
           $correo=\App\evaluadores::find($invitacion->id_evaluador);
-          $correo2=\App\User::find($correo->id_users);  
+          $correo2=\App\User::find($correo->id_users);
+          $config_global = \App\config_global::find(1);   
 
           //\Notification::send('lfiquitiva@ocyt.org.co', new documentos());
-        \Mail::to($correo2->email)->send(new documentos($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new documentos($invitacion));
 
         
 
@@ -220,12 +221,13 @@ class emailController extends Controller
               $invitacion->correo_pago=1;
               $invitacion->save();
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
-              $correo2=\App\User::find($correo->id_users);  
+              $correo2=\App\User::find($correo->id_users);
+              $config_global = \App\config_global::find(1);   
 
           flash('Haz enviado un correo para pagos!')->success();
         // Ship order...
          
-        \Mail::to($correo2->email)->send(new pagos($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new pagos($invitacion));
 
        
 
@@ -247,9 +249,10 @@ class emailController extends Controller
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);  
               //$correofinanciera="lfiquitiva@ocyt.org.co";
+              $config_global = \App\config_global::find(1);  
           
           
-        \Mail::to($correo2->email_financiera)->cc(\Auth::user()->email)->send(new gestionpago($invitacion, $correo , $evaluador));
+        \Mail::to($config_global->email_financiero)->cc($config_global->email_msj_admin)->send(new gestionpago($invitacion, $correo , $evaluador));
 
        
 
@@ -272,12 +275,13 @@ class emailController extends Controller
               $invitacion->certificadoypago=1;
               $invitacion->save();
               $correo=\App\evaluadores::find($invitacion->id_evaluador);
-              $correo2=\App\User::find($correo->id_users);  
+              $correo2=\App\User::find($correo->id_users);
+              $config_global = \App\config_global::find(1);    
 
           
         // Ship order...
          
-        \Mail::to($correo2->email)->send(new certificadoypago($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new certificadoypago($invitacion));
         //\Mail::to($correo2->email)->send(new finalencuesta($invitacion));
        
 
@@ -303,8 +307,9 @@ class emailController extends Controller
 
         $correo=\App\evaluadores::find($invitacion->id_evaluador);
               $correo2=\App\User::find($correo->id_users);
+              $config_global = \App\config_global::find(1);  
 
-        \Mail::to($correo2->email)->send(new norespuesta($invitacion));
+        \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new norespuesta($invitacion));
 
         //$url="http://ocyt.org.co/";
         //return back();

@@ -192,7 +192,7 @@ echo $meses[date($dt->month)-1];
                 Si, Acepto terminos de la confidencialidad                
                 @endif
                 <hr> 
-		<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span>
+		<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Firma</span></span></span></span></span>-->
 
 			<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">__________________________</span></span></span></span></span></p>-->
 

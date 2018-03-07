@@ -423,11 +423,11 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           <!--<a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default">Vista</a>
          </a>-->
            @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-primary" target="_blank">Vista Eloy</a>
+          <a href="{{ $url = route('showeloy', $row->id) }}" class="btn btn-default" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> Vista Eloy</a>
           @elseif ($row->plantilla=="PlantillaUtadeo")
-           <a href="{{ $url = route('utadeo.show', $row->id) }}" class="btn btn-primary" target="_blank">Vista Utadeo</a>
+           <a href="{{ $url = route('utadeo.show', $row->id) }}" class="btn btn-default" target="_blank"><i class="fa fa-search" aria-hidden="true"></i> Vista Utadeo</a>
            @else
-            <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank">Vista Innpulsa</a>
+            <a href="{{ $url = route('preguntas.show', $row->id) }}" class="btn btn-default" target="_blank"><i class="fa fa-search" aria-hidden="true"></i> Vista Innpulsa</a>
           @endif 
 
          
@@ -438,11 +438,11 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           
 
           @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado Eloy</a>
+          <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Certificado Eloy</a>
           @elseif ($row->plantilla=="PlantillaUtadeo")
-           <a href="{{ $url = route('certificadotadeo', $row->id) }}" class="btn btn-info">Certificado Utadeo</a>
+           <a href="{{ $url = route('certificadotadeo', $row->id) }}" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Certificado Utadeo</a>
            @else
-            <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-info">Certificado Eloy</a>
+            <a href="{{ $url = route('certificadoeloy', $row->id) }}" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Certificado Eloy</a>
           @endif 
           @else
           
@@ -594,7 +594,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
       </td>
         @else
         <td>
-        <a href="#" class="btn btn-info"><i class="fa fa-usd" aria-hidden="true"></i> Pago Realizado -Ok</a>
+        <a href="#" class="btn btn-default"><i class="fa fa-usd" aria-hidden="true"></i> Pago Realizado -Ok</a>
         @endif
 
         </td>
