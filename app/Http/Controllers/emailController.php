@@ -324,6 +324,7 @@ class emailController extends Controller
 
 
           flash('Se ha finalizado la evaluación')->success();
+          flash('Por Favor seguir con los Documentos para la gestión de pagos')->important();
 
           Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Finalizacion del id: '.$id);
 

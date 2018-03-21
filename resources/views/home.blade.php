@@ -42,11 +42,11 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
   <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>-->
 
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#Evaluaciones">Evaluaciones por Iniciar</a></li>
+    <li class="active"><a data-toggle="tab" href="#Evaluaciones" title="Iniciar la evaluación"><span class="badge"> Paso 1</span> Evaluaciones por Iniciar</a></li>
       
-    <li><a data-toggle="tab" href="#Documentos" id="doc">Documentos para Gestionar el Pago</a></li>
-    <li><a data-toggle="tab" href="#Financiera">Cuenta de Cobro en Linea</a></li>
-    <li><a data-toggle="tab" href="#Históricos">Evaluaciones Terminadas</a></li>
+    <li><a data-toggle="tab" href="#Documentos" id="doc" title="En este paso se puede actualizar su información para gestionar el pago "><span class="badge"> Paso 2</span> Documentos para Gestionar el Pago</a></li>
+    <li><a data-toggle="tab" href="#Financiera" title="En este paso se puede gestionar la cuenta de cobro"><span class="badge"> Paso 3</span> Cuenta de Cobro en Linea</a></li>
+    <li><a data-toggle="tab" href="#Históricos" title="En este paso se puede verificar la cuenta de cobro, la carta de confidencialidad, la evaluación y el certificado"><span class="badge"> Paso 4</span> Evaluaciones Terminadas</a></li>
     <!--<li><a data-toggle="tab" href="#cuentadecobro">Cuenta de Cobro</a></li>-->
     <!--<li><a data-toggle="tab" href="#Finalizar">Finalizar</a></li>-->
   </ul>
@@ -214,11 +214,18 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
       </lu>
 
       <lu>
-        <strong>Antes de Finalizar verificar lo siguiente:</strong>
+        
         <hr>
-        <li> Revisar que haya Cargado su Hoja de Vida, RUT actualizado O Pasaporte , etc.., para el pago</li>
-        <li>Revisar que haya terminado la Evaluación.</li>
-      
+        <!--<li> Revisar que haya Cargado su Hoja de Vida, RUT actualizado O Pasaporte , etc.., para el pago</li>-->
+        <li id="segpaso"><mark>Si acepta el pago</mark>, por favor seguir con el segundo paso <strong>"Documentos para gestionar el pago"</strong>. Para actualizar lo siguiente: </li>
+          <lo>
+            <br>
+          <li>Hoja de vida.</li>
+          <li>Certificación bancaria en la que se registre la cuenta en la que se le consignará.</li>
+          <li>Cuenta de Cobro se hace en linea, por la plataforma de evaluadores</li>
+          <li>Copia de la cédula de ciudadanía en formato pdf.</li>
+          <li>RUT actualizado (en caso de que realice actividades económicas en el territorio colombiano) o Copia del pasaporte (en caso de que sea extranjero y no realice actividades económicas en el territorio colombiano).</li>
+        </lo>
         
 
        </lu>
@@ -227,7 +234,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <a href="{{ $url = route('siAceptoElPago',$row->id) }}" class="btn btn-default" id="confirmar" >Si acepto el pago</a>
-        <a href="{{ $url = route('noAceptoElPago',$row->id) }}" class="btn btn-default" id="confirmar" >No acepto el pago</a>
+        <a href="{{ $url = route('noAceptoElPago',$row->id) }}" class="btn btn-default" id="confirmar2" >No acepto el pago</a>
       </div>
     </div>
   </div>
@@ -322,7 +329,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
          <!--<td><a href="{{ $url = route('infofinanciera', $row->id ) }}" class="btn btn-primary" title="Click para actualizar información financiera para la cuenta de cobro"><i class="fa fa-users" aria-hidden="true"></i>Realizar la Cuenta de cobro</a></td>-->
         
       <td>
-         <a class="btn btn-primary" data-toggle="modal" href='#revi-{{$row->id}}'>Dilingenciar la Cuenta de Cobro</a>
+         <a class="btn btn-primary" data-toggle="modal" href='#revi-{{$row->id}}'>Diligenciar la Cuenta de Cobro</a>
           <div class="modal fade" id="revi-{{$row->id}}">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -509,7 +516,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
          <!--<td><a href="{{ $url = route('infofinanciera', $row->id ) }}" class="btn btn-primary" title="Click para actualizar información financiera para la cuenta de cobro"><i class="fa fa-users" aria-hidden="true"></i>Realizar la Cuenta de cobro</a></td>-->
     
       <td>
-         <a class="btn btn-primary" data-toggle="modal" href='#revision-{{$row->id}}'>Dilingenciar la Cuenta de Cobro</a>
+         <a class="btn btn-primary" data-toggle="modal" href='#revision-{{$row->id}}'>Diligenciar la Cuenta de Cobro</a>
           <div class="modal fade" id="revision-{{$row->id}}">
             <div class="modal-dialog">
               <div class="modal-content">

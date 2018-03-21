@@ -134,7 +134,7 @@ $( function() {
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Ciudad de Expedición del Documento de Identidad <span style="color:#c0392b">(*) Campo Obligatorio</span></label>
-		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores->Ciudad_expedicion}}" required>
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite su Ciudad de Expedición del Documento de Identidad" value="{{$evaluadores->Ciudad_expedicion}}" required>
 	</div>
 
 

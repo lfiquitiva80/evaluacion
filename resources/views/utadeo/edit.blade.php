@@ -359,27 +359,26 @@
                 </td>
                 
                 <td colspan="7">
-            <!--        <div class="form-group">
-            <!~~<label for="">recomendacion_proyecto</label>
-            <select name="recomendacion_proyecto" id="recomendacion_proyecto" class="form-control" required="required" value="{{$row->recomendacion_proyecto}}">~~>
+                    <div class="form-group">
+           <!--<label for="">recomendacion_proyecto</label>
+            <select name="recomendacion_proyecto" id="recomendacion_proyecto" class="form-control" required="required" value="{{$row->recomendacion_proyecto}}">-->
             
-            @if ($row->recomendacion_proyecto==1)
-                <label>Si recomiendo el Proyecto y/o Artículo</label>
-                <input type="text" name="recomendacion_proyecto" id="recomendacion_proyecto" value="{{$row->recomendacion_proyecto}}">
-                <!~~<option value="1" selected>Si recomiendo el Proyecto y/o Articulo</option>~~>
-                <!~~<option value="0">No recomiendo el Proyecto y/o Articulo</option>~~>
+            <!--@if ($row->recomendacion_proyecto==1)
+                
+                <option value="1" selected>Si recomiendo el Proyecto y/o Articulo</option>
+                <option value="0">No recomiendo el Proyecto y/o Articulo</option>
             @else
-                <!~~<option value="1">Si recomiendo el Proyecto y/o Articulo</option>~~>
-                <!~~<option value="0" selected="">No recomiendo el Proyecto y/o Articulo</option>~~>
-                <label >No recomiendo el Proyecto y/o Artículo</label>  
-                <input type="text" name="recomendacion_proyecto" id="recomendacion_proyecto" value="{{$row->recomendacion_proyecto}}">
-            @endif
--->        
+                <option value="1">Si recomiendo el Proyecto y/o Articulo</option>
+                <option value="0" selected="">No recomiendo el Proyecto y/o Articulo</option>
+                
+                
+            @endif-->
+        
             <div id="nosirecomiento">
             <?php if ($row->recomendacion_proyecto==1) {
-                echo "Si recomiendo el Proyecto y/o Articulo";
+                "Si recomiendo el Proyecto y/o Articulo";
             } else {
-                echo "No recomiendo el Proyecto y/o Articulo";
+                "No recomiendo el Proyecto y/o Articulo";
             } ?>
             </div>
             <input type="hidden" name="recomendacion_proyecto" id="recomendacion" value="{{$row->recomendacion_proyecto}}">
@@ -444,7 +443,7 @@
 
 <!--<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">FECHA DE NACIMIENTO:<b style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"> {{$fecha_nacimiento->toFormattedDateString()}}</b></span></span></span></p>-->
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">{{$proyectos_articulos->evaluadores->tipodocumento->Descripcion_Corta}}&nbsp;</span><span style="font-family:&quot;Arial&quot;,sans-serif">N&deg; {{$proyectos_articulos->evaluadores->Cedula}} <!--expedida en {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}--></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Documento de Identidad&nbsp;</span><span style="font-family:&quot;Arial&quot;,sans-serif">N&deg; {{$proyectos_articulos->evaluadores->Cedula}} <!--expedida en {{$proyectos_articulos->evaluadores->Ciudad_expedicion}}--></span></span></span></p>
 
 <!--<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">DIRECCION: {{$proyectos_articulos->evaluadores->Direccion}}</span></span></span></p>
 

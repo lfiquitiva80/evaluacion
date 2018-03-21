@@ -511,14 +511,15 @@ function nombrefilerut(){
 
 
 
- $(document).ready(function() {
 
-  $("#cerrar").click(function(event) {
-      alert('message?: DOMString');
+$(function() {
+  
+ $('#confirmar').click(function(event) {
+     alert("Recuerde seguir con la pestaña \n'Documentos para la gestión del Pago',\n Para subir la Hoja de Vida \n Rut \n Documento de Identidad, etc...\n Gracias a Finalizado la evaluación. ");
 
-  });
-   
  });
 
 
 
+
+});

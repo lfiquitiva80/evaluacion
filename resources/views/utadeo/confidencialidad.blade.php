@@ -186,10 +186,10 @@ echo $meses[date($dt->month)-1];
 
 			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Nombre. <input type="text" name="nombre_evaluador" size="80" required></span></span></span></span></span></p>
 
-			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. <select name="Tipo_documento" id="inputTipo_documento"  required="required" >
+			<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Documento de Identidad No. <!--<select name="Tipo_documento" id="inputTipo_documento"  required="required" >
 				<option value="C.C.">Cédula de ciudadanía</option>
 				<option value="C.E.">Cédula de extranjería</option>
-				<option value="Pasaporte">Pasaporte</option>
+				<option value="Pasaporte">Pasaporte</option>-->
 			</select><input type="text" name="documento" required></span></span></span></span></span></p>
 
 			<!--<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:#003c60">Fecha de Nacimiento: {{$fecha_nacimiento->toFormattedDateString()}} </span></span></span></span></span></p>
@@ -201,14 +201,14 @@ echo $meses[date($dt->month)-1];
 	</tbody>
 </table>
 	<input type="hidden" name="proyectos_articulos_id" id="proyectos_articulos_id" value="{{$proyectos_articulos->id}}">
-	<input type="hidden" name="fecha_acepto_terminos" id="fecha_acepto_terminos" value="{{$date}}">
+	<input type="hidden" name="fecha_acepto_terminos" id="fecha_acepto_términos" value="{{$date}}">
 	<div class="checkbox">
 		<label>
 			<input type="checkbox" value="1" name="aceptoterminos" id="aceptoterminos" required>
-			Si, Acepto terminos de la confidencialidad
+			Si, Acepto términos de la confidencialidad
 		</label>
 	</div>
-	<button type="submit" class="btn btn-primary">Acepto, los terminos de la confidencialidad</button>
+	<button type="submit" class="btn btn-primary">Acepto, los términos de la confidencialidad</button>
 
 
 

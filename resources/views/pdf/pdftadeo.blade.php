@@ -26,7 +26,7 @@
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?></span></span></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#231f20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php $comment = App\TipoDocumento::find($evaluadores->TipoDocumento); echo $comment->Descripcion_Corta; ?> No. {{$evaluadores->Cedula}} de {{$evaluadores->Ciudad_expedicion}}</span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><span style="color:#231f20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php $comment = App\TipoDocumento::find($evaluadores->TipoDocumento); $comment->Descripcion_Corta; ?> Documento de Identidad No. {{$evaluadores->Cedula}} de {{$evaluadores->Ciudad_expedicion}}</span></span></span></p>
 
 
 

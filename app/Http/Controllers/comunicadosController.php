@@ -25,7 +25,7 @@ class comunicadosController extends Controller
         $name = $request->input('namefuncionario');
         $comunicados=DB::table('proyectos_articulos')->where('DescripcionProyecto_Articulo','LIKE',"%$name%")
            ->orderBy('id', 'desc')->Paginate(15);
-
+//dd($comunicados);
           return view('comunicados_evaluadores.index', ['comunicados' => $comunicados]);
     }
 

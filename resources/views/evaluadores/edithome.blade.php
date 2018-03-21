@@ -137,7 +137,7 @@ $( function() {
 
 	<div class="form-group">
 		<label for="NombreDepartamento">Ciudad de Expedición del Documento de Identidad <span style="color:#c0392b">(*) Campo Obligatorio</span></label>
-		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite una Cedula" value="{{$evaluadores2->Ciudad_expedicion}}" required>
+		<input type="text" class="form-control" name="Ciudad_expedicion" id="Ciudad_expedicion" placeholder="Digite su Ciudad de Expedición del Documento de Identidad" value="{{$evaluadores2->Ciudad_expedicion}}" required>
 	</div>
 
 	<div class="form-group">
@@ -404,17 +404,18 @@ $( function() {
 	</div>
 
 
-	<!--
+	
 
 	<div class="form-group">
 		<label for="Direccion">Dirección <span style="color:#c0392b">(*) Campo Obligatorio</span></label>
 		<input type="text" class="form-control" name="Direccion" id="TelefDireccionono" placeholder="Digite una Direccion" value="{{$evaluadores2->Direccion}}" required>
 	</div>
-
+		<!--
 	<div class="form-group">
 		<label for="Codigo_postal">Código_postal</label>
 		<input type="text" class="form-control" name="Codigo_postal" id="Codigo_postal" placeholder="Digite un Codigo_postal" value="{{$evaluadores2->Codigo_postal}}" >
 	</div>
+
 
 
 

@@ -42,7 +42,7 @@
 
         <div class="container">
             <div class="content">
-                <div class="title">El Observatorio Colombiano de Ciencia y Tecnología, agradece su respuesta positiva. En unos momentos le llegara un correo con las instrucciones para la correspondiente evaluación.</div>
+                <div class="title">El Observatorio Colombiano de Ciencia y Tecnología, agradece su respuesta positiva. En unos momentos le llegará un correo con las instrucciones para la correspondiente evaluación.</div>
                 <p></p>
                
 

@@ -47,7 +47,7 @@ echo date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-Con el usuario y contraseña asignados dar clic al siguiente botón verde.
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Con el usuario y contraseña asignados dar clic al siguiente botón verde.</span></span></span></span></span></span></p>
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 </p>
 @component('mail::button', ['url' => 'http://evaluator.ocyt.org.co/', 'color' => 'green'])
@@ -64,11 +64,12 @@ Ingresar a la página de evaluación.
 @component('mail::button', ['url' => $url, 'color' => 'blue'])
 Ingresar para confirmar contraseñ<a href="" class=""></a>
 @endcomponent-->
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
 
-Adicionalmente, en la plataforma en la parte superior derecha en el icono de ayuda podrá descargar el manual para evaluadores, en caso de que tenga inquietudes sobre la plataforma. 
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:justify">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Adicionalmente, en la plataforma en la parte superior derecha en el icono de ayuda podrá descargar el manual para evaluadores, en caso de que tenga inquietudes sobre la plataforma.</span></span></span><a href="mailto:sfletscher@ocyt.org.co" style="color:blue; text-decoration:underline"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"></span></span></a><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">  </span></span></span><a href="mailto:cpardo@ocyt.org.co" style="color:blue; text-decoration:underline"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"></span></span></a> </span></span></span></p> 
+
+
 
 
 <p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black">Agradecemos desde ya su participaci&oacute;n y quedamos muy atentos a la gesti&oacute;n de la evaluaci&oacute;n y los formatos electr&oacute;nicos. Cualquier inconveniente que se presente podr&aacute; consultarlo en las siguientes cuentas de email: </span></span></span><a href="mailto:sfletscher@ocyt.org.co" style="color:blue; text-decoration:underline"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">sfletscher@ocyt.org.co</span></span></a><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif"><span style="color:black"> y </span></span></span><a href="mailto:cpardo@ocyt.org.co" style="color:blue; text-decoration:underline"><span style="font-size:11.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif">cpardo@ocyt.org.co</span></span></a> </span></span></span></p>
