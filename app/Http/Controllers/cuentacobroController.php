@@ -69,7 +69,7 @@ class cuentacobroController extends Controller
           
           
        \Mail::to($config_global->email_financiero)->cc($config_global->email_msj_admin)->send(new gestionpago($invitacion, $correo , $evaluador));
-
+       \Alert::success('Terminó con los pasos de la evaluación correspondiente', 'Muchas Gracias')->persistent('Cerrar');
        return redirect()->route('homedos');
     }
 

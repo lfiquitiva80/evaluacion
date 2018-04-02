@@ -91,6 +91,7 @@ class utadeoController extends Controller
          
          Log::info('El usuario '. \Auth::user()->name .' Se ingreso a edicion del formulario Utadeopara el Id: '.$id); 
             //dd($proyectos_articulos);
+         
         return view('utadeo.edit', compact('preguntas','proyectos_articulos','id','evaluadores','fecha_nacimiento','fecha_evaluacion'));
     }
 

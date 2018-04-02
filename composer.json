@@ -23,7 +23,8 @@
         "pusher/pusher-php-server": "^3.0",
         "rap2hpoutre/laravel-log-viewer": "^0.10.4",
         "reportico/laravel-reportico": "~5.2",
-        "twbs/bootstrap": "4.0.0-alpha.6"
+        "twbs/bootstrap": "4.0.0-alpha.6",
+        "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

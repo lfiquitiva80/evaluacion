@@ -12,6 +12,7 @@ use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Alert;
 
 class evaluadoresController extends Controller
 {
@@ -271,9 +272,11 @@ class evaluadoresController extends Controller
                       
 
          if (\Auth::user()->TipoUsers==0){
+         //Alert::success('Paso 1 Aceptar el documento de Confidencialidad')->persistent('Cerrar');   
          return redirect()->route('homedos');
          }
         else{
+          Alert::success('Paso 1 Aceptar el documento de Confidencialidad')->persistent('Cerrar');  
             return redirect()->route('evaluadores.index');
         }
     }

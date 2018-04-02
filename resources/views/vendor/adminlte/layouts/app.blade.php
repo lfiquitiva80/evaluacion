@@ -10,6 +10,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     @include('adminlte::layouts.partials.htmlheader')
 
+     
+     
     
 
 @show
@@ -20,6 +22,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+ 
+    
+ 
 
 <!--
 BODY TAG OPTIONS:
@@ -41,7 +46,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini" onload="cargarall">
+<body class="skin-blue fixed" onload="cargarall">
        
 
 <div id="app" v-cloak>

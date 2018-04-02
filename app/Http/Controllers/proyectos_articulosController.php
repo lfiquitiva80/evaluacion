@@ -403,6 +403,7 @@ class proyectos_articulosController extends Controller
         flash('Haz aceptado el pago!')->important();
           Log::info('El usuario '. \Auth::user()->name .' acepto el pago para el id : '.$id);
           emailController::finalevaluacion($id);
+           \Alert::success('Finalizo la evaluación!, seguir con la pestaña "Documentos para gestinar el pago"','Paso 4')->persistent("Close");
         return back();
     }
 

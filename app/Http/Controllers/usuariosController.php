@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use App\Notifications\notificacionadmin;
 use Faker\factory as Faker;
+use Alert;
 
 
 
@@ -157,7 +158,8 @@ class usuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        flash('Se actualizo el registro con exito!')->important();    
+        flash('Se actualizo el registro con exito!')->important();
+        //Alert::message('Robots are working!');    
        
         Log::info('El usuario '. \Auth::user()->name .' Actualizo el id: '.$id);
         //sires::update($input);

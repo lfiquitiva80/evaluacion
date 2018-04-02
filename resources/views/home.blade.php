@@ -8,7 +8,7 @@
 
 @section('main-content')
 
-
+@include('sweet::alert')
 
 Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 <div class="container" id="home">
@@ -88,6 +88,8 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
           
           @if (!empty($row->proyecto_pdf))
           <td><a href="{{$row->proyecto_pdf}}" target="_blank" data-toggle="tooltip" data-placement="top" title="Descargar el archivo del Proyecto para evaluar" class="btn btn-success"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true" >  Descargar<br> los Documentos<br> del Proyecto</span></a></td>
+          @elseif (empty($row->Fecha_Aceptacion))
+              <td>Falta por aceptar el proyecto por el correo</td>
           @else
           <td>Falta por subir</td>
           @endif
@@ -109,7 +111,7 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
                     <td >
               @if (count($confidencialidad)>=1)
           
-          <a href="{{ $url = route('showconfidencialidadutadeo', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" ><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
+          <a href="{{ $url = route('showconfidencialidadutadeo', $row->id) }}" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Revisar el documento de confidencialidad" id="enterconfidencialidad"><i class="fa fa-search" aria-hidden="true"></i> Confidencialidad aceptada.</a>
               @elseif (empty($row->Fecha_Aceptacion))
               Falta por aceptar el proyecto por el correo
               @else 
@@ -130,12 +132,12 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
          @if (count($confidencialidad)>=1)
           <td ><!--<a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary">Inicio Evaluación</a>-->
           @if ($row->plantilla=="PlantillaEloy")
-          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Eloy</a>
+          <a href="{{ $url = route('preguntaseloy', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Realizar Evaluación Eloy</a>
           @elseif($row->plantilla=="PlantillaUtadeo")
-          <a href="{{ $url = route('utadeo.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Utadeo</a>
+          <a href="{{ $url = route('utadeo.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Realizar Evaluación Utadeo</a>
           
           @else
-          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Ver Evaluación Innpulsa</a>
+          <a href="{{ $url = route('preguntas.edit', $row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click para iniciar al Evaluación asignada"><i class="fa fa-star" aria-hidden="true"></i>  Realizar Evaluación Innpulsa</a>
 
           @endif</td>
 
@@ -738,8 +740,40 @@ Fecha de Ingreso al sistema  {{ $date }}  <p id="reloj"></p>
 
      
 
+<div class="modal modal-success fade" id="pasos">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Paso 1</h4>
+      </div>
+      <div class="modal-body">
+          <mark>Recuerde seguir los siguientes pasos:</mark>
+          <br> 1. Aceptar la carta de confidencialidad.
+          <br> 2. Descargar los documentos.
+          <br> 3. Realizar la evaluación.
+          <br> 4. Finalizar la evaluación.
+          <br> 5. Gestionar los Documentos para la gestión de pagos.
+          <br> 6. Gestionar la cuenta de cobro en Línea.
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+ <script>
+  $(document).ready(function()
+  {
+    // id de nuestro modal
+    $("#pasos").modal("show");
+  });
 
 
+  </script> 
 
 
 @endsection

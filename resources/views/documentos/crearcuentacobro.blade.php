@@ -331,7 +331,7 @@ Seleccione el Banco local
 						<h4 class="modal-title">Confirmar la cuenta de cobro</h4>
 					</div>
 					<div class="modal-body">
-						<p>Por favor verificar que la cuenta de cobro tenga la información de su cuenta, ya que al aceptar se enviará un correo para el correspondiente pago</p>
+						<p>Por favor verificar que la cuenta de cobro tenga la información de su cuenta, ya que al aceptar se efectuará en los próximos días el correspondiente pago.</p>
 						
 					</div>
 					<div class="modal-footer">

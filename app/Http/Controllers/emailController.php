@@ -27,6 +27,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Http\Controllers\Redirect;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Alert;
 
 
 
@@ -116,9 +117,8 @@ class emailController extends Controller
 
         // Ship order...
 
-
-        
-          flash('Haz enviado un correo de invitacion!')->success();
+       \Alert::success('Haz enviado un correo de invitación!','E-mail')->persistent("Close");
+          flash('Haz enviado un correo de invitación!')->success();
           Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Invitacion del id: '.$id);
 
         $invitacion = \App\proyectos_articulos::find($id);
@@ -186,6 +186,7 @@ class emailController extends Controller
              //dd($order);
 
         // Ship order...
+           \Alert::info('Haz enviado un correo para solicitar Documentos!!!');
           flash('Haz enviado un correo para solicitar Documentos!')->success();
           Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Documentos del id: '.$id);
 
@@ -225,6 +226,7 @@ class emailController extends Controller
               $config_global = \App\config_global::find(1);   
 
           flash('Haz enviado un correo para pagos!')->success();
+          \Alert::info('Haz enviado un correo para pagos!!!');
         // Ship order...
          
         \Mail::to($correo2->email)->cc($config_global->email_msj_admin)->send(new pagos($invitacion));
@@ -241,7 +243,7 @@ class emailController extends Controller
              //dd($order);
               Log::info('El usuario '. \Auth::user()->name .' Envio un correo para gestionar el pago con el área financiera: '.$id);
               flash('Haz enviado un correo para gestionar el pago con el área financiera!')->success();
-
+              \Alert::info('Haz enviado un correo para gestionar el pago con el área financiera!!!');  
               $invitacion = \App\proyectos_articulos::find($id);
               $invitacion->correo_gestion_pago=1;
               $invitacion->save();
@@ -270,6 +272,7 @@ class emailController extends Controller
              
               Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Certificado y Pagos del id: '.$id);
               flash('Haz enviado un correo de certificado y pago!')->success();
+              \Alert::info('Haz enviado un correo de certificado y pago!!!'); 
 
               $invitacion = \App\proyectos_articulos::find($id);
               $invitacion->certificadoypago=1;
@@ -297,6 +300,7 @@ class emailController extends Controller
         // Ship order...
 
           flash('Haz enviado un correo para la No respuesta!')->success();
+           \Alert::info('Haz enviado un correo para la No respuesta!!!'); 
           Log::info('El usuario  Envio un correo de No respuesta del id: '.$id);
 
         $invitacion = \App\proyectos_articulos::find($id);
@@ -325,7 +329,7 @@ class emailController extends Controller
 
           flash('Se ha finalizado la evaluación')->success();
           flash('Por Favor seguir con los Documentos para la gestión de pagos')->important();
-
+          \Alert::success('Por Favor seguir con los Documentos para la gestión de pagos!!!');
           Log::info('El usuario '. \Auth::user()->name .' Envio un correo de Finalizacion del id: '.$id);
 
           $invitacion = \App\proyectos_articulos::find($id);
@@ -360,7 +364,7 @@ class emailController extends Controller
           flash('Se cambio de estado a no finalizado!')->success();
 
           Log::info('El usuario '. \Auth::user()->name .' se cambio de estado a no finalizado id: '.$id);
-
+          \Alert::success('Se cambio de estado a no finalizado!');  
           $invitacion = \App\proyectos_articulos::find($id);
           $invitacion->proyecto_completado=0;
           $date = Carbon::now();

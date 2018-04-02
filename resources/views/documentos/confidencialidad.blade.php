@@ -193,9 +193,9 @@ echo $meses[date($dt->month)-1];
 			Si, Acepto terminos de la confidencialidad
 		</label>
 	</div>
-	<button type="submit" class="btn btn-primary">Acepto, los terminos de la confidencialidad</button>
+	<button type="submit" class="btn btn-primary" id="confirmarconfidencialidad">Acepto, los terminos de la confidencialidad</button>
 
-
+	
 
 {!! Form::close() !!}
 

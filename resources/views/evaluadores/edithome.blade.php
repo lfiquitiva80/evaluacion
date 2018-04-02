@@ -419,7 +419,7 @@ $( function() {
 
 
 
-	</div>
+	</div>-->
 
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
@@ -437,7 +437,7 @@ $( function() {
 
 	</div>
 	</div>
-
+<!--
 	<div class="form-group">
 		<div class="btn btn-default btn-file">
 			<i class="fa fa-paperclip"></i> Attachment
@@ -497,11 +497,28 @@ $( function() {
 			<div class="modal-footer">
 				<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Regresar</a>
 
-				<button type="submit" class="btn btn-info pull-center">Actualizar para Continuar</button>
+				<button type="submit" class="btn btn-info pull-center" id="informacion">Actualizar para Continuar</button>
 			</div>
+
+
 
 			{!! Form::close() !!}
 		</div>
+	
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+		<script type="text/javascript">
+				$(function() {
+					$('#informacion').click(function(event) {
+						//alert("message?: DOMString");
+						swal("Información actualizada!","Seguir con el boton de aceptar confidencialidad","success");	
+					});
+				});
+
+
+			</script>
+
+			
 	</div>
 </div>
 

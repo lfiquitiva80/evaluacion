@@ -7,6 +7,7 @@
 
 @section('main-content')
 
+@include('sweet::alert')
 
   <div class="panel-body">
 

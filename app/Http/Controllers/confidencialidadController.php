@@ -46,7 +46,10 @@ class confidencialidadController extends Controller
     {
          flash('Se creo con Exito!')->important();
         Log::info('El usuario '. \Auth::user()->name .' Creo una confidencialidad: ');
-
+        \Alert::success('Guardo correctamente el documento de confidencialidad, el siguiente paso es dar click en el boton de "Realizar la Evaluación"','Paso 2')->persistent("Close");
+        //\Alert::success('Paso 2, Realizar la evaluacón!')->persistent("Close");
+        //alert()->error('Paso 2, Realizar la evaluacón!!', 'Optional Title')->persistent('Close');
+        //alert('Paso 2, Realizar la evaluacón!!')->persistent("Close this");
         $input = $request->all();
 
         $confidencialidad=confidencialidad::create($input);

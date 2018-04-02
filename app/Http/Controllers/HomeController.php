@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Flash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
+use Alert;
+
 
 class HomeController extends Controller
 {
@@ -35,6 +37,7 @@ class HomeController extends Controller
         $carbon = new \Carbon\Carbon();
         $date = $carbon->now();
         
+    
 
   $evaluadores=DB::table('evaluadores')->where('id_users','=',\Auth::user()->id)->first();
   Log::info('El usuario '. \Auth::user()->name .' Ingreso al Sistema ');
@@ -60,7 +63,7 @@ class HomeController extends Controller
      $Tipo= TipoDocumento::all();
 
           //return view('evaluadores.index', ['evaluadores' => $evaluadores]);    
-
+    //  \Alert::success('Aceptar la carta de confidencialidad','Paso 1')->persistent("Close"); 
            //dd($proyectos_articulos); 
         return view('home', ['proyectos_articulos' => $proyectos_articulos,'evaluadores' => $evaluadores,'historico' => $historicos,'date' => $date,'Tipo' => $Tipo,'evaluadores2' => $evaluadores2]);
     }

@@ -40,7 +40,7 @@
             
             @if (Auth::user()->TipoUsers==0)
             
-            <li class="active"><a href="{{$url = route('evaluadores.edit', $evaluadores->id) }}"><i class='fa fa-address-card'></i> <span>Información Evaluador</span></a></li><li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             
             <li class="active"><a href="{{ url('enviarcorreosoporte') }}"><i class="fa fa-envelope-square"></i><span>Soporte</span></a></li>
             <li class="active"><a href="{{ $url = route('usuarios.edit', Auth::user()->id) }}"><i class="fa fa-key" aria-hidden="true"></i><span>Cambio de Contraseña</span></a></li>

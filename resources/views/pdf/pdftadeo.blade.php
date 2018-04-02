@@ -49,7 +49,7 @@
           $comment2 = App\User::find($comment->id_users); echo $comment2->name;
           ?> se titula:</span></span></span></em></strong></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm; text-align:center">&nbsp;</p>
+<!--<p style="margin-left:0cm; margin-right:0cm; text-align:center">&nbsp;</p>-->
 
 <p style="margin-left:2cm; margin-right:2cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">{{$proyectos_articulos->DescripcionProyecto_Articulo}}</span></span></p>
 

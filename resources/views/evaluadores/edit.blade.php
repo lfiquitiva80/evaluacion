@@ -272,7 +272,7 @@ $municipios = DB::table('municipios')->get();
 
 
 
-	<center><button type="submit" class="btn btn-info pull-center">Actualizar para Continuar</button>
+	<center><button type="submit" class="btn btn-info pull-center" id="informacion2">Actualizar para Continuar</button>
 	</center><p>
 
 {!! Form::close() !!}
@@ -284,5 +284,6 @@ $municipios = DB::table('municipios')->get();
 </div>
 	</div>
 
+  
 
 @endsection

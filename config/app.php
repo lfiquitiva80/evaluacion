@@ -167,10 +167,11 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Reportico\Reportico\ReporticoServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
         Creativeorange\Gravatar\GravatarServiceProvider::class,
+        Reportico\Reportico\ReporticoServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         
         
 
@@ -243,6 +244,8 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+
         
        
         

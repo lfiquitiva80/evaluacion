@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title> EvaluacionesOCyT- @yield('htmlheader_title', 'Sistema de Eventos') </title>
+    <title> EvaluacionesOCyT- @yield('htmlheader_title', 'Sistema de Evaluaciones') </title>
     
     
 
@@ -31,6 +31,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     <link rel="shortcut icon" href="public/favicon.ico" />
 
@@ -49,6 +51,6 @@
         @endphp
 
     </script>
-    
+   
 
 </head>

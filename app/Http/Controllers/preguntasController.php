@@ -145,12 +145,15 @@ class preguntasController extends Controller
 
 
 
-                     
+                     \Alert::success('Guardo Correctamente la evaluación, para finalizar dar click en el boton "Terminación evaluación y Confirmación de pago"','Paso 3')->persistent("Close"); 
         
                     if (\Auth::user()->TipoUsers==0){
+                   
+                         
                     return redirect()->route('homedos');
                      }
                     else{
+
                     return redirect()->route('criterios_evaluacion.index');           
                     }
         
